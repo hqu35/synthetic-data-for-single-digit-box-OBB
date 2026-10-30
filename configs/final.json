@@ -1,0 +1,6 @@
+{
+  "extends": "preview.json",
+  "output": "outputs/final",
+  "resolution": [1024, 512],
+  "render": {"engine": "CYCLES", "device": "CPU", "samples": 96, "denoise": true, "threads": 8}
+}

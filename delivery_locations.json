@@ -1,0 +1,80 @@
+[
+  {
+    "experiment": "experiment_001_initial-blender-validation",
+    "date": "2026-10-28",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-28/synthetic-data-for-single-digit-box-OBB/experiment_001_initial-blender-validation",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/validation50"
+  },
+  {
+    "experiment": "experiment_002_uv-mechanics-material-upgrade",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_002_uv-mechanics-material-upgrade",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/upgrade50"
+  },
+  {
+    "experiment": "experiment_003_stage1-exposed-mechanics",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_003_stage1-exposed-mechanics",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/stage1_geometry"
+  },
+  {
+    "experiment": "experiment_004_stage1-raised-band",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_004_stage1-raised-band",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/stage1_raised_band"
+  },
+  {
+    "experiment": "experiment_005_stage1-final-pin-typography-ink",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_005_stage1-final-pin-typography-ink",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/stage1_final_refinement"
+  },
+  {
+    "experiment": "experiment_006_industrial-font-candidates",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_006_industrial-font-candidates",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/industrial_fonts_review"
+  },
+  {
+    "experiment": "experiment_007_protective-glass-review",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_007_protective-glass-review",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/glass_review"
+  },
+  {
+    "experiment": "experiment_008_numeral-band-obb-stage1",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_008_numeral-band-obb-stage1",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/obb_band_stage1"
+  },
+  {
+    "experiment": "experiment_009_tight-register-framing-preview",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_009_tight-register-framing-preview",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/tight_framing_preview"
+  },
+  {
+    "experiment": "experiment_010_dependency-safe-cleanup-plan",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_010_dependency-safe-cleanup-plan",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/cleanup_review"
+  },
+  {
+    "experiment": "experiment_011_dependency-safe-cleanup-complete",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_011_dependency-safe-cleanup-complete",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/cleanup_review"
+  },
+  {
+    "experiment": "experiment_012_diffusion-exp1-200-tight-views",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_012_diffusion-exp1-200-tight-views",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/diffusion_model_dataset/exp1"
+  },
+  {
+    "experiment": "experiment_013_moderate-perspective-obb-review",
+    "date": "2026-10-29",
+    "destination": "/Users/ququ/Documents/Codex/2026-10-29/synthetic-data-for-single-digit-box-OBB/experiment_013_moderate-perspective-obb-review",
+    "original": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB/outputs/perspective_review"
+  }
+]

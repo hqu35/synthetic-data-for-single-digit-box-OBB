@@ -1,0 +1,212 @@
+{
+  "stage": "geometry_review_only",
+  "digit_sequence": "00054",
+  "transition_progress": [
+    0,
+    0,
+    0,
+    0,
+    0.05
+  ],
+  "wheel_radius": 1.25,
+  "wheel_width": 0.82,
+  "wheel_bevel_width": 0.018,
+  "radial_segments": 192,
+  "rim_radius": 1.2,
+  "rim_width": 0.1,
+  "pins_per_digit_interval": 2,
+  "pin_radius": 0.055,
+  "pin_length": 0.22,
+  "pin_radial_position": 1.075,
+  "pin_bevel_width": 0.008,
+  "wheel_axial_clearance": 0.14,
+  "axle_radius": 0.13,
+  "slot_width": 0.76,
+  "slot_height": 0.74,
+  "frame_border": 0.045,
+  "frame_depth": 0.025,
+  "aperture_standoff": 0.045,
+  "samples": 64,
+  "threads": 8,
+  "material": {
+    "material_preset": "meter_cream_matte",
+    "material_color": [
+      0.76,
+      0.73,
+      0.63
+    ],
+    "roughness_range": [
+      0.55,
+      0.8
+    ],
+    "micro_bump_strength": 0.016,
+    "micro_bump_distance": 0.004,
+    "aging_intensity": 0.08,
+    "color_variation": 0.008,
+    "ink_color": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "ink_roughness": 0.7,
+    "rim_color_factor": 0.84,
+    "pin_color_factor": 0.72,
+    "pin_roughness": 0.52
+  },
+  "typography": {
+    "font": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+    "segment_pixels": 256,
+    "axial_pixels": 512,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78
+  },
+  "lights": [
+    {
+      "name": "directional_key",
+      "position": [
+        -3.5,
+        5.5,
+        5.5
+      ],
+      "energy": 800,
+      "size": 2.8,
+      "color": [
+        1.0,
+        0.95,
+        0.86
+      ]
+    },
+    {
+      "name": "right_pin_grazing",
+      "position": [
+        6.0,
+        3.5,
+        2.0
+      ],
+      "energy": 550,
+      "size": 2.1,
+      "color": [
+        0.92,
+        0.96,
+        1.0
+      ]
+    },
+    {
+      "name": "weak_fill",
+      "position": [
+        0.0,
+        -3.0,
+        5.0
+      ],
+      "energy": 90,
+      "size": 4.0,
+      "color": [
+        0.8,
+        0.88,
+        1.0
+      ]
+    }
+  ],
+  "world_strength": 0.13,
+  "cool_light_gains": [
+    0.62,
+    0.83,
+    1.0
+  ],
+  "views": {
+    "A_three_quarter_neutral": {
+      "position": [
+        7.5,
+        4.0,
+        10.5
+      ],
+      "target": [
+        0.1,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1440,
+        920
+      ],
+      "fit_margin": 0.09,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": false
+    },
+    "B_right_pin_closeup": {
+      "position": [
+        7.8,
+        1.9,
+        4.2
+      ],
+      "target": [
+        2.65,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1200,
+        1000
+      ],
+      "fit_margin": 0.07,
+      "wheels": [
+        3,
+        4
+      ],
+      "frame": false
+    },
+    "C_front_neutral": {
+      "position": [
+        0.15,
+        0.12,
+        17.0
+      ],
+      "target": [
+        0.16,
+        0.0,
+        1.25
+      ],
+      "resolution": [
+        1600,
+        380
+      ],
+      "fit_margin": 0.035,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": true
+    },
+    "D_grazing_curvature": {
+      "position": [
+        2.5,
+        4.2,
+        3.0
+      ],
+      "target": [
+        1.92,
+        0.0,
+        0.65
+      ],
+      "resolution": [
+        1320,
+        900
+      ],
+      "fit_margin": 0.08,
+      "wheels": [
+        3,
+        4
+      ],
+      "frame": false
+    }
+  }
+}

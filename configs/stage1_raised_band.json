@@ -1,0 +1,246 @@
+{
+  "stage": "raised_band_geometry_review_only",
+  "digit_sequence": "00054",
+  "transition_progress": [
+    0,
+    0,
+    0,
+    0,
+    0.05
+  ],
+  "wheel_radius": 1.25,
+  "wheel_width": 0.82,
+  "wheel_bevel_width": 0.018,
+  "radial_segments": 192,
+  "rim_radius": 1.2,
+  "rim_width": 0.1,
+  "pins_per_digit_interval": 2,
+  "pin_radius": 0.035,
+  "pin_length": 0.0725,
+  "pin_radial_position": 1.225,
+  "pin_bevel_width": 0.004,
+  "wheel_axial_clearance": 0.14,
+  "axle_radius": 0.13,
+  "slot_width": 0.76,
+  "slot_height": 0.74,
+  "frame_border": 0.045,
+  "frame_depth": 0.025,
+  "aperture_standoff": 0.045,
+  "samples": 64,
+  "threads": 8,
+  "material": {
+    "material_preset": "meter_cream_matte",
+    "material_color": [
+      0.76,
+      0.73,
+      0.63
+    ],
+    "roughness_range": [
+      0.55,
+      0.8
+    ],
+    "micro_bump_strength": 0.016,
+    "micro_bump_distance": 0.004,
+    "aging_intensity": 0.08,
+    "color_variation": 0.008,
+    "ink_color": [
+      0.012,
+      0.012,
+      0.012
+    ],
+    "ink_roughness": 0.7,
+    "rim_color_factor": 0.84,
+    "pin_color_factor": 0.72,
+    "pin_roughness": 0.52
+  },
+  "typography": {
+    "font": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+    "segment_pixels": 1024,
+    "axial_pixels": 1024,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78
+  },
+  "lights": [
+    {
+      "name": "directional_key",
+      "position": [
+        -3.5,
+        5.5,
+        5.5
+      ],
+      "energy": 800,
+      "size": 2.8,
+      "color": [
+        1.0,
+        0.95,
+        0.86
+      ]
+    },
+    {
+      "name": "right_pin_grazing",
+      "position": [
+        6.0,
+        3.5,
+        2.0
+      ],
+      "energy": 550,
+      "size": 2.1,
+      "color": [
+        0.92,
+        0.96,
+        1.0
+      ]
+    },
+    {
+      "name": "weak_fill",
+      "position": [
+        0.0,
+        -3.0,
+        5.0
+      ],
+      "energy": 90,
+      "size": 4.0,
+      "color": [
+        0.8,
+        0.88,
+        1.0
+      ]
+    }
+  ],
+  "world_strength": 0.13,
+  "cool_light_gains": [
+    0.62,
+    0.83,
+    1.0
+  ],
+  "views": {
+    "A_exploded": {
+      "position": [
+        4.5,
+        3.0,
+        7.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1400,
+        1000
+      ],
+      "fit_margin": 0.1,
+      "wheels": [
+        2
+      ],
+      "frame": false
+    },
+    "B_single_digit_front": {
+      "position": [
+        0.0,
+        0.0,
+        9.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.25
+      ],
+      "resolution": [
+        1100,
+        1100
+      ],
+      "fit_margin": 0.1,
+      "wheels": [
+        2
+      ],
+      "frame": true
+    },
+    "C_two_wheel": {
+      "position": [
+        3.8,
+        2.3,
+        7.0
+      ],
+      "target": [
+        1.08,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1400,
+        1000
+      ],
+      "fit_margin": 0.09,
+      "wheels": [
+        3,
+        4
+      ],
+      "frame": false
+    },
+    "D_five_wheel_front": {
+      "position": [
+        0.15,
+        0.12,
+        17.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.25
+      ],
+      "resolution": [
+        1600,
+        540
+      ],
+      "fit_margin": 0.06,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": true
+    },
+    "E_three_quarter": {
+      "position": [
+        7.5,
+        4.0,
+        10.5
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1440,
+        920
+      ],
+      "fit_margin": 0.09,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": false
+    }
+  },
+  "previous_config": "configs/stage1_geometry.json",
+  "old_band_width": 0.82,
+  "band_width_scale": 0.625,
+  "band_to_slot_ratio": 0.8,
+  "left_margin_share": 0.2,
+  "digit_gap_ratio": 0.12,
+  "base_radius": 1.1,
+  "band_radius": 1.25,
+  "base_width": 0.62,
+  "band_bevel_width": 0.006,
+  "base_bevel_width": 0.01,
+  "edge_rim_radius": 1.265,
+  "edge_rim_width": 0.015,
+  "minimum_clearance": 0.06
+}

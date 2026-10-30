@@ -1,0 +1,4 @@
+# Host-only visualization/audit dependency; Blender uses its bundled Python.
+Pillow>=10,<13
+# Host-side camera/PNG regression tests; Blender already includes NumPy.
+numpy>=1.24,<3

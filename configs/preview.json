@@ -1,0 +1,231 @@
+{
+  "count": 50,
+  "seed": 20261028,
+  "output": "outputs/upgrade50",
+  "resolution": [
+    640,
+    320
+  ],
+  "digit_counts": {
+    "5": 0.5,
+    "6": 0.5
+  },
+  "rotation": {
+    "min_deg": 2.0,
+    "max_deg": 20.0,
+    "distribution": "uniform",
+    "tolerance_deg": 0.8,
+    "max_spread_deg": 1.0
+  },
+  "geometry": {
+    "slot_width": null,
+    "wheel_radius": [
+      1.9,
+      2.2
+    ],
+    "slot_height_step_ratio": 0.94,
+    "gap_ratio": [
+      0.03,
+      0.2
+    ],
+    "frame_border": 0.18,
+    "wheel_width": [
+      0.76,
+      0.84
+    ],
+    "wheel_axial_clearance": [
+      0.003,
+      0.005
+    ],
+    "wheel_bevel_width": 0.004,
+    "rim_width": [
+      0.004,
+      0.006
+    ],
+    "rim_radius_ratio": 0.96,
+    "axle_radius_ratio": 0.11,
+    "radial_segments": 160,
+    "frame_depth": 0.018,
+    "aperture_standoff": 0.035
+  },
+  "wheels": {
+    "transition_probability": 0.4,
+    "transition_progress_min": 0.15,
+    "transition_progress_max": 0.85
+  },
+  "camera": {
+    "projection_weights": {
+      "ORTHO": 0.4,
+      "PERSP": 0.6
+    },
+    "distance": [
+      13.0,
+      16.0
+    ],
+    "yaw_deg": [
+      -1.5,
+      1.5
+    ],
+    "pitch_deg": [
+      -2,
+      2
+    ],
+    "fov_deg": 36.0,
+    "margin_fraction": 0.07
+  },
+  "lighting": {
+    "key_energy": [
+      260,
+      420
+    ],
+    "fill_energy": [
+      80,
+      160
+    ],
+    "world_strength": [
+      0.12,
+      0.24
+    ],
+    "key_x": [
+      -4.0,
+      2.0
+    ],
+    "key_y": [
+      2.0,
+      5.0
+    ],
+    "area_size": [
+      4.0,
+      6.0
+    ],
+    "temperature_kelvin": [
+      4600,
+      6800
+    ],
+    "fill_x": [
+      -3,
+      3
+    ],
+    "fill_y": [
+      -3,
+      0
+    ],
+    "height": [
+      4,
+      6
+    ]
+  },
+  "appearance": {
+    "material_preset": "meter_cream_matte",
+    "material_color": [
+      0.76,
+      0.73,
+      0.63
+    ],
+    "cream_variation": [
+      0.95,
+      1.04
+    ],
+    "roughness_range": [
+      0.55,
+      0.8
+    ],
+    "micro_bump_strength": [
+      0.01,
+      0.025
+    ],
+    "micro_bump_distance": 0.004,
+    "aging_intensity": [
+      0.05,
+      0.25
+    ],
+    "color_variation": [
+      0.006,
+      0.02
+    ],
+    "ink_darkness": [
+      0.008,
+      0.022
+    ],
+    "ink_roughness": 0.7
+  },
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 16,
+    "denoise": true,
+    "threads": 8
+  },
+  "annotation_target": "viewing_aperture",
+  "max_attempts": 20,
+  "pins": {
+    "pins_enabled": true,
+    "pins_per_digit_interval": [
+      2,
+      3
+    ],
+    "pin_radius_ratio": [
+      0.01,
+      0.014
+    ],
+    "pin_length_ratio": [
+      0.008,
+      0.012
+    ],
+    "pin_radial_position": 0.91,
+    "pin_bevel_width": 0.0015
+  },
+  "typography": {
+    "font": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+    "segment_pixels": 256,
+    "axial_pixels": 512,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78
+  },
+  "camera_appearance": {
+    "preset": "randomized",
+    "preset_weights": {
+      "neutral": 0.5,
+      "cool_blue": 0.3,
+      "warm": 0.2
+    },
+    "cast_strength": [
+      0.35,
+      0.8
+    ],
+    "white_balance_variation": [
+      0.985,
+      1.015
+    ],
+    "exposure_stops": [
+      -0.18,
+      0.18
+    ],
+    "contrast": [
+      0.97,
+      1.04
+    ],
+    "blur_sigma_px": [
+      0.12,
+      0.4
+    ],
+    "sensor_noise_std": [
+      0.0006,
+      0.002
+    ],
+    "defocus_enabled": false,
+    "defocus_fstop": [
+      16,
+      24
+    ]
+  },
+  "randomization": {
+    "geometry": true,
+    "wheel_states": true,
+    "materials": true,
+    "lighting": true,
+    "camera_pose": true,
+    "camera_appearance": true,
+    "fixed_seed": 1729
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "annotation_correction_one_sample_review",
+  "source_scene": "outputs/glass_review/protective_glass_review.blend",
+  "source_parameters": "outputs/glass_review/02_glass_neutral_parameters.json",
+  "output": "outputs/obb_band_stage1",
+  "annotation_target": "visible_numeral_band",
+  "class_id": 0,
+  "class_name": "digit_band",
+  "digit_count": 5,
+  "render_count": 1,
+  "stage2_requires_human_approval": true
+}

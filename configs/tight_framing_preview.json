@@ -1,0 +1,15 @@
+{
+  "source_scene": "outputs/glass_review/protective_glass_review.blend",
+  "source_parameters": "outputs/glass_review/02_glass_neutral_parameters.json",
+  "output": "outputs/tight_framing_preview",
+  "resolution": [1600, 420],
+  "target_register_image_area_fraction": 0.93,
+  "camera_position": [0, 0, 17],
+  "camera_target": [0, 0, 1.5],
+  "camera_roll_degrees": 0,
+  "seed": 20261029,
+  "samples": 64,
+  "threads": 6,
+  "render_count": 1,
+  "dataset_remains_paused": true
+}

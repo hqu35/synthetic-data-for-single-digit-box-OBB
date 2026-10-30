@@ -1,0 +1,144 @@
+{
+  "experiment": "FLUX appearance-transfer input dataset, Experiment 1: 200 tight-framed views",
+  "stage1_approved": true,
+  "source_scene": "outputs/glass_review/protective_glass_review.blend",
+  "source_parameters": "outputs/glass_review/02_glass_neutral_parameters.json",
+  "output": "diffusion_model_dataset/exp1",
+  "count": 200,
+  "seed": 2026102902,
+  "resolution": [
+    1600,
+    420
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "threads": 8,
+    "denoise": true
+  },
+  "annotation_target": "visible_numeral_band",
+  "camera": {
+    "yaw_deg": [
+      -8,
+      8
+    ],
+    "pitch_deg": [
+      -4,
+      4
+    ],
+    "roll_deg": [
+      -0.25,
+      0.25
+    ],
+    "distance": [
+      16,
+      19
+    ],
+    "focal_length_mm": [
+      130,
+      175
+    ],
+    "frame_margin_fraction": 0.003,
+    "auto_fit_register": true,
+    "register_image_area_fraction": [
+      0.91,
+      0.94
+    ]
+  },
+  "register": {
+    "rotation_x_deg": [
+      -2,
+      2
+    ],
+    "rotation_y_deg": [
+      -3,
+      3
+    ],
+    "rotation_z_deg": [
+      -3,
+      3
+    ]
+  },
+  "lighting": {
+    "neutral_temperature_kelvin": [
+      5700,
+      6700
+    ],
+    "cool_temperature_kelvin": [
+      7300,
+      8500
+    ],
+    "intensity_scale": [
+      0.8,
+      1.12
+    ],
+    "individual_intensity_scale": [
+      0.9,
+      1.1
+    ],
+    "position_jitter_xyz": [
+      0.35,
+      0.45,
+      0.45
+    ],
+    "area_size_scale": [
+      0.85,
+      1.25
+    ],
+    "reflection_intensity_scale": [
+      0.65,
+      1.0
+    ],
+    "world_strength": [
+      0.1,
+      0.16
+    ]
+  },
+  "appearance": {
+    "exposure_ev": [
+      -0.2,
+      0.15
+    ],
+    "contrast": [
+      0.98,
+      1.02
+    ],
+    "substrate_color_scale": [
+      0.98,
+      1.02
+    ],
+    "substrate_rgb_gain": [
+      0.99,
+      1.01
+    ],
+    "sensor_noise_probability": 0.15,
+    "sensor_noise_linear_rgb_std": [
+      0.00015,
+      0.0005
+    ]
+  },
+  "validation": {
+    "max_attempts_per_sample": 5,
+    "minimum_boundary_to_obb_area_ratio": 0.94,
+    "maximum_ideal_glass_shift_fraction_of_band_width": 0.035,
+    "minimum_band_luminance_8bit": 25,
+    "maximum_band_overexposed_fraction": 0.1,
+    "minimum_register_image_area_fraction": 0.9,
+    "maximum_register_image_area_fraction": 0.95
+  },
+  "preserved": {
+    "digit_sequence": "00054",
+    "transition_progress": [
+      0,
+      0,
+      0,
+      0,
+      0.05
+    ],
+    "font": "Barlow Condensed Regular",
+    "glass_ior": 1.5,
+    "glass_roughness": 0.035
+  },
+  "stop_after_validation": true
+}

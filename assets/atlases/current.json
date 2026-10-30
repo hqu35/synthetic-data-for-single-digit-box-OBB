@@ -1,0 +1,22 @@
+{
+  "path": "assets/atlases/ink_30236163473670b7.png",
+  "sha256": "f3987f9fe851c1f774015c4f44d9db3383423a460c40374c3d5959cc643f0a7c",
+  "font": "assets/fonts/industrial/D-DINCondensed.ttf",
+  "font_sha256": "724b48d534dbcde7a9f039bddc3a7344d4913de43726f3b7d7a56f0770a8ea6b",
+  "size": [
+    2560,
+    512
+  ],
+  "typography": {
+    "font": "assets/fonts/industrial/D-DINCondensed.ttf",
+    "segment_pixels": 256,
+    "axial_pixels": 512,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78,
+    "font_family": "D-DIN Condensed",
+    "font_weight": "Regular",
+    "font_license": "assets/fonts/industrial/COPYING.txt"
+  },
+  "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
+  "license": "assets/fonts/industrial/COPYING.txt"
+}

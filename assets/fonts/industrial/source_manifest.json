@@ -1,0 +1,16 @@
+{
+  "din_repository": "https://github.com/amcchord/datto-d-din",
+  "din_commit": "e199c8441e758d6e492cd01ef52c3c67ba4bae26",
+  "ocr_b_source": "https://mirrors.ctan.org/fonts/ocr-b-outline.zip",
+  "ocr_b_archive_sha256": "2e625b468d92849071a2ec7debe8a8fe47cdf6f4ea8117e350f093ed32b90617",
+  "files": {
+    "COPYING.txt": "59e505e11e6da3ac3020eb6b4163f4d0382524183db660bf52a08234c764b2e5",
+    "OFL-1.1.txt": "59e505e11e6da3ac3020eb6b4163f4d0382524183db660bf52a08234c764b2e5",
+    "FONTLOG.txt": "e1e2e114db6aed0269e7f907bc0b2bd0da18c05b6339a8f712d3645d5d7e043f",
+    "README.md": "5403ec74ab2326310ef04d9d96ea8c8d8aea03850617e9f2cd731d6cf3824963",
+    "D-DIN.ttf": "705bece88e33c8f86d0ace0c7d93ee143b745cba7a99643753a4f91c3c22e204",
+    "D-DINCondensed.ttf": "724b48d534dbcde7a9f039bddc3a7344d4913de43726f3b7d7a56f0770a8ea6b",
+    "OCR-B-README.txt": "cc2827e9696ea5509f5bc648623ca799d9510974d1e893b784214ea4d8cddc17",
+    "ocrb10.otf": "6270b592af1cb319fe4122777d14fdbfc4a2edd111c6f87af3f4ac04c82ba48a"
+  }
+}

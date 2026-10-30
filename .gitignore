@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+outputs/
+diffusion_model_dataset/
+*.blend1
+.DS_Store

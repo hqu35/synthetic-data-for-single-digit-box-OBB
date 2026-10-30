@@ -1,0 +1,237 @@
+{
+  "stage": "final_stage1_surface_review_only",
+  "digit_sequence": "00054",
+  "transition_progress": [
+    0,
+    0,
+    0,
+    0,
+    0.05
+  ],
+  "radial_segments": 192,
+  "pin_radius": 0.027,
+  "pin_length": 0.06,
+  "pin_radial_position": 1.225,
+  "pin_bevel_width": 0.004,
+  "axle_radius": 0.13,
+  "slot_height": 0.74,
+  "frame_border": 0.045,
+  "frame_depth": 0.025,
+  "aperture_standoff": 0.045,
+  "samples": 64,
+  "threads": 8,
+  "material": {
+    "material_preset": "meter_cream_matte",
+    "material_color": [
+      0.76,
+      0.73,
+      0.63
+    ],
+    "roughness_range": [
+      0.65,
+      0.78
+    ],
+    "micro_bump_strength": 0.016,
+    "micro_bump_distance": 0.004,
+    "aging_intensity": 0.08,
+    "color_variation": 0.008,
+    "ink_color": [
+      0.018,
+      0.02,
+      0.022
+    ],
+    "ink_roughness": 0.3,
+    "rim_color_factor": 0.84,
+    "pin_color_factor": 0.72,
+    "pin_roughness": 0.52,
+    "plastic_roughness": [
+      0.65,
+      0.78
+    ],
+    "ink_specular_ior_level": 0.55,
+    "ink_gloss_enabled": true,
+    "ink_bump_scale": 0.08
+  },
+  "typography": {
+    "font": "assets/fonts/BarlowCondensed-Regular.ttf",
+    "segment_pixels": 1024,
+    "axial_pixels": 1024,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78,
+    "font_family": "Barlow Condensed",
+    "font_weight": "Regular",
+    "glyph_width_scale": 0.82,
+    "glyph_height_scale": 0.82,
+    "glyph_horizontal_alignment": "center",
+    "glyph_vertical_alignment": "center",
+    "glyph_ink_color": [
+      0.018,
+      0.02,
+      0.022
+    ]
+  },
+  "lights": [
+    {
+      "name": "directional_key",
+      "position": [
+        -3.5,
+        5.5,
+        5.5
+      ],
+      "energy": 800,
+      "size": 2.8,
+      "color": [
+        1.0,
+        0.95,
+        0.86
+      ]
+    },
+    {
+      "name": "right_pin_grazing",
+      "position": [
+        6.0,
+        3.5,
+        2.0
+      ],
+      "energy": 550,
+      "size": 2.1,
+      "color": [
+        0.92,
+        0.96,
+        1.0
+      ]
+    },
+    {
+      "name": "weak_fill",
+      "position": [
+        0.0,
+        -3.0,
+        5.0
+      ],
+      "energy": 90,
+      "size": 4.0,
+      "color": [
+        0.8,
+        0.88,
+        1.0
+      ]
+    }
+  ],
+  "world_strength": 0.13,
+  "cool_light_gains": [
+    0.62,
+    0.83,
+    1.0
+  ],
+  "views": {
+    "single": {
+      "position": [
+        0.0,
+        0.0,
+        9.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.25
+      ],
+      "resolution": [
+        1000,
+        1000
+      ],
+      "fit_margin": 0.1,
+      "wheels": [
+        2
+      ],
+      "frame": true
+    },
+    "row": {
+      "position": [
+        0.15,
+        0.12,
+        17.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.25
+      ],
+      "resolution": [
+        1600,
+        540
+      ],
+      "fit_margin": 0.06,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": true
+    },
+    "oblique": {
+      "position": [
+        7.5,
+        4.0,
+        10.5
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "resolution": [
+        1440,
+        920
+      ],
+      "fit_margin": 0.09,
+      "wheels": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "frame": false
+    }
+  },
+  "old_band_width": 0.82,
+  "band_to_slot_ratio": 0.7,
+  "left_margin_share": 0.5,
+  "digit_gap_ratio": 0.12,
+  "base_radius": 1.1,
+  "band_radius": 1.25,
+  "base_width": 0.62,
+  "band_bevel_width": 0.006,
+  "base_bevel_width": 0.01,
+  "edge_rim_radius": 1.265,
+  "edge_rim_width": 0.015,
+  "minimum_clearance": 0.06,
+  "slot_width_fixed": 0.640625,
+  "target_visible_pins": 3,
+  "pin_aperture_safety_margin": 0.015,
+  "previous_typography": {
+    "font": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+    "segment_pixels": 1024,
+    "axial_pixels": 1024,
+    "numeral_height": 0.77,
+    "numeral_width": 0.78
+  },
+  "ink_inspection_light": {
+    "name": "ink_reflection_strip",
+    "position": [
+      0.05,
+      2.3,
+      6.0
+    ],
+    "energy": 90,
+    "size": 1.3,
+    "size_y": 0.38,
+    "color": [
+      1.0,
+      0.96,
+      0.9
+    ]
+  }
+}

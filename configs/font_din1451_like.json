@@ -1,0 +1,4 @@
+{
+  "extends": "preview.json",
+  "font_preset": "din1451_like"
+}
