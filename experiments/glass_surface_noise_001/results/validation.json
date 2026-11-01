@@ -1,0 +1,17 @@
+{
+  "case_count": 5,
+  "geometry_camera_lights_states_boxes": "identical across all cases",
+  "samples": 64,
+  "atlas": {
+    "path": "assets/atlases/photo_feb51f0d24c6973f.png",
+    "sha256": "a4835caaad4a7f450e3e31573813b76e02a9507c38839dc707b920f3fbb1bfd8",
+    "source_image": "assets/reference/user_digit_strip.png",
+    "source_image_sha256": "e1549e76f1935e192a8d6564af77549b4f492c0c6e49bbc6d091f2879c05a44c",
+    "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
+    "size": [
+      10240,
+      1024
+    ]
+  },
+  "method": "same scene reloaded for each render; material modified on glass only; no postprocessing"
+}

@@ -4,8 +4,20 @@ Only radiometry and subpixel blur change; crop, dimensions and coordinates are i
 """
 import struct
 import zlib
+import math
 from pathlib import Path
 import numpy as np
+
+
+def blur_sigma_from_percent(value, resolution):
+    """Map 0..50 percent to 0..4 px sigma at 1600x460, scaling with height.
+
+    This is an artistic strength control, not a measured sensor resolution.
+    """
+    value = float(value)
+    if not math.isfinite(value) or not 0 <= value <= 50:
+        raise ValueError('blur_percent must be between 0 and 50 inclusive')
+    return value * 0.08 * min(resolution) / 460.0
 
 
 def read_png(path):
@@ -46,11 +58,17 @@ def write_png(path,rgb):
 
 def process_image(raw_path,final_path,params):
     encoded=read_png(raw_path).astype(np.float64)/255
+    if 'blur_percent' in params:
+        if params.get('blur_sigma_px', 0) != 0:
+            raise ValueError('Specify blur_percent or blur_sigma_px, not both')
+        sigma=blur_sigma_from_percent(params['blur_percent'], (encoded.shape[1],encoded.shape[0]))
+        params['effective_blur_sigma_px']=sigma
+    else:
+        sigma=params['blur_sigma_px']
     rgb=np.where(encoded<=.04045,encoded/12.92,((encoded+.055)/1.055)**2.4)
     gains=np.array(params['camera_white_balance'])*np.array(params['postprocess_color_cast'])
     rgb=rgb*gains*(2**params['camera_exposure'])
     rgb=(rgb-.18)*params['contrast']+.18
-    sigma=params['blur_sigma_px']
     if sigma>0:
         radius=max(1,int(np.ceil(sigma*3)));x=np.arange(-radius,radius+1)
         kernel=np.exp(-.5*(x/sigma)**2);kernel/=kernel.sum()

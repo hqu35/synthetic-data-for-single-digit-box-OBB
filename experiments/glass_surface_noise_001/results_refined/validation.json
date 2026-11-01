@@ -1,0 +1,46 @@
+{
+  "case_count": 5,
+  "geometry_camera_lights_states_boxes": "identical across all cases",
+  "samples": 64,
+  "atlas": {
+    "path": "assets/atlases/photo_feb51f0d24c6973f.png",
+    "sha256": "a4835caaad4a7f450e3e31573813b76e02a9507c38839dc707b920f3fbb1bfd8",
+    "source_image": "assets/reference/user_digit_strip.png",
+    "source_image_sha256": "e1549e76f1935e192a8d6564af77549b4f492c0c6e49bbc6d091f2879c05a44c",
+    "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
+    "size": [
+      10240,
+      1024
+    ]
+  },
+  "method": "same scene reloaded for each render; material modified on glass only; no postprocessing",
+  "image_comparison": [
+    {
+      "name": "01_baseline",
+      "mean_absolute_rgb_difference_vs_baseline": 0.0,
+      "fraction_of_pixels_with_max_channel_difference_above_5": 0.0
+    },
+    {
+      "name": "02_light_scratches",
+      "mean_absolute_rgb_difference_vs_baseline": 0.042710748792270534,
+      "fraction_of_pixels_with_max_channel_difference_above_5": 0.0005634057971014493
+    },
+    {
+      "name": "03_moderate_scratches",
+      "mean_absolute_rgb_difference_vs_baseline": 0.19841606280193236,
+      "fraction_of_pixels_with_max_channel_difference_above_5": 0.005483695652173913
+    },
+    {
+      "name": "04_surface_noise",
+      "mean_absolute_rgb_difference_vs_baseline": 0.6341413043478261,
+      "fraction_of_pixels_with_max_channel_difference_above_5": 0.015695652173913045
+    },
+    {
+      "name": "05_combined",
+      "mean_absolute_rgb_difference_vs_baseline": 0.591024154589372,
+      "fraction_of_pixels_with_max_channel_difference_above_5": 0.013164855072463769
+    }
+  ],
+  "baseline_render_repeat_max_channel_difference": 1,
+  "baseline_repeat_note": "Independent CPU renders differed by at most 1/255 in the examined runs; bitwise reproducibility is not guaranteed."
+}

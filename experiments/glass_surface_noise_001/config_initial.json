@@ -1,0 +1,15 @@
+{
+  "seed": 2026103119,
+  "samples": 64,
+  "threads": 8,
+  "width_scale": 0.75,
+  "resolution": [1200, 460],
+  "scratch_mask_resolution": [1024, 256],
+  "cases": [
+    {"name":"01_baseline", "scratch_count":0, "scratch_strength":0.0, "noise_strength":0.0},
+    {"name":"02_light_scratches", "scratch_count":12, "scratch_strength":0.35, "noise_strength":0.0},
+    {"name":"03_moderate_scratches", "scratch_count":32, "scratch_strength":0.65, "noise_strength":0.0},
+    {"name":"04_surface_noise", "scratch_count":0, "scratch_strength":0.0, "noise_strength":0.55},
+    {"name":"05_combined", "scratch_count":20, "scratch_strength":0.45, "noise_strength":0.45}
+  ]
+}

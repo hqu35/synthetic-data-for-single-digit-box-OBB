@@ -13,7 +13,7 @@ from digitgen.experiment1_sampling import sample_parameters
 from digitgen.experiment1_scene import apply_parameters,immutable_signature,framing_check,optical_check,fit_register_camera,perspective_check
 from digitgen.band_annotations import project_numeral_bands
 from digitgen.export import export_labels,write_json
-from digitgen.camera_appearance import process_image,read_png
+from digitgen.camera_appearance import process_image,read_png,blur_sigma_from_percent
 
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -39,8 +39,12 @@ def main():
     parser.add_argument('--resume',action='store_true');parser.add_argument('--plan-only',action='store_true')
     parser.add_argument('--allow-legacy-framing',action='store_true',help='Explicitly allow old nearly frontal configurations for historical replay')
     parser.add_argument('--only',type=int,help='Render one original index for replay, into a config-selected separate output')
+    parser.add_argument('--blur-percent',type=float,default=0,help='Gaussian blur strength, 0 through 50')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+    blur_sigma_from_percent(args.blur_percent,(1600,460))
     config=json.loads((ROOT/args.config).read_text());out=ROOT/config['output']
+    if args.blur_percent:
+        config['blur_percent']=args.blur_percent
     if config['count'] not in (5,100,200) or not config['stage1_approved']:raise ValueError('Choose an approved review or dataset configuration')
     if 'min_perspective_disparity' not in config['camera'] and not args.allow_legacy_framing:
         raise ValueError('Legacy near-frontal framing was rejected. Use a perspective configuration or explicitly allow historical replay.')
@@ -103,7 +107,7 @@ def main():
                 image=out/'images'/f'{stem}.png';labels=out/'labels'/f'{stem}.txt'
                 phase='render';scene.render.filepath=str(image);bpy.ops.render.render(write_still=True)
                 ap=p['appearance'];processing={'camera_white_balance':[1,1,1],'postprocess_color_cast':[1,1,1],
-                    'camera_exposure':0,'contrast':ap['contrast'],'blur_sigma_px':0,
+                    'camera_exposure':0,'contrast':ap['contrast'],'blur_percent':args.blur_percent,
                     'sensor_noise_std':ap['sensor_noise_std'],'noise_seed':ap['noise_seed']}
                 phase='postprocess';process_image(image,image,processing);readability=image_check(image,regions,config)
                 export_labels(labels,[r['obb_px'] for r in regions],config['resolution'])

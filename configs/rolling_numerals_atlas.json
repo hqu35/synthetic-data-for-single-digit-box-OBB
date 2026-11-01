@@ -1,0 +1,64 @@
+{
+  "typography": {
+    "font": "assets/fonts/BarlowCondensed-Regular.ttf",
+    "segment_pixels": 1024,
+    "axial_pixels": 1024,
+    "numeral_height": 0.91,
+    "numeral_width": 0.7857142857142857,
+    "font_family": "Barlow Condensed",
+    "font_weight": "Regular",
+    "glyph_width_scale": 1.0,
+    "glyph_height_scale": 1.0,
+    "glyph_horizontal_alignment": "center",
+    "glyph_vertical_alignment": "center",
+    "glyph_ink_color": [
+      0.018,
+      0.02,
+      0.022
+    ],
+    "trim_glyph_ink_bounds": true,
+    "image_source": "assets/reference/user_digit_strip.png",
+    "source_crop_x": [
+      310,
+      485
+    ],
+    "source_row_boundaries": [
+      0,
+      216,
+      432,
+      640,
+      847,
+      1047,
+      1226,
+      1408,
+      1582,
+      1771,
+      1983
+    ],
+    "photo_extractor_version": "v2",
+    "tile_order": [
+      0,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
+  },
+  "geometry": {
+    "wheel_radius_scale": 0.72,
+    "original_band_radius": 1.25,
+    "window_height_scale": 0.9121621621621623,
+    "target_stationary_height_fraction": 0.75,
+    "target_stationary_width_fraction_for_zero": 0.55,
+    "target_rolling_gap_fraction": [
+      0.09,
+      0.12
+    ],
+    "rotation_sign": -1
+  }
+}

@@ -1,22 +1,62 @@
 {
-  "path": "assets/atlases/ink_30236163473670b7.png",
-  "sha256": "f3987f9fe851c1f774015c4f44d9db3383423a460c40374c3d5959cc643f0a7c",
-  "font": "assets/fonts/industrial/D-DINCondensed.ttf",
-  "font_sha256": "724b48d534dbcde7a9f039bddc3a7344d4913de43726f3b7d7a56f0770a8ea6b",
+  "path": "assets/atlases/photo_feb51f0d24c6973f.png",
+  "sha256": "a4835caaad4a7f450e3e31573813b76e02a9507c38839dc707b920f3fbb1bfd8",
+  "source_image": "assets/reference/user_digit_strip.png",
+  "source_image_sha256": "e1549e76f1935e192a8d6564af77549b4f492c0c6e49bbc6d091f2879c05a44c",
+  "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
   "size": [
-    2560,
-    512
+    10240,
+    1024
   ],
   "typography": {
-    "font": "assets/fonts/industrial/D-DINCondensed.ttf",
-    "segment_pixels": 256,
-    "axial_pixels": 512,
-    "numeral_height": 0.77,
-    "numeral_width": 0.78,
-    "font_family": "D-DIN Condensed",
+    "font": "assets/fonts/BarlowCondensed-Regular.ttf",
+    "segment_pixels": 1024,
+    "axial_pixels": 1024,
+    "numeral_height": 0.91,
+    "numeral_width": 0.7857142857142857,
+    "font_family": "Barlow Condensed",
     "font_weight": "Regular",
-    "font_license": "assets/fonts/industrial/COPYING.txt"
+    "glyph_width_scale": 1.0,
+    "glyph_height_scale": 1.0,
+    "glyph_horizontal_alignment": "center",
+    "glyph_vertical_alignment": "center",
+    "glyph_ink_color": [
+      0.018,
+      0.02,
+      0.022
+    ],
+    "trim_glyph_ink_bounds": true,
+    "image_source": "assets/reference/user_digit_strip.png",
+    "source_crop_x": [
+      310,
+      485
+    ],
+    "source_row_boundaries": [
+      0,
+      216,
+      432,
+      640,
+      847,
+      1047,
+      1226,
+      1408,
+      1582,
+      1771,
+      1983
+    ],
+    "photo_extractor_version": "v2",
+    "tile_order": [
+      0,
+      9,
+      8,
+      7,
+      6,
+      5,
+      4,
+      3,
+      2,
+      1
+    ]
   },
-  "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
-  "license": "assets/fonts/industrial/COPYING.txt"
+  "note": "Current 3D photographic atlas; references the original user-provided strip."
 }

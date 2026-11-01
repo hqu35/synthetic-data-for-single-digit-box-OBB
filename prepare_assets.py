@@ -8,10 +8,37 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent
 
 
-def prepare(config):
+def closed_four(width, height, style):
+    """Closed, triangular-counter 4, drawn as ink in the same mask as the font."""
+    image=Image.new('L',(width,height))
+    draw=ImageDraw.Draw(image)
+    def points(coords):
+        return [(round(x*(width-1)),round(y*(height-1))) for x,y in coords]
+    if style=='closed_triangle_v1':
+        draw.polygon(points([(.43,0),(.60,0),(.86,.72),(1,.72),(1,.83),
+                             (.90,.83),(.96,1),(.76,1),(.71,.83),(0,.83),(0,.72)]),fill=255)
+        draw.polygon(points([(.46,.17),(.19,.66),(.67,.66)]),fill=0)
+    elif style=='closed_upright_v2':
+        draw.polygon(points([(.69,0),(.88,0),(.88,.70),(1,.70),(1,.82),
+                             (.88,.82),(.88,1),(.69,1),(.69,.82),(0,.82),(0,.70)]),fill=255)
+        draw.polygon(points([(.67,.22),(.19,.66),(.67,.66)]),fill=0)
+    else:
+        raise ValueError('Unknown 4 glyph style')
+    return image
+
+
+def prepare(config, update_current=True):
     from font_candidates import resolve_config
     config = resolve_config(config)
     t = config['typography']
+    if t.get('image_source'):
+        from digitgen.photo_atlas import build_photo_atlas
+        from digitgen.assets import texture_spec
+        _, crops=build_photo_atlas(config)
+        manifest=texture_spec(config);manifest['source_crops']=crops
+        if update_current:
+            (ROOT/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        return manifest
     font_path = ROOT/t['font']
     key = hashlib.sha256(font_path.read_bytes()+json.dumps(t,sort_keys=True).encode()).hexdigest()[:16]
     destination = ROOT/'assets/atlases'/f'ink_{key}.png'
@@ -30,6 +57,10 @@ def prepare(config):
             bounds = font.getbbox(str(digit))
             glyph = Image.new('L',(bounds[2]-bounds[0],bounds[3]-bounds[1]))
             ImageDraw.Draw(glyph).text((-bounds[0],-bounds[1]),str(digit),font=font,fill=255)
+            if t.get('trim_glyph_ink_bounds',False):
+                glyph=glyph.crop(glyph.getbbox())
+            if digit==4 and t.get('four_style'):
+                glyph=closed_four(glyph.width,glyph.height,t['four_style'])
             glyphs.append(glyph)
         max_width = max(g.width for g in glyphs)
         for digit,glyph in enumerate(glyphs):
@@ -52,7 +83,8 @@ def prepare(config):
                 'size':[10*t['segment_pixels'],t['axial_pixels']], 'typography':t,
                 'uv_definition':'u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u',
                 'license':t.get('font_license','assets/fonts/OFL.txt')}
-    (ROOT/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    if update_current:
+        (ROOT/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
     return manifest
 
 
