@@ -1,0 +1,848 @@
+{
+  "note": "Static Python imports only. Runtime assets, dynamic imports and output dependencies are documented in dependency_graph.md.",
+  "modules": {
+    "generate_degraded_register.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "digitgen.shear",
+        "generate_scratch_multi",
+        "generate_vlm_exp",
+        "importlib.util",
+        "json",
+        "numpy",
+        "pathlib",
+        "random",
+        "sys",
+        "time"
+      ]
+    },
+    "render_x_shear_review.py": {
+      "imports": [
+        "PIL",
+        "copy",
+        "digitgen.export",
+        "digitgen.shear",
+        "hashlib",
+        "json",
+        "pathlib",
+        "shutil"
+      ]
+    },
+    "run.py": {
+      "imports": [
+        "argparse",
+        "digitgen.config",
+        "pathlib",
+        "prepare_assets",
+        "shutil",
+        "subprocess",
+        "validate"
+      ]
+    },
+    "prepare_assets.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "digitgen.assets",
+        "digitgen.config",
+        "digitgen.photo_atlas",
+        "font_candidates",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    "render_blur_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "shutil",
+        "sys"
+      ]
+    },
+    "validate_diffusion_exp1.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "digitgen.export",
+        "digitgen.geometry",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "render_rolling_atlas_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "review_raised_stage1.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "digitgen.export",
+        "digitgen.geometry",
+        "json",
+        "math",
+        "pathlib"
+      ]
+    },
+    "verify_final_stage1_scene.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.pin_calibration",
+        "digitgen.pin_visibility",
+        "digitgen.raised_mechanics",
+        "digitgen.scene",
+        "json",
+        "math",
+        "mathutils",
+        "pathlib",
+        "stage1_raised_band",
+        "sys"
+      ]
+    },
+    "generate.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.camera_appearance",
+        "digitgen.config",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.sampling",
+        "digitgen.scene",
+        "hashlib",
+        "json",
+        "pathlib",
+        "sys",
+        "traceback"
+      ]
+    },
+    "review_tight_framing_preview.py": {
+      "imports": [
+        "PIL",
+        "digitgen.export",
+        "digitgen.geometry",
+        "json",
+        "pathlib"
+      ]
+    },
+    "render_tight_framing_preview.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "digitgen.band_annotations",
+        "digitgen.experiment1_scene",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.scene",
+        "hashlib",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "validate_scratch_multi.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "collections",
+        "digitgen.shear",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib"
+      ]
+    },
+    "generate_vlm_exp.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.band_annotations",
+        "digitgen.camera_appearance",
+        "digitgen.experiment1_sampling",
+        "digitgen.experiment1_scene",
+        "digitgen.export",
+        "digitgen.sampling",
+        "digitgen.shear",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib",
+        "random",
+        "shutil",
+        "sys",
+        "time",
+        "traceback"
+      ]
+    },
+    "stage1_raised_band.py": {
+      "imports": [
+        "argparse",
+        "bmesh",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.mechanics",
+        "digitgen.raised_layout",
+        "digitgen.raised_mechanics",
+        "digitgen.scene",
+        "hashlib",
+        "json",
+        "math",
+        "mathutils",
+        "pathlib",
+        "stage1_geometry",
+        "sys"
+      ]
+    },
+    "review_stage1.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "json",
+        "pathlib"
+      ]
+    },
+    "review_diagnostics.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "digitgen.export",
+        "json",
+        "pathlib",
+        "validate"
+      ]
+    },
+    "font_candidates.py": {
+      "imports": [
+        "copy"
+      ]
+    },
+    "validate.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "collections",
+        "digitgen.export",
+        "digitgen.geometry",
+        "hashlib",
+        "json",
+        "math",
+        "pathlib"
+      ]
+    },
+    "prepare_font_review.py": {
+      "imports": [
+        "PIL",
+        "digitgen.assets",
+        "font_candidates",
+        "json",
+        "pathlib",
+        "prepare_assets"
+      ]
+    },
+    "stage1_geometry.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "bpy_extras.object_utils",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "digitgen.materials",
+        "digitgen.mechanics",
+        "hashlib",
+        "json",
+        "math",
+        "mathutils",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "render_upward_order_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "generate_scratch_multi.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "digitgen.shear",
+        "generate_vlm_exp",
+        "importlib.util",
+        "json",
+        "math",
+        "pathlib",
+        "random",
+        "shutil",
+        "sys",
+        "time",
+        "traceback"
+      ]
+    },
+    "review_band_stage1.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "digitgen.export",
+        "digitgen.geometry",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "shutil"
+      ]
+    },
+    "render_photo_atlas_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "glass_review.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.glass",
+        "digitgen.scene",
+        "hashlib",
+        "json",
+        "mathutils",
+        "pathlib",
+        "stage1_geometry",
+        "stage1_raised_band",
+        "sys"
+      ]
+    },
+    "obb_band_stage1.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "digitgen.band_annotations",
+        "digitgen.export",
+        "hashlib",
+        "industrial_fonts_review",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "generate_diffusion_exp1.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "digitgen.band_annotations",
+        "digitgen.camera_appearance",
+        "digitgen.experiment1_sampling",
+        "digitgen.experiment1_scene",
+        "digitgen.export",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib",
+        "sys",
+        "time",
+        "traceback"
+      ]
+    },
+    "review_final_stage1.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "csv",
+        "digitgen.export",
+        "digitgen.geometry",
+        "json",
+        "math",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "render_diagnostics.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.camera_appearance",
+        "digitgen.config",
+        "digitgen.export",
+        "digitgen.materials",
+        "digitgen.sampling",
+        "digitgen.scene",
+        "generate",
+        "json",
+        "mathutils",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "review_glass.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "measure_rolling_gap.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "json",
+        "math",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "render_narrow_wheel_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "mathutils",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "render_closed_four_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "render_rotation_order_review.py": {
+      "imports": [
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.camera_appearance",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "industrial_fonts_review.py": {
+      "imports": [
+        "bpy",
+        "digitgen.assets",
+        "hashlib",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "stage1_final_refinement.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "digitgen.geometry",
+        "digitgen.materials",
+        "digitgen.pin_calibration",
+        "digitgen.pin_visibility",
+        "digitgen.raised_layout",
+        "digitgen.raised_mechanics",
+        "digitgen.scene",
+        "hashlib",
+        "json",
+        "math",
+        "mathutils",
+        "pathlib",
+        "stage1_geometry",
+        "stage1_raised_band",
+        "sys"
+      ]
+    },
+    "digitgen/raised_layout.py": {
+      "imports": []
+    },
+    "digitgen/config.py": {
+      "imports": [
+        "copy",
+        "json",
+        "math",
+        "pathlib"
+      ]
+    },
+    "digitgen/raised_mechanics.py": {
+      "imports": [
+        ".materials",
+        ".mechanics",
+        ".raised_layout",
+        "bpy",
+        "math"
+      ]
+    },
+    "digitgen/materials.py": {
+      "imports": [
+        "bpy"
+      ]
+    },
+    "digitgen/__init__.py": {
+      "imports": []
+    },
+    "digitgen/shear.py": {
+      "imports": [
+        ".camera_appearance",
+        ".geometry",
+        "copy",
+        "math",
+        "numpy",
+        "random"
+      ]
+    },
+    "digitgen/scene.py": {
+      "imports": [
+        ".assets",
+        ".geometry",
+        ".mechanics",
+        "bpy",
+        "bpy_extras.object_utils",
+        "math",
+        "mathutils",
+        "pathlib"
+      ]
+    },
+    "digitgen/pin_calibration.py": {
+      "imports": [
+        "math"
+      ]
+    },
+    "digitgen/mechanics.py": {
+      "imports": [
+        ".materials",
+        "bpy",
+        "math"
+      ]
+    },
+    "digitgen/export.py": {
+      "imports": [
+        "base64",
+        "json",
+        "pathlib"
+      ]
+    },
+    "digitgen/photo_atlas.py": {
+      "imports": [
+        "PIL",
+        "hashlib",
+        "json",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "digitgen/experiment1_scene.py": {
+      "imports": [
+        ".geometry",
+        ".scene",
+        "bpy",
+        "hashlib",
+        "json",
+        "math",
+        "mathutils",
+        "random"
+      ]
+    },
+    "digitgen/assets.py": {
+      "imports": [
+        ".photo_atlas",
+        "font_candidates",
+        "hashlib",
+        "json",
+        "pathlib"
+      ]
+    },
+    "digitgen/geometry.py": {
+      "imports": [
+        "math"
+      ]
+    },
+    "digitgen/sampling.py": {
+      "imports": [
+        ".assets",
+        "math",
+        "random"
+      ]
+    },
+    "digitgen/glass.py": {
+      "imports": [
+        ".materials",
+        ".mechanics",
+        "bmesh",
+        "bpy",
+        "hashlib",
+        "math",
+        "mathutils",
+        "struct"
+      ]
+    },
+    "digitgen/experiment1_sampling.py": {
+      "imports": [
+        "math",
+        "random"
+      ]
+    },
+    "digitgen/pin_visibility.py": {
+      "imports": [
+        ".scene",
+        "bpy",
+        "math",
+        "mathutils"
+      ]
+    },
+    "digitgen/camera_appearance.py": {
+      "imports": [
+        "math",
+        "numpy",
+        "pathlib",
+        "struct",
+        "zlib"
+      ]
+    },
+    "digitgen/band_annotations.py": {
+      "imports": [
+        ".geometry",
+        ".scene",
+        "bpy",
+        "math",
+        "mathutils"
+      ]
+    },
+    "geometry_worker/worker.py": {
+      "imports": [
+        ".geometry",
+        "copy",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "geometry_worker/audit.py": {
+      "imports": [
+        ".geometry",
+        ".render",
+        ".worker",
+        "PIL",
+        "argparse",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib"
+      ]
+    },
+    "geometry_worker/render.py": {
+      "imports": [
+        "PIL",
+        "json",
+        "math",
+        "pathlib"
+      ]
+    },
+    "geometry_worker/__init__.py": {
+      "imports": []
+    },
+    "geometry_worker/geometry.py": {
+      "imports": [
+        "math",
+        "numpy"
+      ]
+    },
+    "geometry_worker/__main__.py": {
+      "imports": [
+        ".render",
+        ".worker",
+        "argparse",
+        "json",
+        "pathlib",
+        "sys"
+      ]
+    },
+    "experiments/glass_heavy_scratches_001/render.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "random",
+        "sys"
+      ]
+    },
+    "experiments/glass_heavy_scratches_001/save_scene.py": {
+      "imports": [
+        "bpy",
+        "digitgen.assets",
+        "json",
+        "pathlib",
+        "render",
+        "sys"
+      ]
+    },
+    "experiments/glass_heavy_scratches_001/make_comparison.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "pathlib"
+      ]
+    },
+    "experiments/glass_surface_noise_001/render.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "random",
+        "sys"
+      ]
+    },
+    "experiments/glass_surface_noise_001/render_initial.py": {
+      "imports": [
+        "argparse",
+        "bpy",
+        "copy",
+        "digitgen.assets",
+        "digitgen.export",
+        "generate_vlm_exp",
+        "hashlib",
+        "json",
+        "math",
+        "numpy",
+        "pathlib",
+        "random",
+        "sys"
+      ]
+    },
+    "experiments/glass_surface_noise_001/make_comparison.py": {
+      "imports": [
+        "PIL",
+        "argparse",
+        "pathlib"
+      ]
+    }
+  },
+  "top_level_outputs": [
+    "outputs/VLM_blue_blur50_yaw20",
+    "outputs/VLM_blue_blur50_yaw20.log",
+    "outputs/VLM_blue_blur50_yaw20.process.json",
+    "outputs/VLM_exp",
+    "outputs/atlas_cleanup_2026-11-01",
+    "outputs/blur_review",
+    "outputs/cleanup_2_5d_2026-11-01",
+    "outputs/cleanup_review",
+    "outputs/closed_four_review",
+    "outputs/degraded_register_review_20261107",
+    "outputs/degraded_register_review_v2_20261107",
+    "outputs/degraded_register_review_v3_20261107",
+    "outputs/glass_review",
+    "outputs/industrial_fonts_review",
+    "outputs/narrow_wheel_review",
+    "outputs/obb_band_stage1",
+    "outputs/perspective_review",
+    "outputs/photo_atlas_adjusted",
+    "outputs/photo_atlas_review",
+    "outputs/prompt_box_comparison_2026-11-03",
+    "outputs/rolling_atlas_review",
+    "outputs/rolling_box_calibrated",
+    "outputs/rolling_box_review",
+    "outputs/rolling_gap_final",
+    "outputs/rolling_gap_review",
+    "outputs/rotation_order_review",
+    "outputs/scratch_multi_version",
+    "outputs/stage1_final_refinement",
+    "outputs/statistical_geometry_001",
+    "outputs/tight_framing_preview",
+    "outputs/upward_gap_probe",
+    "outputs/upward_order_review",
+    "outputs/x_shear_review_2026-11-07",
+    "outputs/x_shear_review_adaptive_2026-11-07"
+  ],
+  "other_experiments": [
+    "experiments/glass_heavy_scratches_001",
+    "experiments/glass_surface_noise_001"
+  ]
+}

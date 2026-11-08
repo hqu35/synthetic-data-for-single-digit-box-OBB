@@ -11,6 +11,7 @@ from digitgen.sampling import wheel_state
 from digitgen.export import export_labels,write_json
 from digitgen.camera_appearance import process_image, blur_sigma_from_percent
 from digitgen.assets import texture_spec, verify_spec
+from digitgen.shear import make_shear_plan,apply_to_file,SHEAR_BUCKETS
 
 OUT=ROOT/'outputs/VLM_exp'
 OUTPUT_INITIALIZED=False
@@ -90,6 +91,7 @@ def main():
     parser.add_argument('--blue-light',action='store_true',help='Use blue-tinted scene lights for every image')
     parser.add_argument('--count',type=int,default=100,help='Number of images (1 to 100)')
     parser.add_argument('--seed-base',type=int,default=2026103100,help='Base for unique deterministic image seeds')
+    parser.add_argument('--no-shear',action='store_true',help='Disable image-space X shear')
     parser.add_argument('--output', default='outputs/VLM_exp', help='New output directory')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
     blur_sigma_from_percent(args.blur_percent, (1600,460))
@@ -107,6 +109,7 @@ def main():
     config['requested_yaw_spread_deg']=args.yaw_spread if args.yaw_center is not None else None
     config['blue_light']=args.blue_light
     config['blur_percent']=args.blur_percent
+    config['x_shear_sampling']={'enabled':not args.no_shear,'categories':[{'name':n,'probability':p,'range':[-b,b]} for n,p,b in SHEAR_BUCKETS]}
     # Match the output aspect ratio to the narrower physical register so that
     # the approved tight-framing constraint remains feasible.
     config['resolution'][0]=round(config['resolution'][0]*args.wheel_width_scale)
@@ -119,6 +122,8 @@ def main():
     config['rolling_geometry']=rolling_config['geometry']
     config['rolling_atlas']=atlas
     plan=[plan_item(config,i) for i in range(1,args.count+1)]
+    for item,shear in zip(plan,make_shear_plan([x['parameters']['seed'] for x in plan],not args.no_shear)):
+        item['x_shear']=shear
     for item in plan:
         rng=random.Random(item['parameters']['seed']+64039)
         if args.yaw_center is not None:
@@ -134,7 +139,7 @@ def main():
     shutil.copy2(__file__,OUT/'generator_snapshot.py')
     (OUT/'README.md').write_text('''# VLM experiment: 100 synthetic register images\n\nThe background run produces 100 PNG images, YOLO OBB label files, and per-image JSON metadata. `plan.json` records all seeds, digit sequences, transition progress, lighting, and requested camera settings before rendering. `status.json` records progress; the launch log is stored next to the output directory.\n\nImages are 1600 x 460, tightly framed around the register. The dataset contains 100 unique seeds and digit sequences; 80 samples contain at least one transitioning digit. Camera pose, perspective, lighting, exposure and mild sensor noise vary. The design retains the same underlying 3D register, typography, and glass, so it does not represent all real-world variation.\n\nClass 0 labels are projected 3D digit-band rectangles, not digit identities; JSON records the underlying digit and transition values. Glass refraction is not fitted to labels. Glass can cause a displacement between projected labels and visible pixels, and mid-transition digits can show a substantial gap. This is a synthetic dataset for later comparison, not a VLM evaluation or evidence of a measured sim-to-real gap.\n''')
     readme=OUT/'README.md'
-    readme.write_text(readme.read_text().replace('100',str(args.count)).replace('80 samples',f"{sum(any(t>0 for t in x['transitions']) for x in plan)} samples").replace('1600 x 460',f"{config['resolution'][0]} x {config['resolution'][1]}") + f"\nHorizontal geometry scale: {args.wheel_width_scale}; blur: {args.blur_percent}%; blue lights: {args.blue_light}; yaw center/spread: {args.yaw_center}/{args.yaw_spread} degrees.\n")
+    readme.write_text(readme.read_text().replace('100',str(args.count)).replace('80 samples',f"{sum(any(t>0 for t in x['transitions']) for x in plan)} samples").replace('1600 x 460',f"{config['resolution'][0]} x {config['resolution'][1]}") + f"\nHorizontal geometry scale: {args.wheel_width_scale}; blur: {args.blur_percent}%; blue lights: {args.blue_light}; yaw center/spread: {args.yaw_center}/{args.yaw_spread} degrees.\nX shear: {not args.no_shear}; minimal horizontal padding protects the register and OBBs when needed; peripheral background may be cropped. OBBs are refitted after shear.\n")
     completed=[]; t0=time.time()
     write_json(OUT/'status.json',{'state':'preflighting','completed':0,'total':args.count})
     # Preflight the exact geometry of every requested image before starting production.
@@ -164,8 +169,10 @@ def main():
         ap=item['parameters']['appearance']
         processing={'camera_white_balance':[1,1,1],'postprocess_color_cast':[1,1,1], 'camera_exposure':0,'contrast':ap['contrast'],'blur_percent':args.blur_percent,'sensor_noise_std':ap['sensor_noise_std'],'noise_seed':ap['noise_seed']}
         process_image(image,image,processing)
-        export_labels(label,[r['obb_px'] for r in regions],config['resolution'])
-        record={**item,'wheel_width_scale':args.wheel_width_scale,'resolution':config['resolution'],'atlas':atlas,'rolling_geometry':config['rolling_geometry'],'wheel_states':states,'resolved_scene':resolved,'framing':framing,'regions':regions,'camera_matrix_world':list(map(list,scene.camera.matrix_world)),'camera_lens_mm':scene.camera.data.lens,'camera_processing':processing,'image_sha256':sha(image),'label_sha256':sha(label),'source_scene_sha256':sha(SOURCE),'blender_version':bpy.app.version_string,'render_samples':scene.cycles.samples,'annotation_note':'Projected band geometry; refraction not corrected.'}
+        original_framing=copy.deepcopy(framing)
+        regions,framing,affine=apply_to_file(image,regions,framing,item['x_shear']['s'])
+        export_labels(label,[r['obb_px'] for r in regions],affine['output_resolution'])
+        record={**item,'wheel_width_scale':args.wheel_width_scale,'resolution':affine['output_resolution'],'pre_shear_resolution':config['resolution'],'image_affine':affine,'atlas':atlas,'rolling_geometry':config['rolling_geometry'],'wheel_states':states,'resolved_scene':resolved,'framing_before_shear':original_framing,'framing':framing,'regions':regions,'camera_matrix_world':list(map(list,scene.camera.matrix_world)),'camera_lens_mm':scene.camera.data.lens,'camera_processing':processing,'camera_processing_stage':'before image shear','image_sha256':sha(image),'label_sha256':sha(label),'source_scene_sha256':sha(SOURCE),'blender_version':bpy.app.version_string,'render_samples':scene.cycles.samples,'annotation_note':'Transformed projected band geometry; refraction not corrected.'}
         write_json(OUT/'metadata'/f'{stem}.json',record);completed.append(stem)
         write_json(OUT/'status.json',{'state':'rendering','completed':len(completed),'total':args.count,'last_completed':stem,'elapsed_seconds':round(time.time()-t0,1)})
         print('VLM_SAMPLE_OK',stem,'seed',item['parameters']['seed'],'digits',item['digits'],flush=True)

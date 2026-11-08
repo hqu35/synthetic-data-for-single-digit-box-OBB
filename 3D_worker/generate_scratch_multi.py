@@ -1,13 +1,15 @@
 """Render 20 varied 3D register images with glass scratches."""
-import copy,importlib.util,json,math,random,shutil,sys,time,traceback
+import argparse,copy,importlib.util,json,math,random,shutil,sys,time,traceback
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent;sys.path.insert(0,str(ROOT))
 import bpy
 import generate_vlm_exp as worker
 from digitgen.assets import texture_spec,verify_spec
 from digitgen.export import export_labels,write_json
+from digitgen.shear import make_shear_plan,apply_to_file,SHEAR_BUCKETS
 
 OUT=ROOT/'outputs/scratch_multi_version'
+OUTPUT_INITIALIZED=False
 LIGHTS={'blue':[.55,.75,1.0],'white':[1.0,1.0,1.0],
         'natural':[1.0,.97,.92],'pale_blue':[.86,.93,1.0],
         'vintage_beige':[1.0,.93,.83]}
@@ -48,16 +50,27 @@ def make_plan(c):
     return items
 
 def main():
+    global OUT,OUTPUT_INITIALIZED
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output',default='outputs/scratch_multi_version')
+    parser.add_argument('--no-shear',action='store_true',help='Disable image-space X shear')
+    args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
+    OUT=(ROOT/args.output).resolve()
     if OUT.exists():raise ValueError(f'Output already exists: {OUT}')
     OUT.mkdir(parents=True)
+    OUTPUT_INITIALIZED=True
     for name in ('images','labels','metadata'):(OUT/name).mkdir()
     shutil.copy2(__file__,OUT/'generator_snapshot.py')
     config=scene_config();source=json.loads(worker.SOURCE_PARAMS.read_text());rolling=json.loads(worker.ROLLING_ATLAS_CONFIG.read_text());atlas=texture_spec(rolling);verify_spec(atlas)
     source_path=ROOT/'experiments/glass_heavy_scratches_001/render.py';spec=importlib.util.spec_from_file_location('glass_scratch_effect',source_path);glass=importlib.util.module_from_spec(spec);spec.loader.exec_module(glass)
-    items=make_plan(config);t0=time.monotonic();write_json(OUT/'status.json',{'state':'preflighting','completed':0,'total':20})
+    items=make_plan(config)
+    for item,shear in zip(items,make_shear_plan([x['parameters']['seed'] for x in items],not args.no_shear)):
+        item['x_shear']=shear
+    t0=time.monotonic();write_json(OUT/'status.json',{'state':'preflighting','completed':0,'total':20})
     write_json(OUT/'config.json',{'count':20,'seed_base':config['seed'],'theta_definition':'signed camera pitch degrees','theta_absolute_max_exclusive':40,'yaw_range_deg':[-8,8],
         'lighting_styles':LIGHTS,'scratch_distribution':{'heavy':12,'medium':6,'light':2},'resolution_width':1200,'adaptive_height':True,
-        'target_register_area_fraction':.9005,'blur_percent':0,'render_samples':32,'threads':8,'atlas':atlas,'rolling_geometry':rolling['geometry']})
+        'target_register_area_fraction':.9005,'blur_percent':0,'render_samples':32,'threads':8,'atlas':atlas,'rolling_geometry':rolling['geometry'],
+        'x_shear_sampling':{'enabled':not args.no_shear,'categories':[{'name':n,'probability':p,'range':[-b,b]} for n,p,b in SHEAR_BUCKETS]}})
     # Fit a range of image aspect ratios. Do not change the sampled theta or yaw.
     for item in items:
         passed=False;failures=[]
@@ -74,12 +87,14 @@ def main():
         scene.cycles.samples=32;scene.cycles.device='CPU';scene.cycles.use_denoising=True;scene.cycles.seed=item['parameters']['seed'];scene.render.threads_mode='FIXED';scene.render.threads=8
         case=item['scratch'];glass.apply_glass_effect(case,{'seed':case['seed'],'scratch_mask_resolution':[1024,256]})
         stem=item['sample_id'];image=OUT/'images'/f'{stem}.png';label=OUT/'labels'/f'{stem}.txt';scene.render.filepath=str(image);bpy.ops.render.render(write_still=True)
-        export_labels(label,[r['obb_px'] for r in regions],item['resolution'])
-        write_json(OUT/'metadata'/f'{stem}.json',{**item,'wheel_states':states,'resolved_scene':resolved,'framing':framing,'regions':regions,
+        original_framing=copy.deepcopy(framing)
+        regions,framing,affine=apply_to_file(image,regions,framing,item['x_shear']['s'])
+        export_labels(label,[r['obb_px'] for r in regions],affine['output_resolution'])
+        write_json(OUT/'metadata'/f'{stem}.json',{**item,'resolution':affine['output_resolution'],'pre_shear_resolution':item['resolution'],'image_affine':affine,'wheel_states':states,'resolved_scene':resolved,'framing_before_shear':original_framing,'framing':framing,'regions':regions,
             'camera_matrix_world':list(map(list,scene.camera.matrix_world)),'camera_lens_mm':scene.camera.data.lens,'atlas':atlas,
             'image_sha256':worker.sha(image),'label_sha256':worker.sha(label),'source_scene_sha256':worker.sha(worker.SOURCE),
             'render':{'engine':'Cycles','device':'CPU','samples':32,'seed':scene.cycles.seed,'blender_version':bpy.app.version_string},
-            'note':'Scratch texture affects only the glass surface. The OBB projects band geometry and does not correct refraction.'})
+            'note':'Scratch texture affects only the glass surface. OBBs are fitted to the X-sheared projected bands and do not correct refraction.'})
         write_json(OUT/'status.json',{'state':'rendering','completed':i,'total':20,'last_completed':stem,'elapsed_seconds':round(time.monotonic()-t0,2)})
         print('SCRATCH_MULTI_OK',stem,item['digits'],item['light_style'],case['name'],flush=True)
     write_json(OUT/'status.json',{'state':'complete','completed':20,'total':20,'elapsed_seconds':round(time.monotonic()-t0,2)})
@@ -88,6 +103,6 @@ def main():
 if __name__=='__main__':
     try:main()
     except BaseException as e:
-        if OUT.exists():
+        if OUTPUT_INITIALIZED:
             p=OUT/'status.json';data=json.loads(p.read_text()) if p.exists() else {};data.update(state='failed',error=repr(e),traceback=traceback.format_exc());write_json(p,data)
         traceback.print_exc();raise

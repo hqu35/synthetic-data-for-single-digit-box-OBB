@@ -5,3 +5,9 @@ outputs/
 diffusion_model_dataset/
 *.blend1
 .DS_Store
+
+# Generated experiments (source code and shared assets remain tracked normally).
+/2D_blurry/exp/
+/3D_worker/exp/*
+!/3D_worker/exp/material_experiments/
+/2d_mask/exp/

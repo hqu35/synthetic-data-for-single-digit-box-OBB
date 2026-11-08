@@ -1,0 +1,17 @@
+{
+  "pre_move_files_verified_after_move": 2049,
+  "broken_symlinks": 0,
+  "focused_tests": "14 passed (shear, rolling atlas, statistical geometry)",
+  "smoke_tests": {
+    "2D_blurry": "one Blender render generated; image checksum and five labels verified",
+    "3D_worker": "one Blender render generated; image checksum and five labels verified",
+    "2d_mask": "two samples generated and audited"
+  },
+  "full_historical_test_suite": {
+    "total": 40,
+    "passed": 34,
+    "errors": 6,
+    "reason": "Legacy tests reference Barlow font files which were absent before this reorganization; current photo-atlas workers do not use those fonts. See the 2026-11-01 atlas cleanup report."
+  },
+  "retention": "No existing worker, atlas, data, or experiment was intentionally deleted; original paths for directories and results are retained as compatibility links."
+}

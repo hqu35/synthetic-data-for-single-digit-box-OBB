@@ -1,3 +1,5 @@
+> **Repository organization (2026-11-07):** The current entry points are [2D_blurry](2D_blurry/README.md), [3D_worker](3D_worker/README.md), [2d_mask](2d_mask/README.md), and [shared](shared/README.md). Each worker has an `exp/` directory. See the [dependency graph and migration notes](docs/reorganization_2026-11-07/dependency_graph.md). The historical commands below may use old script locations; use the worker READMEs for current commands.
+
 # Blender mechanical digit-register data
 
 > **Latest review: [five moderate-perspective views with OBBs](docs/perspective_review.md).**

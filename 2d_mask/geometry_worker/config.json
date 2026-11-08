@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "width": 1200,
+  "height": 460,
+  "boundary_samples_per_edge": 128,
+  "strip_width_fraction": [0.138, 0.155],
+  "strip_height_fraction": [0.64, 0.76],
+  "gap_to_width_ratio": [0.15, 0.27],
+  "global_roll_deg": [-2.5, 2.5],
+  "horizontal_perspective": [-0.13, 0.13],
+  "vertical_perspective": [-0.025, 0.025],
+  "horizontal_foreshortening": [0.96, 1.02],
+  "vertical_scale": [0.97, 1.02],
+  "shared_slant_halfwidth": [-0.07, 0.07],
+  "shared_curvature_halfwidth": [-0.11, 0.11],
+  "local_width_deviation": [-0.012, 0.012],
+  "local_height_deviation": [-0.012, 0.012],
+  "local_curvature_deviation": [-0.015, 0.015],
+  "background_gray": [38, 58],
+  "strip_gray": [165, 196],
+  "local_gray_delta": [-7, 7],
+  "max_attempts": 100
+}

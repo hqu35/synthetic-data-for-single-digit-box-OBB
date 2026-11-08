@@ -1,31 +1,44 @@
 """Validate the finished 20-image scratch batch and build an overview."""
 from collections import Counter
+import argparse
 from pathlib import Path
 import hashlib,json,math
 from PIL import Image,ImageDraw,ImageFont
-ROOT=Path(__file__).resolve().parent;p=ROOT/'outputs/scratch_multi_version'
+from digitgen.shear import map_points
+ROOT=Path(__file__).resolve().parent
+parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--input',default=str(ROOT/'outputs/scratch_multi_version'));parser.add_argument('--check-only',action='store_true')
+args=parser.parse_args();p=Path(args.input).resolve()
 status=json.loads((p/'status.json').read_text());assert status['state']=='complete' and status['completed']==20
 metas=sorted((p/'metadata').glob('*.json'));images=sorted((p/'images').glob('*.png'));labels=sorted((p/'labels').glob('*.txt'));assert len(metas)==len(images)==len(labels)==20
-lights=Counter();scratches=Counter();seeds=set();scratch_seeds=set();sequences=set();all_digits=set();angles=[];yaws=[];res=[];sha=set();transitions=0
+lights=Counter();scratches=Counter();shears=Counter();seeds=set();scratch_seeds=set();sequences=set();all_digits=set();angles=[];yaws=[];res=[];sha=set();transitions=0
 for f in metas:
- m=json.loads(f.read_text());name=f.stem;image=p/'images'/f'{name}.png';label=p/'labels'/f'{name}.txt';raw=label.read_text().splitlines();assert len(raw)==5
- for line in raw:
+ m=json.loads(f.read_text());name=f.stem;image=p/'images'/f'{name}.png';label=p/'labels'/f'{name}.txt';raw=label.read_text().splitlines();assert len(raw)==len(m['regions'])==5
+ for line,region in zip(raw,m['regions']):
   parts=line.split();assert len(parts)==9 and parts[0]=='0';coords=[float(x) for x in parts[1:]];assert all(math.isfinite(x) and 0<=x<=1 for x in coords)
+  assert all(abs(value-expected/m['resolution'][j%2])<1e-9 for j,(value,expected) in enumerate(zip(coords,[v for point in region['obb_px'] for v in point])))
  assert hashlib.sha256(image.read_bytes()).hexdigest()==m['image_sha256'];assert hashlib.sha256(label.read_bytes()).hexdigest()==m['label_sha256']
  with Image.open(image) as im:assert list(im.size)==m['resolution'];im.verify()
  assert len(m['digits'])==len(set(m['digits']))==5 and m['digits'].isdigit();sequences.add(m['digits']);all_digits.update(m['digits'])
  seed=m['parameters']['seed'];seeds.add(seed);scratch_seeds.add(m['scratch']['seed']);lights[m['light_style']]+=1;scratches[m['scratch']['name']]+=1
  assert m['parameters']['lighting']['preset']==m['light_style'];assert abs(m['theta_deg'])<40 and abs(m['yaw_deg'])<=8
  assert abs(m['theta_deg']-m['parameters']['camera']['pitch_deg'])<1e-8 and abs(m['yaw_deg']-m['parameters']['camera']['yaw_deg'])<1e-8
- assert .90<=m['framing']['register_area_fraction']<=.95
+ assert .90<=m.get('framing_before_shear',m['framing'])['register_area_fraction']<=.95
+ if 'x_shear' in m:
+  sh=m['x_shear'];shears[sh['bucket']]+=1;aff=m['image_affine'];assert abs(sh['s'])<=.12 and abs(sh['s']-aff['coefficient'])<1e-12
+  for r in m['regions']:
+   expected=map_points(r['pre_shear_projection']['visible_boundary_px'],aff)
+   assert all(abs(a-b)<1e-8 for p1,p2 in zip(expected,r['visible_boundary_px']) for a,b in zip(p1,p2))
  angles.append(m['theta_deg']);yaws.append(m['yaw_deg']);res.append(tuple(m['resolution']));sha.add(m['image_sha256']);transitions+=any(t>0 for t in m['transitions'])
 assert len(sequences)==len(seeds)==len(scratch_seeds)==len(sha)==20 and all_digits==set('0123456789')
 assert lights==Counter({'blue':4,'white':4,'natural':4,'pale_blue':4,'vintage_beige':4}) and scratches==Counter({'heavy':12,'medium':6,'light':2})
+if shears and shears!=Counter({'disabled':20}):assert shears==Counter({'subtle':10,'natural':6,'strong':4})
 report={'status':'passed','count':20,'unique_digit_sequences':len(sequences),'unique_digits_per_image':5,'digit_coverage':''.join(sorted(all_digits)),
  'unique_render_seeds':len(seeds),'unique_scratch_seeds':len(scratch_seeds),'lighting_counts':dict(lights),'scratch_counts':dict(scratches),
  'theta_definition':'signed camera pitch degrees','theta_range_deg':[min(angles),max(angles)],'yaw_range_deg':[min(yaws),max(yaws)],
  'resolutions':[list(x) for x in sorted(set(res))],'samples_with_transitions':transitions,'labels':'five in-frame normalized class-0 OBBs per image',
- 'limitations':'Geometric labels are not corrected for glass refraction; OBB validity does not certify legibility or scratch realism.'}
+ 'x_shear_counts':dict(shears),'limitations':'Geometric labels are not corrected for glass refraction; OBB validity does not certify legibility or scratch realism.'}
+if args.check_only:
+ print(json.dumps(report,indent=2));raise SystemExit(0)
 (p/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
 font=ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',18);small=ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf',15)
 board=Image.new('RGB',(2000,1200),'white');draw=ImageDraw.Draw(board)

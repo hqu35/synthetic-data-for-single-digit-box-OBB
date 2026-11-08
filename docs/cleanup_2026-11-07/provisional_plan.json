@@ -1,0 +1,357 @@
+{
+  "root": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB",
+  "status": "provisional; retention and deletion approval pending",
+  "candidates": [
+    {
+      "path": "2D_blurry/exp/degraded_register_review_v3_20261107/README.md",
+      "size": 454,
+      "sha256": "8aba63eb883ac75e47fe01e0dee7ef1c871dbcd6ff776a09ba5294cb85cb05f6",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "2D_blurry/exp/degraded_register_review_v3_20261107/blender.log",
+      "size": 7812,
+      "sha256": "3b277809373f0ecbb555c15f4fdb31e01741a2a43af96d68d62581a3ce692b1f",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "2d_mask/exp/prompt_box_comparison_2026-11-03/README.md",
+      "size": 922,
+      "sha256": "d3027532221b97dd8a7f02621c27ac996cd098c3fa193a0b8b6f315dd72a7118",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "2d_mask/exp/statistical_geometry_001/README.md",
+      "size": 917,
+      "sha256": "50890200402e05f95636194f93259b37ab3192ce4967e4cf67f3213aeec7d68e",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "2d_mask/exp/statistical_geometry_001/audit.log",
+      "size": 438,
+      "sha256": "845ff6a36b035c1d52db047a5889a36f5dc1123d7b3fc95445d6244006e7ad8c",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/VLM_blue_blur50_yaw20.log",
+      "size": 28449,
+      "sha256": "2d54e67ffe4bb54349856eea9fbb11bc5d441a774efe7cb717d0e8120d1dda59",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/VLM_blue_blur50_yaw20/README.md",
+      "size": 1253,
+      "sha256": "6662b96afa63d8d61c541bc714039549618f862cb4520c8c8a36fd85f0fdb229",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/VLM_blue_blur50_yaw20/collage_001_010/README.md",
+      "size": 170,
+      "sha256": "940a4a3120607731812488320142a4ecfc0f7d52aa7e7242813d03c4092f54b8",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/VLM_exp/README.md",
+      "size": 1133,
+      "sha256": "9c2295bd4419082a1bb545841f5b15ac81e95522bb2b03c514ed040f6fdd11b1",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/VLM_exp/render.log",
+      "size": 55658,
+      "sha256": "1e28489b9145beb0db53c68080f6ad556a15c06a828d58894eb75d239d6375c4",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/atlas_cleanup_2026-11-01/plan.md",
+      "size": 2073,
+      "sha256": "f0b02deef929f98f7423e640258a6383c222ba43c4bcd97790595112105cac44",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/atlas_cleanup_2026-11-01/report.md",
+      "size": 1474,
+      "sha256": "85368503dfb3117e375fe71783fa1558e90cea2a5776853425fc35dae39aef6d",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/blur_review/README.md",
+      "size": 352,
+      "sha256": "31cf70ad2264fe277b3b2743c02b272dca0e71b12d4bca9ef78d0eb18a61518d",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_2_5d_2026-11-01/plan.md",
+      "size": 1789,
+      "sha256": "d33388f7483051c95f751d6aea54eeb5e8fc3c28b642ed0328f74d17c0ee5b03",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_2_5d_2026-11-01/report.md",
+      "size": 966,
+      "sha256": "e793ebd4c01c76d43e19ce28bb1dc744485da0c97fdec896d7ff1c6fe14e70d5",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/REPORT.md",
+      "size": 3806,
+      "sha256": "9c46f108195831504540f3308a56e713a98906b04fcf93b3da44787f701a89c5",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/execution_report.json",
+      "size": 9778,
+      "sha256": "0d0202b05ac84fc65372e6e548ebe187730fa0ba8ccb92e6e82991bac815bb67",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/post_cleanup_band_projection.log",
+      "size": 1616,
+      "sha256": "5a319080f7a7c405c9ec421c8601323f7384f8d66d5d0a233cb5ef8797560c8d",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/post_cleanup_host_tests.log",
+      "size": 122,
+      "sha256": "31c9277c3c095f22ff063fda586d39a84be3c8c7f05bc10c5aba4f42efffe7ad",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/post_cleanup_optics.log",
+      "size": 463,
+      "sha256": "9c5ccd3648bc28e963633cfeb5d600a08fc987e86a0b74089a96763eb27e2062",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/cleanup_review/preflight_tests.log",
+      "size": 122,
+      "sha256": "3a08caaaad71a0aca73227694e9d16660468f7ec61d7e8be01e74f48f18c3fab",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/README.md",
+      "size": 2772,
+      "sha256": "5d131a17c5e21d707bc3ca4240facdc8eb866068d7bad8e943cb1ed3825893d7",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/metadata/logs/first_sample.log",
+      "size": 476,
+      "sha256": "b340d4be94ed04e2250094779b7fa7d5cc0d2c8fe20360a3db12e1d74c1b9e80",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/metadata/logs/generation.log",
+      "size": 74318,
+      "sha256": "ea4e6b0c08e48f0a9c3461c02fd98bda3709740ba982cc8e07e9fa6d9b9a0706",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/metadata/logs/host_tests.log",
+      "size": 123,
+      "sha256": "c10bd0112c8daf9d0642712654ce4f4c7be5f1c975e182112b4017ddf541a58a",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/metadata/logs/preflight.log",
+      "size": 45634,
+      "sha256": "0200e4f78e971969c56e933ee8db7999ace7add036a97ef29f5dc708f5a4edd4",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/diffusion_model_dataset/exp1/validation_report.json",
+      "size": 2860,
+      "sha256": "aec3f84ba54b72358ab40e462d2e9021b44d7cdf4452f199e80f936ac85bbe5a",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/glass_review/optics_invariants.log",
+      "size": 463,
+      "sha256": "9c5ccd3648bc28e963633cfeb5d600a08fc987e86a0b74089a96763eb27e2062",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/industrial_fonts_review/README.md",
+      "size": 261,
+      "sha256": "fddc2a9cdb5237b0433d3686ad565f83d1652e902f8266299a926378571262a9",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/industrial_fonts_review/REPORT.md",
+      "size": 5965,
+      "sha256": "d76165de30793865246de7a3a68665f011be351a4d4357d25eadcb657ac60921",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/industrial_fonts_review/render.log",
+      "size": 1332,
+      "sha256": "18f10e25791285880e45ab2019bf8ac2729a77019a5f3c97ff040b710aeadc74",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/narrow_wheel_review/README.md",
+      "size": 547,
+      "sha256": "de8e0508062220be8b0423708d5b0ddc79f9e454c05b6ce97b190e86f2fbdd80",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/obb_band_stage1/annotation_recheck.log",
+      "size": 516,
+      "sha256": "35f957d1fc38e32e48f876441523ecf26037313bb732d0cdd361ddfea700bb73",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/obb_band_stage1/band_projection_tests.log",
+      "size": 1616,
+      "sha256": "4d89f6734a1c718d29d7f43d8faca072d418df1a028b8cee1f9e812f9597c69e",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/obb_band_stage1/single_render.log",
+      "size": 960,
+      "sha256": "12e2d6b72a6dd6454045c0e9258401225020ec22052fdea8c9405d8d1fcad333",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/README.md",
+      "size": 1053,
+      "sha256": "2e5d666c41e89c7d37400920d4a43bcd6787276910503191a4031a5e5eb925d6",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/metadata/logs/comparison.log",
+      "size": 671,
+      "sha256": "a93e4e073886dd7abc2cafb24403df45ee3b141446f09eed514ef22d4dcfb339",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/metadata/logs/preflight.log",
+      "size": 914,
+      "sha256": "a51f58b6c97dc50182051b13fa3a261c9f09459088fe2ef75c525ee752cc91dc",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/metadata/logs/render.log",
+      "size": 1957,
+      "sha256": "a04234fc94f187da8bc2bc3ce8ba004b46038f37907f960fba005f3a6e30f605",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/metadata/logs/tests.log",
+      "size": 124,
+      "sha256": "430a7b5a05e565dced554301fe29f4d4220db44a079355632d7e0aea1a73577b",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/metadata/logs/validation.log",
+      "size": 2760,
+      "sha256": "2c39ec9964da847176aeb150b0bcf41455af9048a8fe0e69bce8faebc22b8f97",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/perspective_review/validation_report.json",
+      "size": 2760,
+      "sha256": "2c39ec9964da847176aeb150b0bcf41455af9048a8fe0e69bce8faebc22b8f97",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/photo_atlas_adjusted/README.md",
+      "size": 460,
+      "sha256": "3d057338116b356cc9c38849da96f38b6e0641d886bed57c7afce83a9de3fc02",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/rolling_box_calibrated/README.md",
+      "size": 402,
+      "sha256": "cdddca330174121c29aedb241a0adc605dd6bfa120a0c2d7d3fdabe458d5e346",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/rolling_gap_review/README.md",
+      "size": 435,
+      "sha256": "390f9676f2f3ed843efdaad51de02de01b122115fd87073b38df2c95f63bc3ac",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/rotation_order_review/README.md",
+      "size": 321,
+      "sha256": "6826eb4967faeda49449dbee7a2d30c59b6fc93ab353ec76f992b899e47406c9",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/rotation_order_review/rotation_order_test.log",
+      "size": 782,
+      "sha256": "91488c8325047aaa1bddeaa5ff9ed6c431f994b2c7c7f472bffb28205e3dd652",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/scratch_multi_version/README.md",
+      "size": 2232,
+      "sha256": "0a49ec4676d9eadccabe30dc8bcdb6c653aa1b97822dbf106777b18411ffd510",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/scratch_multi_version/render.log",
+      "size": 30523,
+      "sha256": "8cbf77e6185132efd7f84f25b97524d18b16e1e4d05364b9f003949b5180420b",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/stage1_final_refinement/artifact_audit.log",
+      "size": 778,
+      "sha256": "4c38beef6d8e7aacdbf23f546271b204262b81546d620d8ba45caebd28d19bfe",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/stage1_final_refinement/saved_scene_verification.log",
+      "size": 2426,
+      "sha256": "30882bf3f4eefcc536ee05ec79ce2396f66cd1e54d8209cdc4d65f3d308c3002",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/tight_framing_preview/render.log",
+      "size": 635,
+      "sha256": "f5c935db9ea0c9865ad04316704691828ca5b75bbd3e51b3868605d18c7ebc23",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/tight_framing_preview/validation_report.json",
+      "size": 553,
+      "sha256": "9fc4db2b86b3268b91ad696e543a0d386e42adbfcf7098eed01f4610d1de4633",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/upward_order_review/README.md",
+      "size": 338,
+      "sha256": "065167c20fba80e148ffb1ee9bd628b36f95fcbb095bf75a3cd5f831f7802f25",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/upward_order_review/rotation_order_test.log",
+      "size": 782,
+      "sha256": "8575966f1be0add470d6df3d58df9b51f393d111c87a1c2bcb87c1a4baca1e74",
+      "reason": "Historical experiment report or log; visual assets retained."
+    },
+    {
+      "path": "3D_worker/exp/x_shear_review_adaptive_2026-11-07/README.md",
+      "size": 340,
+      "sha256": "c423876bd81d8115fddfb083cf3d71f229694bc31a02fc8ea6f841ce6c590bb9",
+      "reason": "Historical experiment report or log; visual assets retained."
+    }
+  ],
+  "retained_inspection_reports": [
+    "3D_worker/exp/glass_review/inspection_report.json",
+    "3D_worker/exp/obb_band_stage1/inspection_report.json",
+    "3D_worker/exp/industrial_fonts_review/inspection_report.json",
+    "3D_worker/exp/tight_framing_preview/inspection_report.json",
+    "3D_worker/exp/stage1_final_refinement/inspection_report.json"
+  ],
+  "total_files": 56,
+  "total_bytes": 308856,
+  "notes": [
+    "All visual images retained.",
+    "No files in reproduction or license subdirectories proposed.",
+    "Source, metadata, datasets, shared resources and uncommitted edits retained.",
+    "External delivery archives excluded."
+  ]
+}
