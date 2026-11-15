@@ -1,0 +1,2084 @@
+{
+  "root": "/Users/ququ/synth_data_digit_box/synthetic-data-for-single-digit-box-OBB",
+  "state": "awaiting exact deletion approval",
+  "retain": [
+    "2.5D_blurry_4_diffusion/generate_degraded_register.py",
+    "3D_worker/scene/scene_core.py",
+    "3D_worker/scene/generate_scratch_multi.py",
+    "2d_mask_4_diffusion/geometry_worker",
+    "shared/assets",
+    "3D_worker/exp/glass_review/protective_glass_review.blend",
+    "3D_worker/exp/scratch_multi_version"
+  ],
+  "candidates": [
+    {
+      "path": "3D_worker/generate_vlm_exp.py",
+      "files": 1,
+      "bytes": 15138,
+      "entries": [
+        {
+          "path": "3D_worker/generate_vlm_exp.py",
+          "size": 15138,
+          "sha256": "34d5290f028b02e81bdffff4890121406ee626707079691d854a94fefada2f62"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/exp/VLM_exp",
+      "files": 306,
+      "bytes": 83207560,
+      "entries": [
+        {
+          "path": "3D_worker/exp/VLM_exp/plan.json",
+          "size": 150446,
+          "sha256": "da5147f2e652a2be9da23c1865094f1b0f16a638df280ddac7e69cd15c6230c3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/config.json",
+          "size": 2627,
+          "sha256": "31ab888179e6bd1d784e366379288edb9a4c61d2cfa09bf7d0bf81a8f9bdc576"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/generator_snapshot.py",
+          "size": 7656,
+          "sha256": "dfa9c98e85222dc12fe68c4eac7a7c3042c488d8b41b2b159c5b5f69fc11fb1a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/process.json",
+          "size": 354,
+          "sha256": "a0e79859d5c708f958b74c905bb9ab3d5617614b2aae3b31efed729e78b8cafd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/status.json",
+          "size": 91,
+          "sha256": "f427c2592b79570554c7c76792be0c990d69662e614a4a2222d06303e673d734"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000032.png",
+          "size": 769400,
+          "sha256": "8f0bcc400501291a1162b1aaf11d702940e2415dfe19382476e040399c3c3216"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000026.png",
+          "size": 796410,
+          "sha256": "b86c184f71f7ebd5a8189857f3c2c982d48b67bf686c3ea18279957069dd1169"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000027.png",
+          "size": 811965,
+          "sha256": "5462de0288de5c0ee6199104e681e656dc3ece50d8426451c53abf4bfe253e19"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000033.png",
+          "size": 729467,
+          "sha256": "d25a6ed5f26264ec0cb9bda63c21013b732b66fe62a5cbab126a74eb6cd554d4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000019.png",
+          "size": 772551,
+          "sha256": "57e239c111f6ce5f0a79b0dea7a823a992add529d242f29def143c22ce00669b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000025.png",
+          "size": 777992,
+          "sha256": "ac1df0344175688abb07e2b07462be825dfa66f298daa5bb3dec4a772a77b43e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000031.png",
+          "size": 781667,
+          "sha256": "3f993406533250bdabaf7f9264303207e5f6497e4d12a9c6beed375e2aa40243"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000030.png",
+          "size": 786110,
+          "sha256": "05737ddee663a902122efd673d7d37fc9d420fc046ae4a50246b28bb841541d6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000024.png",
+          "size": 796113,
+          "sha256": "234e83d30441a3f3718540335abf6aeb40740f7275d9fec783a5c01428d81289"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000018.png",
+          "size": 865589,
+          "sha256": "f03ea5c80cd1f953cc2226e51defd859b64cf10b87a657831b64a46ca8beca8f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000020.png",
+          "size": 946767,
+          "sha256": "86210f7ea9780ab99f907fed446302323dea161aff17db1a736e232d3a446807"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000034.png",
+          "size": 723546,
+          "sha256": "4418f612bc15b61c7bc13ef223964ccb84e3470386874690cda5ec38e7c7996f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000008.png",
+          "size": 771718,
+          "sha256": "7feaaf876c66bd54e680207ceb76fba9deceab648f268121b3cd58a5116b1054"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000009.png",
+          "size": 783071,
+          "sha256": "4051ad49b15c203b1a104e037475b8816f7b944cf6b2578817a10fc7e469f436"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000035.png",
+          "size": 751951,
+          "sha256": "2c1eb1f7c7c2cbf1be3660ea05a5e7303c06b77b3a55660fb33fec7e27549979"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000021.png",
+          "size": 747910,
+          "sha256": "6dc25ae3756176fa8c763ac7a47f06c5f4087d87c25c3c2b582c9d3d860f57f8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000037.png",
+          "size": 805744,
+          "sha256": "7c9b445dcb63575ad8c90243a2c81b3e42916d63ffdbd34dd4882550c6a9affd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000023.png",
+          "size": 927934,
+          "sha256": "33de190e40af25407b62e42ea55d97ec626d1069bf0d62063164f6f574cae668"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000022.png",
+          "size": 760563,
+          "sha256": "b61d9918bb80ab09b1cab8ac6fe3cc3a37788b666d4fb009c558f6b56ef776a7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000036.png",
+          "size": 770919,
+          "sha256": "c1049f4252a144b910be943873ebec178ee12d0c5aa9d58802e9b52112641ed8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000092.png",
+          "size": 771748,
+          "sha256": "5eda7fe2fbf343dc549a05d8aa216f0dc3ba9b2489db5aab4f43aac0c371d095"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000086.png",
+          "size": 784208,
+          "sha256": "cd9796357a231f808a3660c304afd31e05fa101e024babc923fefba0e7f5090e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000079.png",
+          "size": 771251,
+          "sha256": "482f8c04f7fedca7bbd20c437ff5c48bd6a741487e13c3b75f3f8ac7a589958f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000051.png",
+          "size": 769173,
+          "sha256": "90aeb3c665e218f9f4d63697ed363765c98e3b66cd5e44006cf79fb0e36b0c94"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000045.png",
+          "size": 786678,
+          "sha256": "dc3f95c17c377c5d7beafce28bb329c5f733f8e649a2d40bc623d386fa24cc62"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000044.png",
+          "size": 743436,
+          "sha256": "afb22c38211cbd51f04bab831f7284b06ef28eb66055dd5b6791b2cb5928ecc9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000050.png",
+          "size": 772530,
+          "sha256": "30dd84a07010924e155cfcfadf4c476990b7db374a3f394c31d1e4856c7b4178"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000078.png",
+          "size": 784439,
+          "sha256": "bf9e646d9212ed3982c0235ba400068b6daaa6cd698c3d2a465f1a6d3a5d40fd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000087.png",
+          "size": 769212,
+          "sha256": "17f5676ce3f8928b93100848617bc0752a9549bcff0c2bb42d9fe64b856b8625"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000093.png",
+          "size": 903042,
+          "sha256": "e0308fdb90a32d82628b0f3ee5ad9a7471f7a11fbac9075283222a13cf5ac61c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000085.png",
+          "size": 787932,
+          "sha256": "7723d7186fc34d931f6471e940deac6d8f82d6ce15ba5857e67beb8b1a049735"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000091.png",
+          "size": 790458,
+          "sha256": "998737be49a7b6acf879ad69bc68259e841219350c37120a225e0142dde0dc44"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000046.png",
+          "size": 940107,
+          "sha256": "0a32b47c2205b58c39ca037ad62b0bc3be568c6e9dfe4087119d4582a366309b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000052.png",
+          "size": 733491,
+          "sha256": "6b25a4779d7cdb8129cdcc6fb2fb5d85ef2b9effac6f9a3b6981f7dd53c582ee"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000053.png",
+          "size": 753851,
+          "sha256": "5beb09f04dc08153c2b1a8f03349eb6aad7304286a0360d568f304e4e6c1b6a5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000047.png",
+          "size": 751692,
+          "sha256": "ba3c90ae19a841626fe3b75111e0a36190849c504c6a4c90189627ce5145d4b4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000090.png",
+          "size": 760832,
+          "sha256": "0658184c777977e63eeb241bfee8f29e1079e2b7d826103c33f71ed8431e2053"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000084.png",
+          "size": 794082,
+          "sha256": "b7f51fcf56b0f599ffcbb7701f256688eabbd8c4cd941886eeeb8211d98424ce"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000080.png",
+          "size": 896898,
+          "sha256": "733c74a533badfe229c226fc7634ca9b662b82eb00816161b6e5c524e93a0817"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000094.png",
+          "size": 764440,
+          "sha256": "a6e5a4484a8001990d8f9eebaf021e93260f35e5a38b08477ba9a309990b7823"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000043.png",
+          "size": 761766,
+          "sha256": "1f38760929ed6e6288cd39351f26faba17322c11cfa8321df0e2a04f0d4d62e0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000057.png",
+          "size": 763033,
+          "sha256": "9b065ca123ed04e09c16a41f568050be9df89bc95803cb28e9098253d0831d50"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000056.png",
+          "size": 759265,
+          "sha256": "d6d4366612cb9282e655e9744875a68a8775d40bf922f6806e36ea9de07d9f4e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000042.png",
+          "size": 919085,
+          "sha256": "9dfa7f671ffa244e90d14b5014f77e1ab017a166fac648db01b32ef75fcc1d80"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000095.png",
+          "size": 785991,
+          "sha256": "e1a94603fb90682e6e1ab7c39d8ef6aa87732ccc664f7c3ab186f3226bd33611"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000081.png",
+          "size": 865647,
+          "sha256": "f7e6f2843ed062ca1dabc80491f4ee607645d5a7dd2bf9f9e52e0d657f37c97c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000097.png",
+          "size": 779162,
+          "sha256": "1bc168b096731f28f64a07e7c9aa0d14d5a64eed86e5f4c03d01fdaf5c49f5e3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000083.png",
+          "size": 1014503,
+          "sha256": "e43bfe80cfa3594f9155136612361f9128ba804e93f54414fac9bcf484a7c8df"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000054.png",
+          "size": 750646,
+          "sha256": "86f5e57ef1ae2bb381bc26fccd6efbbcd55994d6cde4d84674016a21b4e0dcb0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000040.png",
+          "size": 772205,
+          "sha256": "6b1959916a2f411646b090796e1b9d2c15f0320ab6440a99eda588437cba2038"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000068.png",
+          "size": 776663,
+          "sha256": "c4b5a8fa40c10bac93ad8c207730d5e466faf2c47ea4576eb8536cb1feaa8a1e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000069.png",
+          "size": 755070,
+          "sha256": "5745d0f80a4f3e7625f54edaf313f5337599bbaf17c8f3628e75fa0822b111df"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000041.png",
+          "size": 770047,
+          "sha256": "f2b09b8fc39d17d7a0b3937ea74bb4962deca6125f1cbe46ab586b6648346a17"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000055.png",
+          "size": 781344,
+          "sha256": "186302463ed7d2ea76e6bdc53cc3eb5e3bffa6026a13ff393c3ce99d5fe36dd8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000082.png",
+          "size": 751237,
+          "sha256": "e6fdc10096a6079434e24da3d580eca6fe2b27f96d2e2330f96bb532d4938fba"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000096.png",
+          "size": 773820,
+          "sha256": "2e3f5dc2a6160201047e375d854257ffe421937ca351aadd7e736ab336d4aace"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000058.png",
+          "size": 894150,
+          "sha256": "c803402631e0cd2ed97aead68208ddddceba55545b028fb4619d4faa09d45565"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000070.png",
+          "size": 961893,
+          "sha256": "91fdedfc616009264b8876a45c37c346e03b6caf23136542fdaeee3e5db1abd2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000064.png",
+          "size": 753368,
+          "sha256": "3e50246488e113bc86542e586f0959533898440f92c2c7b01e7556e517db8475"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000065.png",
+          "size": 777519,
+          "sha256": "8e6f6894a5a4148912cce68a9bacb7370189bf472526019c5925e1baf150a8c7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000071.png",
+          "size": 780420,
+          "sha256": "5df03ef42e478b1e1999c0fca17907ffd8bde414d60cef8e24bcfd3ea9885a67"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000059.png",
+          "size": 800359,
+          "sha256": "b8e6fbf381917235d7ce96457f799c05e6fdfabf1530e934b4650dfb9626af5c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000098.png",
+          "size": 754203,
+          "sha256": "bd6923ed99deca9ff34e734cfe6cfa10578ea853790b907ab855148df6f6842a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000067.png",
+          "size": 897425,
+          "sha256": "8146984b412b20646907dccd57e3a8cfbda22e9cd1c3d7b8d2a18658172961a6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000073.png",
+          "size": 784186,
+          "sha256": "a144bbc12a5f5ed0b8838879c6d068322c41e49e74b3149b279633eb715f0fa4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000072.png",
+          "size": 785659,
+          "sha256": "8c5f4c915fb3dba8341fa3b398d98a21e503594a1fdff768ce66ebac42cd4baf"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000066.png",
+          "size": 926630,
+          "sha256": "48a0510468f4dc631c47bae7613d4e8973ea2bcacff1e180ab633fa2f9775015"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000099.png",
+          "size": 940541,
+          "sha256": "d25666430858ff63bec0491c05b6448307cd2e96a6c51d8de6c6fdcba8d903cc"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000089.png",
+          "size": 776222,
+          "sha256": "e82e72681a411f14d89f023ad8b340da7137e319c9cbd070acf409f687909557"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000062.png",
+          "size": 760784,
+          "sha256": "015f798e83aa71bec18c61b6b36d6167497f3534ec6d3e2e1caee8eea8f6c0fa"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000076.png",
+          "size": 790201,
+          "sha256": "1ff79c8b61709905704e76afb5f7b3bd851e31eeb8da3118aab485e0fae47556"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000077.png",
+          "size": 787698,
+          "sha256": "9db8ce3c81bdfca3fed263d59a5975c9d69e05875616cb66de4d489776c196be"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000063.png",
+          "size": 880582,
+          "sha256": "ad001c95ac47a433b913b066afbde6c0cee43db93235b6cd0c67e6cc1839b911"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000088.png",
+          "size": 753691,
+          "sha256": "1194dedd46099537a2f96c613994d996a4264dc70f676bcff7c73f05ab9595bd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000075.png",
+          "size": 773426,
+          "sha256": "183ced4b7e9805e790fc4c033475e0fd1e2da988472d8a1c93f85750f141f1b6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000061.png",
+          "size": 899769,
+          "sha256": "87f5b2537cb43e836108bb3c15cd3ae5c671a06f14d0406e71ebc6d762ce3970"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000049.png",
+          "size": 742129,
+          "sha256": "eed0d6f87d6e647b9731fbcde212a77a8d42dfa53cd597cd3c1fb084e3532168"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000048.png",
+          "size": 763340,
+          "sha256": "62c3fbca974a38af540ec579622cdd204ab02eb326dc167927847673d58b8abc"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000060.png",
+          "size": 804740,
+          "sha256": "475f957a1625b0e97a5832ea5f8d7f65468915863e9688364a2e7a59f06a495c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000074.png",
+          "size": 768452,
+          "sha256": "490aaab8349c1cf16c1637020b8da3ee0cd4ea5c240c59f81a3cfcc9e4ff453c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000100.png",
+          "size": 752334,
+          "sha256": "0182c82043631a58d082765c7b514d585cc49ca0cda62384e8a5f743f3410b70"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000013.png",
+          "size": 915470,
+          "sha256": "0af103ece4f4b95898e7b616d1f565f7fb01b6f5029202b166229b5ab2ec070d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000007.png",
+          "size": 768079,
+          "sha256": "c27eb67fb53fd776d3cbb7df42d8cbea549c61863ee6675de0b7bbb5febaaf88"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000006.png",
+          "size": 759723,
+          "sha256": "2f20651fb9aaab36f13342929d300d01aa9929ea01b23fffa2af9e779898f2bd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000012.png",
+          "size": 754135,
+          "sha256": "5c8609e0017a74c5fdbd8ef9ab14c57170da7c64483c2b63f6bff0d0c64f4a20"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000038.png",
+          "size": 759097,
+          "sha256": "da4a58c5a73b5634efa9b9074995541b9c3b3100d89e85144f4a4d5221bbc314"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000004.png",
+          "size": 776517,
+          "sha256": "ca718272b95045baaa339dc42a066a01550a1904f8cba2d0d2f97b2a5859a871"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000010.png",
+          "size": 783509,
+          "sha256": "46c2cea587c3456ee52e3f55991fb16f5f95a00f76afeff27e2188e5662fe7df"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000011.png",
+          "size": 893441,
+          "sha256": "5de64cd160930aedc48f7c82396fa0a2d00a9cbed06ca187bae1a5a4f9fd7ee9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000005.png",
+          "size": 745623,
+          "sha256": "44ad6aebdf86e3d78244617d97a7637988e7a0694daba39c9b3bca687ab295a0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000039.png",
+          "size": 772226,
+          "sha256": "4450003d15f84226f0625795e406632877e9a983126330ec546994d1c9758eb9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000001.png",
+          "size": 952465,
+          "sha256": "23d12be8d7611409b8f38b6a04c0014831523314cbe482c7ebbbcf3952192530"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000015.png",
+          "size": 781243,
+          "sha256": "7bb42c2a2fab0ae921cc0894ec8eb5615953a7719c543bef4daafe189223387b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000029.png",
+          "size": 752090,
+          "sha256": "456f370e1668a62fb9240f1a52fe0a69d5e2387ad72746686dfb8cde7717e310"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000028.png",
+          "size": 780254,
+          "sha256": "db1ca0e5df6e13f552d3a0cb92b526561df6e3bf9f7de1acd0790886e0611c3a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000014.png",
+          "size": 752915,
+          "sha256": "c17bbf3b95ae1887aeb53204978ba07bc7652edc1e70eeb3553ea04e14858078"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000016.png",
+          "size": 768269,
+          "sha256": "5789b59e2f543b45fdcd30c2e4598cc37517d3f9086bb50a4db9851df5d59e61"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000002.png",
+          "size": 781743,
+          "sha256": "8ff4de8f2c617e4765273bee35db8c26dfd4e6868e5fa461dafeaa2c8c17b169"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000003.png",
+          "size": 791492,
+          "sha256": "3ce7da438a627c562ac52b93d572838fe84a2cc99e0c8009aa60e9316a2beef6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/images/000017.png",
+          "size": 758308,
+          "sha256": "36d41b71b0ff32ea6956995863127f991f8d8f3f5df44432e3aed6079b149543"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000050.txt",
+          "size": 530,
+          "sha256": "68be2897e0fe0abbd8672efc7a6bc1182ca0eae298504f3cf2b786b30a9ba2c0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000044.txt",
+          "size": 530,
+          "sha256": "053121a59c31d5b9a09152b6ade94e33cdd209f3b96786b1a4694a777f6f3721"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000078.txt",
+          "size": 530,
+          "sha256": "14c70fed7e2d5ae03f2d62cda502f177b4a9b8b4b37a728bb4e2bab933a747af"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000093.txt",
+          "size": 530,
+          "sha256": "e5f129dde831988e20a392385c2508cc6a9a31a4ae7daff5872ea73ac2317047"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000087.txt",
+          "size": 530,
+          "sha256": "8625b912ca7b36a2c86289aaad508229f9fba72580f90028a0299708f37c119f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000086.txt",
+          "size": 530,
+          "sha256": "ce60b55e4a8d4fe3ebf29e9e3fb5fe20991ae4f3dccb807fb4972c0ae101f492"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000092.txt",
+          "size": 530,
+          "sha256": "7bb67b649e54f77d1d29e21cdfc2744e4936f5348bca697cc8bd1bda70c25b37"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000079.txt",
+          "size": 530,
+          "sha256": "d9a16710661886998961ff182399310bd67b1d33567d52b462dfb5708d118edd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000045.txt",
+          "size": 530,
+          "sha256": "d4c44bf13a71b6f91d52dc7b74815f3147eddef5ac38334460302f816adf499a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000051.txt",
+          "size": 530,
+          "sha256": "5a8694f999758fe7cfdc11f645b206d5e63ba5847c4aa1467d2a5ebbdd8082de"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000047.txt",
+          "size": 530,
+          "sha256": "87ba1893659f0c90e581bc2ab1604a53e798e1fcdaff7ef15b9992bf70a1066e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000053.txt",
+          "size": 530,
+          "sha256": "18f0ca1ad50d573228737148bcfa4522876ebd8fe839d9a15dbe0fb0fd5af781"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000084.txt",
+          "size": 530,
+          "sha256": "d42a665558a45121ebb81cc25cc45b5bb9323a947c72e536a787c188b08573e1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000090.txt",
+          "size": 530,
+          "sha256": "aae15cfaa04a135a46b6d7501717beed618661de3e61a2c857e7747cf885a971"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000091.txt",
+          "size": 530,
+          "sha256": "4b8cd48496f67dd32bedb7c8c76d2c58ffc672833ce077acb86ec39f55861003"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000085.txt",
+          "size": 530,
+          "sha256": "a4118fee5f086807c0ba7b4b52ddf2125d60d6aef511718dd08d4fc88a8b3060"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000052.txt",
+          "size": 530,
+          "sha256": "e6904a39bfa2652b9cdc53c0b1b88918cd3f5e7dbd0081d99aeb10a0dca829c0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000046.txt",
+          "size": 530,
+          "sha256": "7c5919bb9faa98529118334ab2388d8702a6e35ac96c7b412f797b0265f17e88"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000042.txt",
+          "size": 530,
+          "sha256": "dfd845b8143769ecdcf2d824e04ed7ff93c20895580e51eddf17ae8e092b6229"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000056.txt",
+          "size": 530,
+          "sha256": "9a97e3433d45d81ea88ce8079b9533af057072098ce3296f6fbafbc739d07e79"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000081.txt",
+          "size": 530,
+          "sha256": "f9925f28427f36e29849d1af4ff812d98f9d678328b3ec3a9349e82774f86e66"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000095.txt",
+          "size": 530,
+          "sha256": "1b361de19937d956d2925be55d89322b0c0045a831797650b4ba1ebe3c6e0660"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000094.txt",
+          "size": 530,
+          "sha256": "6382b082f9cd006224845e25d58b79d6268154a41e334e18383c16fdb3a9ea79"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000080.txt",
+          "size": 530,
+          "sha256": "1411c30431b37dda29efe9cc9631c97b04ed6e074268a9199df46cfaa33af0f1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000057.txt",
+          "size": 530,
+          "sha256": "6f82736c291b41d6f76a5b4012e8b6b6ab29d9cfa9746202dd0f2de35780a6c5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000043.txt",
+          "size": 530,
+          "sha256": "a8c3a02725f7b7ffacebefa3d2561ec5918faecc5f885c2eecdc9b70a901b99b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000069.txt",
+          "size": 530,
+          "sha256": "dc4db1b3a24bb08317fab595925cce40487e40d05263c5e080610510672ff1d0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000055.txt",
+          "size": 530,
+          "sha256": "4767e7ec0dd5d6382f16a136d7a3aa87ea7722463d49915d23cdc7d424a3811a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000041.txt",
+          "size": 530,
+          "sha256": "cfd638e59448b92b1ba0ef543f7e128522def37f8aa76aa2cf0708a206993a85"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000096.txt",
+          "size": 530,
+          "sha256": "721a08061a7c08250a42844f0938c96a96b4b67c2a5b86e77dda86a1ccb7ce02"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000082.txt",
+          "size": 530,
+          "sha256": "6280a2ee8f84db986ee5d2bd0f32ca7a39738e712853a0d332747a387b53c2bb"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000083.txt",
+          "size": 530,
+          "sha256": "6b6cbcbe474e892db7522fb1700c6c7631865706da9f1192e1709fd98e40480d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000097.txt",
+          "size": 530,
+          "sha256": "44579c05697acbde970961ca70f769cb1fbe7189b7a76f14e298cf80ca006e42"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000040.txt",
+          "size": 530,
+          "sha256": "ca600605061fcdd700bf5080d3840e3f387a73bda99bfcbf1e972a2698eaa5f5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000054.txt",
+          "size": 530,
+          "sha256": "f6923746d094a90c0a34bc6bdc7e981dbbefcfbfde570cbd7811e3076e412eeb"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000068.txt",
+          "size": 530,
+          "sha256": "2debf00693e011a8a6acf5f55e97a24361be947965af3408790a2c967ce6600e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000033.txt",
+          "size": 530,
+          "sha256": "0085ee627e9cc2d50308477ebd1fda49fe9671b77294f01a575c4da863727a6d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000027.txt",
+          "size": 530,
+          "sha256": "3e31d5c7643b504e0387bf23d22ed9ff56a1d96e51c8f276e4c8b6d615bfbe3e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000026.txt",
+          "size": 530,
+          "sha256": "77669efe6de85beb64adba74fb20aa43bff7061f75844270827839cb9a3c878f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000032.txt",
+          "size": 530,
+          "sha256": "8ca8a58258ea7dca7f5427e7149eda69f468350da27ecddbf0a10ee455ab1cf8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000024.txt",
+          "size": 530,
+          "sha256": "0165952f45762931f1af74441ec52fe9d6527c1aa1c46f916c7c9edc7482e728"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000030.txt",
+          "size": 530,
+          "sha256": "7f9904bc4a9781bd0e4056e758c30b1d35562a5be86daee1acf12c72973c9d87"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000018.txt",
+          "size": 530,
+          "sha256": "b63a83e076bb2f9aca52d515a78c1cd5616d4c4416e5bb9cf1c4b9dcb6e5a362"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000019.txt",
+          "size": 530,
+          "sha256": "ee8669a1d538213eeca66bce2ec160c456983a8b84c4d3eeb7e7303dfd1c93db"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000031.txt",
+          "size": 530,
+          "sha256": "041c9f1608e0ee6647df62f1f42e2540e3052891cc9c875f06239b70c21c567a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000025.txt",
+          "size": 530,
+          "sha256": "6ed28421c014374cb53b0c1b3ad24de679b930ac6e85c9419e5b85c568c15db8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000009.txt",
+          "size": 530,
+          "sha256": "318004cf16ad52355d9c16bce8c39ec43375d3b973afb37226089b6243dd14b5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000021.txt",
+          "size": 530,
+          "sha256": "775c0f5704a2cf576e1f61cbe4d1643be9d2dc1fc34fb46a1fbc8fd6f61f591b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000035.txt",
+          "size": 530,
+          "sha256": "1357afdb5a3673dea72120683f86076ee44293e8f5643fa87a34c58de0535cc4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000034.txt",
+          "size": 530,
+          "sha256": "8bc03410b9a54ed7166349cc3e7439f04066f992c7e6fe2ead218f64d4d31004"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000020.txt",
+          "size": 530,
+          "sha256": "9ce4e5449f293a3ea727cbba7b6e4c2827cc1775edc37af788319ee9aa0e7950"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000008.txt",
+          "size": 530,
+          "sha256": "757bcba438491a2b64e947f24ebb95f70bc7739d55e57e8d3bcfbfdec1ad5600"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000036.txt",
+          "size": 530,
+          "sha256": "5a92daa5fe6b01ebb7a4062cee345f8271245003bc060c3bcb41e5732de9456f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000022.txt",
+          "size": 530,
+          "sha256": "32e2d7e0edd60ade92606bf73554750e5fd5ccecdd1f17a4255d18dfdecd52fe"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000023.txt",
+          "size": 530,
+          "sha256": "ed6954c83422129cefb3828ec61a3bf26f7c28d01caa1a874e539e5f603158d4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000037.txt",
+          "size": 530,
+          "sha256": "81f72548b34a569f1791ce3f57199c49d7121a2cc775d3b403dd85a562c0e060"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000012.txt",
+          "size": 530,
+          "sha256": "2c4ffa18cf0a2d65aa6d2c074e916e45b6101b7f4219b548d2cefdcd8b8a98a1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000006.txt",
+          "size": 530,
+          "sha256": "1bbbae6a05241a3ecf6f79a1a66ed953b0b1ae60e2870559963b2206562dbc0f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000007.txt",
+          "size": 530,
+          "sha256": "9b1184357728527ea6e27427e5b90a617d9271e5d538c79cde84c8650f13dae7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000013.txt",
+          "size": 530,
+          "sha256": "49df570966283eb43f6266e6c2bef46e177c625c8488af956fa192093501e858"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000005.txt",
+          "size": 530,
+          "sha256": "865a7af6d0ab9bcd639cd4642de233c5b6ca9622380fc093c099e4b420e28775"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000011.txt",
+          "size": 530,
+          "sha256": "0c3cceeeb5740de025e15dc284d5c27209dc19ebd2704a28b94f65515c9fcf5d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000039.txt",
+          "size": 530,
+          "sha256": "bb964782e9fc96b59bc8d7d6e79d67ba2d083fa5fc5662cbabdc5a70daf6b6b2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000038.txt",
+          "size": 530,
+          "sha256": "348209b9202dd620ade3307496233ec98813f451b2f4c78042e3de00917deb76"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000010.txt",
+          "size": 530,
+          "sha256": "1fb7b0dc5806d1da6ba4e5394429ca7961fc396ab7d5b8e29b9bdfef2ad2967a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000004.txt",
+          "size": 530,
+          "sha256": "dec5d72408afce10a4ad05684940376cde92724f6fc7ffbebc02b660e065d2fe"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000028.txt",
+          "size": 530,
+          "sha256": "554b2eff0bb3d5fee07980123a6bd6b532b0ff44fed1f09e2a09e2f174361786"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000014.txt",
+          "size": 530,
+          "sha256": "04cf8c70d4e8eff6371161a8a18fd41bde5a36492e68fe9e5bf96f03450fda21"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000015.txt",
+          "size": 530,
+          "sha256": "4f177b2d7fa5c3f9f822a4c2fb338010c23955887cd372f696cf8fcc51e9f596"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000001.txt",
+          "size": 530,
+          "sha256": "a6d8b4325dcd168c6be98ef2c760a0b81b8abdc413f70276b9dc10cc4852a7a8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000029.txt",
+          "size": 530,
+          "sha256": "dc4587553adf0b8f6a15cae5234d0e67df0a6f6d92a62556d01c852356d9ce66"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000017.txt",
+          "size": 530,
+          "sha256": "7e4c1023a1ff8a724fca5af5ff16ed3ba96051e389cdb911325cbda61e64b674"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000003.txt",
+          "size": 530,
+          "sha256": "c097cf88585e4bb0b1419ae824a880055da7d32d08b1bd2478bfe5fcb523a469"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000002.txt",
+          "size": 530,
+          "sha256": "0dffc30114df92308346a8150de2f5f8c855e5e541625e20b1c134743d09df98"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000016.txt",
+          "size": 530,
+          "sha256": "28de1979086620dc716392964bc56ee0f5407de89d3587e1fc12d36d4fc7c593"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000071.txt",
+          "size": 530,
+          "sha256": "f5806e3ce1ea8df4a9b5b397d03deca4997f36ddd430aae1c7bb906fc828099d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000065.txt",
+          "size": 530,
+          "sha256": "22ab322be356fdf05f36ff52b98272b755c069ddd3b427b744c0a109d8891ebf"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000059.txt",
+          "size": 530,
+          "sha256": "50f77016225833b905b30e245bb27c3a50b5dc7e1fdb83b082bb0987d39a1251"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000058.txt",
+          "size": 530,
+          "sha256": "409cccd129cd1cfadb53e932b271e8064ef4ecf308aa2851873b1f993db383af"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000064.txt",
+          "size": 530,
+          "sha256": "a55641672dd425b57900b509d14399796ca4d1d495daef13764df3fabbc4b446"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000070.txt",
+          "size": 530,
+          "sha256": "8052fc8b0f936e12febf28cf33b1b14a790756b29f25acc412a27582fba075c1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000066.txt",
+          "size": 530,
+          "sha256": "e59608cf0b63d9813a10a34cc558163ab54e7cea2e47f962fa146d3ae6359005"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000072.txt",
+          "size": 530,
+          "sha256": "7877cee49b814f70deb3f1ba82c4ffaebeba2c34078847cbf1de2d0a4f6c0b22"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000099.txt",
+          "size": 530,
+          "sha256": "2531dccd955dc400ce7b1338ab2d1545c0ad0a81bc0725ad08b94fd43c9cebe8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000098.txt",
+          "size": 530,
+          "sha256": "d66416ea8118cd506072d45b1eb413957556a9c77384521b875e2d9cca513c74"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000073.txt",
+          "size": 530,
+          "sha256": "31e70e16af55f4daf6317f0a4ef606dc69dacef7c90c7db74e81cb45201b8a3e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000067.txt",
+          "size": 530,
+          "sha256": "6412436637508326a11e3a3b62e6b956f537733f05d47587010e85ae4a7819b8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000063.txt",
+          "size": 530,
+          "sha256": "3b97abf8a104caa2c9ed0d32ae0542dea9a0662867875c6246a77774487d7cdd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000077.txt",
+          "size": 530,
+          "sha256": "931fe6c086b3d11310bc25746661f45429d0b546d4251432856f13b975434c1b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000088.txt",
+          "size": 530,
+          "sha256": "de7bb995e61fc6891ad4f23b288a4a7771fb4bd3492929b6051964209ecbcca0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000089.txt",
+          "size": 530,
+          "sha256": "eafbef241faeff6783e88d855ff1ea078a732428a1cff69f16d47768de11a85c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000076.txt",
+          "size": 530,
+          "sha256": "ddfd2e62f0594ee1948bb6071ece834ebf8181d2cc51e6c0f6733ca331b3b6ec"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000062.txt",
+          "size": 530,
+          "sha256": "11724d8ca1221d37fc3b0155599ba6d187ef7e6fa3ad36f3ab77d76677e80102"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000048.txt",
+          "size": 530,
+          "sha256": "ba6688eb4ef0169cbbf8cea9980586129643555962740ae4f01925021c50ca95"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000074.txt",
+          "size": 530,
+          "sha256": "ff098810785c421ca750ffe87e3e8f666632f52b60b78598c2b8317603475a2c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000060.txt",
+          "size": 530,
+          "sha256": "85351a8a1c297e88b755084d8b1658aeea72fb0d773f474a950769f2842418df"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000100.txt",
+          "size": 530,
+          "sha256": "c37ea417c50e53496d6c1003b967da7047466a209191d2cbedd661de8441a930"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000061.txt",
+          "size": 530,
+          "sha256": "c67c594a5154adc0f9fc999b3747ba781c0757c00d86e1aba50278940367aca5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000075.txt",
+          "size": 530,
+          "sha256": "c93988c706f4034b39dbbf6978d09a8a047a40f492d48945ca27171ed1686888"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/labels/000049.txt",
+          "size": 530,
+          "sha256": "80f561f7ac53f69e310c02dd5a358823631d588822a4e5dcbffa35b8fa712486"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/__pycache__/generator_snapshot.cpython-39.pyc",
+          "size": 7667,
+          "sha256": "0f9ba58ceb7a89221e076ca961f27a7c289c480b2b49e50afae18b9fdfdb93ac"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000057.json",
+          "size": 31015,
+          "sha256": "5da1abe15a13f56ea432ba6f8c42d8114a7a13d9d51e2aa82afa1cc394443279"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000041.json",
+          "size": 30693,
+          "sha256": "afecc800c565e774b4162adf411e908abd9542f7ab2ec6c00b5afced902c2321"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000016.json",
+          "size": 30378,
+          "sha256": "4cd6f50162980ff80a2f4c11e136648b84b6514475a95807ec0eca6ee9ea905b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000082.json",
+          "size": 32426,
+          "sha256": "a9498bbb9c339759db8054e82e86e3331757197cc12c98bf0c94b7c5904165b7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000094.json",
+          "size": 30988,
+          "sha256": "90d524d558d74b0dab5b175a7dde3d711d4b56a61563718f53a404c5fdaa543d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000061.json",
+          "size": 30948,
+          "sha256": "aef03ddfea0a35afde8704e507d4e00d8c1b3c084ce68565fb31dccc5a171fc0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000036.json",
+          "size": 30567,
+          "sha256": "dfeed9385e95c76097c846366d812b4a2f1987a6363e8fcfe6a64e62b0778db5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000020.json",
+          "size": 30990,
+          "sha256": "de5f870e3cde27cfca388e03b28f5eee480bad53547376148860004ee4c75a41"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000077.json",
+          "size": 30696,
+          "sha256": "a01c14fec07b41ff700e0d8ab483e82e4c337a3ff6f82c92e684b48109e3ce52"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000098.json",
+          "size": 31956,
+          "sha256": "0517fce870cfa12912c3617fa227685614abcdc3b9735c108140dbd7ba4a5b59"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000076.json",
+          "size": 32025,
+          "sha256": "bb3a03e97d3a46f6b683dea95d4d8bd8b14a1d763ab51fa91c30445498c760f8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000099.json",
+          "size": 32120,
+          "sha256": "06323757fef88da89cbcab6e100b61c85a7110a43dc04835b5606f0ccf8daf31"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000021.json",
+          "size": 32184,
+          "sha256": "97a953cb6757da53208b31045edd624b6eff8fab009456625707db97532977a7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000037.json",
+          "size": 31768,
+          "sha256": "2d82bdff7d155fe25b6ad9fb90323011a315d2209102a0678690d741ad048a95"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000060.json",
+          "size": 32344,
+          "sha256": "5c4a5b138e652d272c0ed879a6f93f9170a72653298be74ee07861c249baedb9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000095.json",
+          "size": 32816,
+          "sha256": "80ee30ef498ccbdbc7ece76ffa32687fc375f2df93c5c0c6c50de13b8d3e4aaa"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000083.json",
+          "size": 32546,
+          "sha256": "e3f9878ff6041a7ea0641e187db567b786c71884752ed4ab1c3c86e41d448122"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000017.json",
+          "size": 32185,
+          "sha256": "b3f8b0ddb2b459c4f9489ba9b8e960c45de8042c92cc5c1005e75b108179eb84"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000040.json",
+          "size": 32111,
+          "sha256": "52ae38441cc5746234a4772ffbaef5a29d6bc7c8ff259e430817d0599404f421"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000056.json",
+          "size": 31212,
+          "sha256": "2e746f1efad6ce934e2dfd040a7383845525c1611497a542d5b54c137aa33496"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000001.json",
+          "size": 32714,
+          "sha256": "8c3bb7e07f121af9deceeddc2980ddf86ec49a2005ea6836589c2b72abba752f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000067.json",
+          "size": 32354,
+          "sha256": "7e3ee146188a1dc895bf2951e829266980253e3a5f43b22581ec5ca65d6da92c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000088.json",
+          "size": 31569,
+          "sha256": "71de2efab6f414f537996389fbe0b10fc048425f367a4e30a4018b850275b8a2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000030.json",
+          "size": 30570,
+          "sha256": "7ec744414caa46c48054609910a431f38a2b9ea506a30e2bd8a68743438aecd2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000026.json",
+          "size": 32423,
+          "sha256": "eba7e78f8998f900c5616bdfc334345c634c79c0f5015765810a37085a06b593"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000071.json",
+          "size": 30901,
+          "sha256": "398d2c36d7d7c5a8aca9e1b3379c3f6b723f3353474395900989c560277d014e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000006.json",
+          "size": 32161,
+          "sha256": "eb210b23b5e24da4d30127dc1c5355231e786cfd2f5c369f2ac6eb0d0e290f3d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000051.json",
+          "size": 32210,
+          "sha256": "65847b9b49b3cae3df0e5e356dcd55638bd152e95c2934d8065512b60d70d640"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000047.json",
+          "size": 32103,
+          "sha256": "1cf31770d2709a5410390bca671e35f4974c3a0529e8320a54086de3c8e80130"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000010.json",
+          "size": 32216,
+          "sha256": "fed79e3ee80cfc9b3fb24182945b1af5117d7f3fcd6b56b0ea380e123948cb82"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000084.json",
+          "size": 32438,
+          "sha256": "c3f9aa5a5344793a82ecb1ebb28fb7ce42d6fa6b78030e2d97ac171e5d38a201"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000092.json",
+          "size": 30369,
+          "sha256": "aed22bf202a273ae98ad05f88bb166dd62526fc6cd7244d906e197665e36c8d1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000093.json",
+          "size": 30529,
+          "sha256": "e974ad856909d60e89a491fe381b943206b5fe8044aea1f18f1b9a4d8d17a7b5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000085.json",
+          "size": 30682,
+          "sha256": "24b055e0ddd3501c68d9a78c5d78d69311a7ab9fbf5a9b0f0481ec8cb695c24f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000011.json",
+          "size": 31160,
+          "sha256": "6dcd1904bb90049df7629b462e8789951283e68f8a06cac1efaea0bad8e393fd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000046.json",
+          "size": 30838,
+          "sha256": "7ee59c7f8cd25bcc36b243b5b3abea44541363d406f40e580b14035cd5c05aab"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000050.json",
+          "size": 30920,
+          "sha256": "3a170b21b65e5ab4851e08e5ba5636010c1f0a240a56602287887172611360a1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000007.json",
+          "size": 31543,
+          "sha256": "544669536a1c624e6f33c0dabc269350abeee189045015a55bea79ece9d87195"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000070.json",
+          "size": 30697,
+          "sha256": "c83575e91a0cf9c412239b1376e36126b4f290e223ce0fb10e46888697dc44e6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000027.json",
+          "size": 30902,
+          "sha256": "f40f6076db60055020eb49c5d8e5d7ca6dfb950af92a3e1894af2b2449865d3c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000031.json",
+          "size": 30969,
+          "sha256": "c8816beb941e63a3dbab50d0708ff1981397b5105baddf5d92655d91c85184cc"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000066.json",
+          "size": 31112,
+          "sha256": "59a8797bc028532d0861866a3283fe93e59059050bd8307d03d3e77887207129"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000089.json",
+          "size": 31327,
+          "sha256": "d6147cdcefbbd53de0793c9a379ce6832d5c6a36082d11d020118960193cd0b3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000073.json",
+          "size": 30899,
+          "sha256": "470b50ad4e90fc4862b0a5257174517c5ded2fc54b91cc84bd8c2c40a015420a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000024.json",
+          "size": 30747,
+          "sha256": "3207c358458906f02e2cdea1d3f6a0cf54be0f3c050406d76865b71fb723b8ba"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000032.json",
+          "size": 30785,
+          "sha256": "f803430d507151ce63b6183ca3ef0c43d938fe5f0ec9aa6ca4479515803ae2f6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000065.json",
+          "size": 32188,
+          "sha256": "b4a1b8393ee4448cbe24087c2c0364105f91b9189507523757c6e57ed4bc4d28"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000049.json",
+          "size": 31839,
+          "sha256": "639ad27c5fe555e7cbfe98be83db268e3e92645a67fd94d37372ce0a060830ed"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000008.json",
+          "size": 30372,
+          "sha256": "8ba06c8f3a885284f954a45742bdff57594ea8759ca227005abe0bafc6f8196d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000090.json",
+          "size": 30580,
+          "sha256": "0bab61396f74a27f2ac7efc652e35874288e09c495304ea01b4c3acf11310eef"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000028.json",
+          "size": 31193,
+          "sha256": "69943d9c1c101b57aece4772b124c23e780bb0742ce64fc3610ceb79ffd67b94"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000086.json",
+          "size": 31388,
+          "sha256": "fe2198a9ffb9329bc9e8fa3a42ff6d70e47b180a91104a4ad2dd5f54909f1c6c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000069.json",
+          "size": 31147,
+          "sha256": "90e9a163d43ab18a4d44be40b06250b066ca20d1673f8e916bcce7024ac2652a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000012.json",
+          "size": 31795,
+          "sha256": "0ddcd680b97229c2d4e5c178237176418ee326d210af72a5f4e2c3a90af8592b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000045.json",
+          "size": 30731,
+          "sha256": "336cf9eb556d7f898c42303cdfe4cd7aab0a5a54e235005db2cf3038990cb1a3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000100.json",
+          "size": 31983,
+          "sha256": "2beed7cc6ffc5ca9a37e575b6baee4dc299f5c2e147cb020335eef8b0a7c56f9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000053.json",
+          "size": 31078,
+          "sha256": "f3a8b1aed0a5f2e77a25769db225ab77f385467eb4702ff3491adef51523bc10"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000004.json",
+          "size": 30677,
+          "sha256": "14fe894a64f92a7708924cd71a11234c723a70f2a33962df2e77bc6cbbb3c7e9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000005.json",
+          "size": 30308,
+          "sha256": "6f8dd0ad40af3e8aa5d8f3d89922de3cb112c2674ae96c4c4ba50dbe3f4a1337"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000052.json",
+          "size": 32017,
+          "sha256": "0f2688aaad473e7c932676ab3ba1622a62a1cd4ab4bbc3efcfe71055939684c8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000044.json",
+          "size": 31072,
+          "sha256": "eb3721c5765fede8ce03223be4ae79503913e1fddb363c34bda611a75934e50a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000013.json",
+          "size": 30782,
+          "sha256": "0ea2064790e1412c3b34f0f47b262885e9443f8214b00f32dd675e1e3fb4c17e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000087.json",
+          "size": 32280,
+          "sha256": "524d0bf19155d74d412c909c929a5ba0818f1c6b408e657a78f4900cd2d3242c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000068.json",
+          "size": 32081,
+          "sha256": "dd4fbf5a28401555ffdf04bb1edba10b5a215be6a5d5dddbfd3a9516328cfc05"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000029.json",
+          "size": 32306,
+          "sha256": "87fcbfd059344396158208fe29eed68fcde50f8fdd94a7d77e09cb511eca48bd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000091.json",
+          "size": 30545,
+          "sha256": "1a57c2dbe6cdf4adcfba91ad24ece21f4239f99e457e75ece0a83f66998888ca"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000009.json",
+          "size": 32584,
+          "sha256": "ba436a4ad4b29a6f69c82a37c02f8961729ebb6da8d8b5dd1252933296478a6e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000048.json",
+          "size": 30960,
+          "sha256": "c56a9cab455257031421385faa461a404b4e951870d29754b03d29d9905ea600"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000064.json",
+          "size": 31830,
+          "sha256": "0774b7d35a3ea496384f6be203ea180a9cf3c16c229f188fb0668e1e31df55b7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000033.json",
+          "size": 32502,
+          "sha256": "26659415e2d78282d079df6f641a9b8dcb2b6728b8ae3d29f97fa34f6f71b8c5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000025.json",
+          "size": 32229,
+          "sha256": "adce1e77fdb79984b41cd4c67f1a155d2c9e963abf5619c9cb8d11ef174c8f76"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000072.json",
+          "size": 30915,
+          "sha256": "1ee4f1f39f3363442f284f7cf914b18e80025c308b46d99dcd66e652a5ee4731"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000096.json",
+          "size": 30796,
+          "sha256": "63d830031bebb453b79f8b61a6523a89169765d6f4b59d2dca8dac4feaf6af94"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000079.json",
+          "size": 32293,
+          "sha256": "88727cc6e270d2b0de5ca74d828861f99233cacd6fb5291f717c965d253b111c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000038.json",
+          "size": 30496,
+          "sha256": "facd9c831395caf46b1d22a9fa24e78671a2e20fa0c363ae8300238d31193add"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000080.json",
+          "size": 31738,
+          "sha256": "70af20b0d62a4fea5386c62b793f50e7f0f8714c1075937eaeaeda6a4159cdbb"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000014.json",
+          "size": 30511,
+          "sha256": "6d7f49c7808285bb978759c03fc57b90f5aeb3b75653b5ebfac4d2500e5a2671"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000043.json",
+          "size": 32074,
+          "sha256": "c27891101c9f3f6e8074b401608a9e5bd99e9ad8beae56f83ec8bf120e885ad7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000055.json",
+          "size": 32652,
+          "sha256": "854c473e07b3fd636723b9e1864d21fb3118745f9a5821a42ecb3e9330afcf87"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000002.json",
+          "size": 31677,
+          "sha256": "26ee1e609d0c060923a4829d24d8a88222c6e1b4445c19e423333c57acc16a99"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000075.json",
+          "size": 31988,
+          "sha256": "f8d6c41a950dffc0a270096365f38848537b24dd5efc164d929da1c2337009ec"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000022.json",
+          "size": 30586,
+          "sha256": "62f8f59256aff787e861c9b3dc90d82cda98ebba4aee9847f8b99d1cbcfcae5f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000034.json",
+          "size": 31153,
+          "sha256": "1f1254528f683b94aa55af3c2114f7c506263dd5c7e249e6a1be4b7556efb4ff"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000063.json",
+          "size": 30646,
+          "sha256": "5ef8c394521353efb4e2cd8797e5cb505cb345371e1d2f66600d6fcdd85ce7a2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000018.json",
+          "size": 32469,
+          "sha256": "82160af235184501c5ef3be1a73e79f20f09f48b1b3473735acc31f5bf633a6e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000059.json",
+          "size": 32421,
+          "sha256": "78e07a79cf6492f7419cefa282ceb17b85f304216e89e5245de67a8f6c303bd7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000058.json",
+          "size": 32304,
+          "sha256": "227177378563f84766aaaffb83bb53bb8c1e2d3e5763d3ec106fdaa6e33c52db"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000019.json",
+          "size": 30742,
+          "sha256": "9a7b6c30e7e8fef13b0250e848c7b7a9809e7238aaee8ebe52fa76c7746b86e3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000062.json",
+          "size": 30332,
+          "sha256": "68f679a06d460d0cf58c79d521db87501d945587c02fd9e9270130c396bd8236"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000035.json",
+          "size": 30605,
+          "sha256": "a4abd2eea7cec36ff78288836721af07ba736cbb8b92d9198f3fcf454d69be64"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000023.json",
+          "size": 32324,
+          "sha256": "a5e29947ea28bba38a8079604aaef3353b058ee1a6762271c8491ea4c59c4e1e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000074.json",
+          "size": 32244,
+          "sha256": "b36caa1eb828edb7e4ca0abb20a9df615e952936a359cbebbcf16d502e16d50f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000003.json",
+          "size": 32624,
+          "sha256": "80a843ec5031e8287e7cc0f60a55e6a7d5b67465e2614ec6635c73616e82c8f3"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000054.json",
+          "size": 30760,
+          "sha256": "c7186c9d5e8288a7a369ab5f23f6e5240a9c1b4d5bf9fbee59273b845dbb9887"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000042.json",
+          "size": 30649,
+          "sha256": "23a194ad43f618c70262832a2278e99fe2ec1be7c9b126cbbb81026efd585e02"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000015.json",
+          "size": 32284,
+          "sha256": "1b4ddffd450ac630043fce5a3808141d0d4f3ebc5e31235dbd1cbd9385b30bfb"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000081.json",
+          "size": 30492,
+          "sha256": "0262f71f6508932461411ed39976a99aa8dd3fe18951102f460bd5e97ebbf734"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000039.json",
+          "size": 30697,
+          "sha256": "d40d83bfac19f453756743c0edcec92e58fe47692984c4b4ecc41435655e7c6a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000097.json",
+          "size": 30481,
+          "sha256": "a0bdbb9afb2a939846c919ca7086a19148e60e730e535e7b1da81270e7d63fd7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_exp/metadata/000078.json",
+          "size": 30502,
+          "sha256": "fe948b8c6b0ec3bdf23c0ee40eaded73fff7a890b8025019489ae2d852c8ef2a"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/exp/VLM_blue_blur50_yaw20",
+      "files": 83,
+      "bytes": 13704174,
+      "entries": [
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/.DS_Store",
+          "size": 8196,
+          "sha256": "4bba2eab74f90b7a5ee807a41b99930ff71461710f6971873a6b16b9b0b24ff9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/plan.json",
+          "size": 149040,
+          "sha256": "2b2915915075eb73b8757df1a9757cc5eac88efb34bedcefff457fdd8f5fd347"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/config.json",
+          "size": 3548,
+          "sha256": "bc845407a36009ed9c70a8dee134dfe1da258687bb45149c1b0d79dc74eb0f1a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/generator_snapshot.py",
+          "size": 13824,
+          "sha256": "0e80ecba7b25db4da7ac22d914e7c26dbfc4e39614911a5724a2ec24d907abad"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/status.json",
+          "size": 178,
+          "sha256": "70829b827bb3ff5774a920bedb43559d4bbec73a63b756f46f9082fb162bffe5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000019.png",
+          "size": 355698,
+          "sha256": "296fc9f066f3987c1ba0d8aff885ef936feb4f14b6d7f1348751702e49380db7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000025.png",
+          "size": 351394,
+          "sha256": "33ca431aad769c05b2312a917e1c12c81f6205c3a0b040e2a5df15ed2abf183a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000024.png",
+          "size": 658947,
+          "sha256": "c1b9c78e1c4e6161483041234b73a1f77619c94bc4e76628e56c30faba8c8397"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000018.png",
+          "size": 370588,
+          "sha256": "6f38cbd8825b9ef64abdf885f3c7c7d5e06e9522506b681d0d354cc0b57a264d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000020.png",
+          "size": 370142,
+          "sha256": "4b4fe7edf9a511317082012afc2bb8b3fc1d2657990c0da4a4d349b7fb1fd8d7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000008.png",
+          "size": 582022,
+          "sha256": "3df7118655353df27d2939bd110892d54c14a72978e7aeb258d45600a2f461e2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000009.png",
+          "size": 357669,
+          "sha256": "ff4da8c897e5e7c541435aead2ca804891bd6c3bd6fca8f5ca7e26477e3c6866"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000021.png",
+          "size": 366462,
+          "sha256": "94420b3b7d912adf294e16c6681461f4bcb2bfff4dcb319c6617e216970cc4b6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000023.png",
+          "size": 455464,
+          "sha256": "0641a9844cc242faac8e0be41670502e195c032a06624d2d187dcf594ad72562"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000022.png",
+          "size": 366121,
+          "sha256": "d0bf2eb85671883ba3a702c3d16f2b558ea901e433d3f3378f55782971fc3eae"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000013.png",
+          "size": 385675,
+          "sha256": "0d0d9e1c7b24a178397dfbdb7f8ab8a475f8dc3d2baf85c47c7c92ecc6cd8060"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000007.png",
+          "size": 388304,
+          "sha256": "3e4a557e4612e54785030de337b6ec18292c2788c2e2eb296a259d87325f74aa"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000006.png",
+          "size": 316687,
+          "sha256": "da3b667f900336d5e6c662846f267cdcce8b24705357ccbcae2058c904272ae5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000012.png",
+          "size": 374132,
+          "sha256": "78c938614809ecd72dd14f51fd73fe91e126dd5dce8d55457bddc9b3eb7fe85a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000004.png",
+          "size": 383109,
+          "sha256": "97b7410e0ec4bf385b302dca5769786efa8cad5954e72369a2600697e49f70fe"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000010.png",
+          "size": 328643,
+          "sha256": "5888fc39cbd5a8a50e2185d5d2c100c688b748a11e65286ec2c687f69e650686"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000011.png",
+          "size": 382896,
+          "sha256": "eb32667c89578d34cf541503a8203a0fac204723c2e7ebbc3fda3bc8546c661b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000005.png",
+          "size": 344031,
+          "sha256": "503788b7d2286e5d33595961602b91525d00938c54da69cd24e8b0e7447fde8c"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000001.png",
+          "size": 646741,
+          "sha256": "f75da2752154e3582d9338db99cb2c69fb3acb2ab87fa519feef48e6f6c85d47"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000015.png",
+          "size": 332038,
+          "sha256": "c0ad8c3ce052301f138a37085824178c879c4a1d0baeed2055b5330402ea58c5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000014.png",
+          "size": 371607,
+          "sha256": "3ad14f41e5aec1474216498b02d5a2d7bb339530d1d85fe50ff95b9075d5e7c0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000016.png",
+          "size": 410150,
+          "sha256": "431c4e5008e049691c2b6e768981f936df39e55ea8b6af57b3f83fb57c25d209"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000002.png",
+          "size": 368418,
+          "sha256": "88a1c955b3e10e08b3eb8d4330c4f5260b113e5408ada97afe8c71c9a83660b5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000003.png",
+          "size": 369145,
+          "sha256": "4c38dbdb068a5685277c99dc335d6be547fb99b12a418ebd324f5aa00d368bf2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/images/000017.png",
+          "size": 392274,
+          "sha256": "80a2e50e02193b042766c8fa0571b95f5d3c9126270e4f87eab5ab07162a4870"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000024.txt",
+          "size": 530,
+          "sha256": "57f0d6bfdf03e1cff465b940e55ad4decbb30cf26c377f2d87b432326395e04f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000018.txt",
+          "size": 530,
+          "sha256": "8d8f12a2848bb8f88a6a04659b8e10a39053e652529eb6e111ecebd5c9ea67f4"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000019.txt",
+          "size": 530,
+          "sha256": "67ff3a2add49ca3d9c236cbd9bae14c9fb6f1489329d95950f74b7108382ddfd"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000025.txt",
+          "size": 530,
+          "sha256": "cbe617639dd95aafa4b9fe27a4c1bdbcf32e20c5e11e00cb1bdc21ad8109bff7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000009.txt",
+          "size": 530,
+          "sha256": "751661c52d32c79348e9923b5f473a3fb87a24c18201ba5ba58d1dff4c3c79f2"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000021.txt",
+          "size": 530,
+          "sha256": "d95b845de5ca2baa81df635f5b4b8b07e316b445a5694feac743abf8e6eaec00"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000020.txt",
+          "size": 530,
+          "sha256": "26ad665ebc351131dc796a572e1b215cb96705e43433f26c4f173f034f5b7b65"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000008.txt",
+          "size": 530,
+          "sha256": "66dd350bc205695cc375a6797bf861a9edee0d2d07c0199ec1238bfeeaaf9416"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000022.txt",
+          "size": 530,
+          "sha256": "dab1248efce71be13c83fd9fd128eb1805c591cb3f1c145ad97c94df7da6d245"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000023.txt",
+          "size": 530,
+          "sha256": "4b6cbd5cdb05d71f3f5e780a6770e3baf6ea3b65b40f1a322f7a3fb70fd6e8de"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000012.txt",
+          "size": 530,
+          "sha256": "8406e1e725ba33db57893f31f58c90da313ca29ccb6d626a75d8d2b469f376a7"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000006.txt",
+          "size": 530,
+          "sha256": "0cceeb3e748106af0d96969f2eb8b43f114429e0e7e2c31d49e47879091dc537"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000007.txt",
+          "size": 530,
+          "sha256": "00920029f53de7d72fc1444739665ab353f4db1be14c9f9cd21050bac4ac69d1"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000013.txt",
+          "size": 530,
+          "sha256": "09b8e0cad41c6d5732cdfe68a216868352e834344c85aed37cc97b852f408715"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000005.txt",
+          "size": 530,
+          "sha256": "3b4476c940f79b076947617c9ea0eefa341daed0fd253f12d36d5306b6b2bb97"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000011.txt",
+          "size": 530,
+          "sha256": "d9acb7d812659eff05565e7fc6f39573ddc6c0943f9bc92952c0f9484c724cb9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000010.txt",
+          "size": 530,
+          "sha256": "230bdb9c2336d475a0f0cf5202b17f5d5381b5ad35cb12712aadcf0f573413e6"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000004.txt",
+          "size": 530,
+          "sha256": "7e6569f47edf8e1f5d73fa265fbe771c17156ac85f24d380e602f71a2d8de540"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000014.txt",
+          "size": 530,
+          "sha256": "818982436610836f9719211c58c809c2449655c1e3dd09c354160d2f03d85240"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000015.txt",
+          "size": 530,
+          "sha256": "e020978420bd1af22f7d0bdd75ec4b087bb0280df9e9d8b500870006d157e02d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000001.txt",
+          "size": 530,
+          "sha256": "01985efd8c52bccaf520221a633c83e27dbdb7c3af180e0446e85e5f64b9755b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000017.txt",
+          "size": 530,
+          "sha256": "65f50dffc884e9f3ff2193d37dd06b48222bd69bf288dfe41c094035f8e74b49"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000003.txt",
+          "size": 530,
+          "sha256": "e588b0da8a787ac0cd148583b556d3b4d2904ff5821385434e88c1c77ddc9e3f"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000002.txt",
+          "size": 530,
+          "sha256": "473dee2fd1af525ebe06aac8f7a75779be87e308fd5b260038b41b030b89ab9e"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/labels/000016.txt",
+          "size": 530,
+          "sha256": "2ad3b4a5ed68c006d122667784dce9cd30391f19b1c5fc41376788898eba34e8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/__pycache__/generator_snapshot.cpython-39.pyc",
+          "size": 11716,
+          "sha256": "e4eaa2501be88e4e1cb9b160231e61804bbe982083b9c54954551850c448de95"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/collage_001_010/sources.json",
+          "size": 1700,
+          "sha256": "34951dfbbab71e5addb00db89d8a06e2a713e186033c2c97bc9cf67a60a579c8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/collage_001_010/collage_001_010.png",
+          "size": 2628723,
+          "sha256": "f8ddb3b8eb86828d467c31bcb53508aab399848c19601b93824ed7fa498b05c5"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000016.json",
+          "size": 33582,
+          "sha256": "f7a784e36d2fda4d0b4c5cd124b37f78db0e1080a45f8c22c52d43055d987f57"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000020.json",
+          "size": 34116,
+          "sha256": "b308dd63c6c163047cfb1d1d1b42f845b58bb0f14c22d43edf374092b1ab3fda"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000021.json",
+          "size": 33656,
+          "sha256": "8e7afa70a59b741115d5a7762b8d48f819ad80d3684e65881c4302ca7ad04c65"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000017.json",
+          "size": 33857,
+          "sha256": "46efc350a50488fe23d700c691b5f1aac931b9a405ea44adc72cd8248dfa900b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000001.json",
+          "size": 33942,
+          "sha256": "599232bf16f78d18d45abc0a080197a7f3de2149ce489a43e33a976b652a94e0"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000006.json",
+          "size": 33658,
+          "sha256": "a6a71b8f883d46541761551313ba0cd8c8a70b524415f508fd5689294f637ab9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000010.json",
+          "size": 33905,
+          "sha256": "13f0ff8e6b33bf77e181035a9c3624bb10e4631a84cafd738baa4edd3a884420"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000011.json",
+          "size": 33569,
+          "sha256": "4ade308a2427bddc796bd362f687078856f2554cc297a945490158d05e1ee6f8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000007.json",
+          "size": 33651,
+          "sha256": "0eef3ed87eb7879b84978bbf70a6ac1ea75fd33ac0e4f33b9a1d4ac9e35beb34"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000024.json",
+          "size": 33807,
+          "sha256": "fcf2f74a79d29819c1132244bdc4b67b9140ff99b1e29a881ab4ecd71d987d45"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000008.json",
+          "size": 34451,
+          "sha256": "0443f318fdee021482112d45314ea34ea53ffdbe21d5e33b8ef0d0bf01a22f08"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000012.json",
+          "size": 33942,
+          "sha256": "987e5307685bfda579ed58eb0eb736e60e9f49a794beeda130cfa5a06cf3176a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000004.json",
+          "size": 33878,
+          "sha256": "aec9cd03725e54eca718c0c55d23c329e6c75f9cedd611868a67d06b99486d74"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000005.json",
+          "size": 33862,
+          "sha256": "6746ec1e956603cab2df261d6a2ec6808da1121d60fce3c0afed445dcff86a3b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000013.json",
+          "size": 33919,
+          "sha256": "ba4301528a2257bab9e3e244260e1e1a4a7b311b07bdfbab032b1031b4bf3166"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000009.json",
+          "size": 33963,
+          "sha256": "86c70829f77155af40c09bf1ea808df782b2cddfc6b584a17fcecb38d831e50b"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000025.json",
+          "size": 33662,
+          "sha256": "b5d668e0d1e5c10e8ce94bc32f5ff525904792c032643325b6c20d2e3cf43e61"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000014.json",
+          "size": 34007,
+          "sha256": "04fd0c945d846307f9a92c877b7e8cb9127dca0d52d839c5bea7ab8a3f5b9ec8"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000002.json",
+          "size": 34160,
+          "sha256": "7ead201f96006bfc96345b36c6657a908e94613421cadb82a859277087c82e25"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000022.json",
+          "size": 33461,
+          "sha256": "cdd64ff11a39ad96e766e02b80c48e1414e9f8841e7caa301e50178ee782aaf9"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000018.json",
+          "size": 33704,
+          "sha256": "9d4ffcf9cd08e4cca805534335b54238a4fd9928d5c1722b998d82bbe4980335"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000019.json",
+          "size": 33780,
+          "sha256": "6e8ced52cea9f6ec28c9aa048a8df7be46e4b9e8bc910199876f445bb0ee890a"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000023.json",
+          "size": 33819,
+          "sha256": "ae0986726b0b2e03d37b055f6649251928b2a5c59cbc1288c303cbe6427a2d1d"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000003.json",
+          "size": 33627,
+          "sha256": "d45a509c06bd040c7233c01daf9bb707d35cd968bb5918b5dd26517f6685aa79"
+        },
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20/metadata/000015.json",
+          "size": 33664,
+          "sha256": "ed7fa944e36709b7494945413894e502465a0fce1c4554d4a4f342eb2c1a5a7b"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/exp/VLM_blue_blur50_yaw20.process.json",
+      "files": 1,
+      "bytes": 863,
+      "entries": [
+        {
+          "path": "3D_worker/exp/VLM_blue_blur50_yaw20.process.json",
+          "size": 863,
+          "sha256": "06a26764d96429887b6d281e2a4146106bbc6c24b5055cc9b70bd4300c5e8345"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/__pycache__/generate_vlm_exp.cpython-39.pyc",
+      "files": 1,
+      "bytes": 12985,
+      "entries": [
+        {
+          "path": "3D_worker/__pycache__/generate_vlm_exp.cpython-39.pyc",
+          "size": 12985,
+          "sha256": "8c5b97072b54d62250ff1fd121fc331793ad33c7260bee24e1abf87f44131594"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/__pycache__/generate_vlm_exp.cpython-313.pyc",
+      "files": 1,
+      "bytes": 24407,
+      "entries": [
+        {
+          "path": "3D_worker/__pycache__/generate_vlm_exp.cpython-313.pyc",
+          "size": 24407,
+          "sha256": "46638a156d8c60228b85a92d4f84fbf50960e67a1075896267e3868c1ccc5997"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/review_final_stage1.py",
+      "files": 1,
+      "bytes": 7976,
+      "entries": [
+        {
+          "path": "3D_worker/review_final_stage1.py",
+          "size": 7976,
+          "sha256": "8d5188c82fa6cac8eb3c8d9bf830f654ed5333cd4002f1d741d1c038c1276f01"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/review_raised_stage1.py",
+      "files": 1,
+      "bytes": 4863,
+      "entries": [
+        {
+          "path": "3D_worker/review_raised_stage1.py",
+          "size": 4863,
+          "sha256": "fc18c41346cc255e40bdbb3b6625d4cc581c40d353d8841c1372880972927d4b"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/review_stage1.py",
+      "files": 1,
+      "bytes": 4085,
+      "entries": [
+        {
+          "path": "3D_worker/review_stage1.py",
+          "size": 4085,
+          "sha256": "3aed2b2a82045a3a31891c26725db54110c325e02229eb268fed0c84a9bd02f9"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/prepare_font_review.py",
+      "files": 1,
+      "bytes": 2345,
+      "entries": [
+        {
+          "path": "3D_worker/prepare_font_review.py",
+          "size": 2345,
+          "sha256": "b2fb57068f9d39774fa3d96fbc112ceea5fe4eedb1fe3482d92a82336b9a5866"
+        }
+      ]
+    },
+    {
+      "path": "3D_worker/industrial_fonts_review.py",
+      "files": 1,
+      "bytes": 4943,
+      "entries": [
+        {
+          "path": "3D_worker/industrial_fonts_review.py",
+          "size": 4943,
+          "sha256": "429254eb48cc8c4007fdf71d23e52d21674a39f8416e967b2a380cd978ea709d"
+        }
+      ]
+    }
+  ],
+  "files": 398,
+  "bytes": 96989339
+}

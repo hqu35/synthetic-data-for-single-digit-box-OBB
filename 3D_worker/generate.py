@@ -1,4 +1,9 @@
 """blender --background --factory-startup --python generate.py -- --config configs/preview.json"""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import copy
 import hashlib
@@ -16,7 +21,7 @@ from digitgen.sampling import sample_parameters, wheel_state
 
 
 def code_hash():
-    files = [ROOT/'generate.py', *sorted((ROOT/'digitgen').glob('*.py'))]
+    files = [ROOT/'generate.py', *sorted((ROOT.parent/'shared'/'digitgen').glob('*.py'))]
     return hashlib.sha256(b''.join(p.read_bytes() for p in files)).hexdigest()
 
 
@@ -67,7 +72,7 @@ def main():
     replay = json.loads(args.replay.read_text()) if args.replay else None
     if replay and replay.get('schema_version')!=2:
         raise ValueError('This UV-textured mechanical generator replays schema 2 metadata; schema 1 belongs to the earlier curved-mesh baseline.')
-    c = copy.deepcopy(replay['config']) if replay else load_config(ROOT/args.config)
+    c = copy.deepcopy(replay['config']) if replay else load_config((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config))
     if args.count is not None:
         c['count'] = args.count
     validate_config(c)

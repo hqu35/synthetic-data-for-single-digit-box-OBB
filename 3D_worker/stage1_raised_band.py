@@ -1,4 +1,9 @@
 """Fixed raised-band geometry review ONLY. One five-slot diagnostic OBB overlay."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import copy
 import hashlib
@@ -110,7 +115,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--config',default='configs/stage1_raised_band.json')
     parser.add_argument('--output',default='outputs/stage1_raised_band')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    c=json.loads((ROOT/args.config).read_text());d=raised_layout(c);p=parameters(c,d);verify_spec(p['texture'])
+    c=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());d=raised_layout(c);p=parameters(c,d);verify_spec(p['texture'])
     if c['digit_sequence']!='00054' or c['transition_progress']!=[0,0,0,0,.05]:raise ValueError('Fixed Stage 1 reference states required')
     out=(ROOT/args.output).resolve()
     if out.exists() and any(out.iterdir()):raise ValueError('Use a new or empty review output directory')
@@ -158,7 +163,7 @@ def main():
     # Before/after: reconstruct previous geometry, but freeze the NEW front
     # camera matrix, lens, render settings, font, plastic and light setup.
     camera_matrix=cameras['B_single_digit_front'].matrix_world.copy();lens=cameras['B_single_digit_front'].data.lens
-    old=json.loads((ROOT/c['previous_config']).read_text())
+    old=json.loads((ROOT.parent/'shared'/c['previous_config']).read_text())
     # Use identical font/raster settings on both sides of the comparison; the
     # high-resolution mask is solely to avoid pixelated inspection close-ups.
     old['typography']=copy.deepcopy(c['typography']);op=fixed_parameters(old)
@@ -171,7 +176,7 @@ def main():
     if views['F_before_single_front']['camera_matrix_world']!=views['B_single_digit_front']['camera_matrix_world']:
         raise AssertionError('Before/after camera conditions changed')
     write_json(out/'geometry_checks.json',checks)
-    sources=[ROOT/'stage1_raised_band.py',ROOT/'digitgen/raised_layout.py',ROOT/'digitgen/raised_mechanics.py',ROOT/'digitgen/mechanics.py',ROOT/'digitgen/materials.py']
+    sources=[ROOT/'stage1_raised_band.py',ROOT.parent/'shared'/'digitgen/raised_layout.py',ROOT.parent/'shared'/'digitgen/raised_mechanics.py',ROOT.parent/'shared'/'digitgen/mechanics.py',ROOT.parent/'shared'/'digitgen/materials.py']
     write_json(out/'inspection_report.json',{'stage':'Stage 1 raised-band revision; STOP for human approval',
         'randomization':False,'training_dataset_generated':False,'config':c,'parameters':p,'layout':d,
         'checks':checks,'views':views,'test_obb_corners_px':boxes,'projected_slot_boundaries_px':boundaries,

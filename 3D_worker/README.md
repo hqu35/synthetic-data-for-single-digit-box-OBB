@@ -1,9 +1,14 @@
 # 3D graphics worker
 
-3D renderers and review scripts live here. `generate_vlm_exp.py` and `generate_scratch_multi.py` are primary batch entry points. Existing experiments and scene dependencies live under `exp/`. `outputs` is a compatibility link to `exp`; `assets`, `configs`, and `digitgen` point to shared components.
+The shared 3D scene and scratch generation entry point are in [scene](scene/README.md). Existing experiments and scene dependencies live under `exp/`; `outputs` is a compatibility link to `exp`. Shared assets and modules live under `../shared/`.
 
-```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python 3D_worker/generate_vlm_exp.py -- --count 1 --output exp/my_new_batch
-```
+## Semantic organization
 
-Run from the repository root; the relative output path is resolved within `3D_worker/`. Material-experiment code remains in `experiments/`; its results are in `exp/material_experiments/` with compatibility links.
+- `effects/blur/`: blur-specific visual review.
+- `effects/shear/`: X-shear comparison and OBB review.
+- `effects/glass/`: glass scene and optics review scripts.
+- `geometry/rolling/`: digit atlas, wheel size, rolling order, and gap review scripts.
+- `experiments/glass_heavy_scratches_001/` and `experiments/glass_surface_noise_001/`: glass scratch and surface-noise implementations and experiments.
+- `scene/`: shared 3D scene construction and scratch generation; these use shared geometry, materials and OBB logic.
+
+The `2.5D_blurry_4_diffusion` worker uses this same 3D scene and existing OBB pipeline; blur does not require a separate OBB algorithm.

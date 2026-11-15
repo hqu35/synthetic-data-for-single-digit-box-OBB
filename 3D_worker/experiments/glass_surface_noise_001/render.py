@@ -1,10 +1,15 @@
 """Render controlled physical-glass surface experiments in the 3D worker."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse,copy,hashlib,json,math,random,sys
 from pathlib import Path
 HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[1];sys.path.insert(0,str(ROOT))
 import bpy
 import numpy as np
-from generate_vlm_exp import setup,CONFIG,SOURCE_PARAMS,ROLLING_ATLAS_CONFIG,sha
+from scene.scene_core import setup,CONFIG,SOURCE_PARAMS,ROLLING_ATLAS_CONFIG,sha
 from digitgen.assets import texture_spec,verify_spec
 from digitgen.export import export_labels,write_json
 
@@ -82,7 +87,7 @@ def main():
     if not cases or (args.case and set(args.case)!={case['name'] for case in cases}):raise ValueError('Unknown or empty case selection')
     reference=None
     for case in cases:
-        scene,states,regions,resolved,framing=setup(item,c,source,config['width_scale'],ROOT/atlas['path'],rolling['geometry'])
+        scene,states,regions,resolved,framing=setup(item,c,source,config['width_scale'],ROOT.parent/'shared'/atlas['path'],rolling['geometry'])
         scene.cycles.samples=config['samples'];scene.cycles.seed=config['seed'];scene.render.threads=config['threads']
         signature=geometry_signature();camera=[list(row) for row in scene.camera.matrix_world];boxes=[r['obb_px'] for r in regions]
         invariants={'geometry_sha256':signature,'camera_matrix_world':camera,'camera_lens_mm':scene.camera.data.lens,'digit_states':states,'boxes':boxes,'lighting':resolved['lights'],'resolution':config['resolution']}

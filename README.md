@@ -1,15 +1,15 @@
-> **Repository organization (2026-11-07):** The current entry points are [2D_blurry](2D_blurry/README.md), [3D_worker](3D_worker/README.md), [2d_mask](2d_mask/README.md), and [shared](shared/README.md). Each worker has an `exp/` directory. See the [dependency graph and migration notes](docs/reorganization_2026-11-07/dependency_graph.md). The historical commands below may use old script locations; use the worker READMEs for current commands.
+> **Repository organization (2026-11-07):** The current entry points are [2.5D_blurry_4_diffusion](2.5D_blurry_4_diffusion/README.md), [3D_worker](3D_worker/README.md), [2d_mask_4_diffusion](2d_mask_4_diffusion/README.md), and [shared](shared/README.md). Each worker has an `exp/` directory. See the [dependency graph and migration notes](shared/docs/reorganization_2026-11-07/dependency_graph.md). The historical commands below may use old script locations; use the worker READMEs for current commands.
 
 # Blender mechanical digit-register data
 
-> **Latest review: [five moderate-perspective views with OBBs](docs/perspective_review.md).**
+> **Latest review: [five moderate-perspective views with OBBs](shared/docs/perspective_review.md).**
 > The previous 200-view batch was rejected for insufficient visible perspective.
 > The current worker defaults to [`configs/perspective_review.json`](configs/perspective_review.json).
-> The [industrial-font candidates](docs/industrial_fonts_review.md),
-> [corrected band OBBs](docs/obb_band_stage1.md), glass and required mechanical
+> The [industrial-font candidates](shared/docs/industrial_fonts_review.md),
+> [corrected band OBBs](shared/docs/obb_band_stage1.md), glass and required mechanical
 > references are preserved. Further generation is paused until the user restarts it; the rejected
 > 22-image environmental-framing run was removed with explicit cleanup approval.
-> See the [cleanup report](docs/cleanup_report.md). Dataset commands below also
+> See the [cleanup report](shared/docs/cleanup_report.md). Dataset commands below also
 > describe legacy functionality and do not authorize a new batch.
 
 A headless Phase II generator with cylindrical UV-printed digit wheels, independently
@@ -25,7 +25,7 @@ Validated with Blender **5.1.1**, Cycles **CPU**, Python 3.9, Pillow 11.3 and Nu
 GPU is required. Install Blender separately, then:
 
 ```bash
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r shared/requirements.txt
 python3 run.py --config configs/preview.json --output outputs/my_batch
 ```
 
@@ -68,7 +68,7 @@ python3 validate.py outputs/my_replay
 python3 run.py --index 24 --output outputs/my_index24
 python3 -m unittest discover -s tests -v
 blender --background --factory-startup --python-exit-code 1 \
-  --python tests/blender_checks.py
+  --python shared/tests/blender_checks.py
 ```
 
 ## Configuration and mechanical layout
@@ -176,7 +176,7 @@ for legibility; cream/basic use dark ink.
 
 The guide was read at
 `/Users/ququ/Documents/Codex/2026-10-28/chat-354-midterm-ii-access-to-2/outputs/Plastic_Shader_Guide/Plastic_Shader_操作指南.md`.
-See [shader implementation notes](docs/shader.md) for values and provenance.
+See [shader implementation notes](shared/docs/shader.md) for values and provenance.
 
 ## Separate photographic controls
 
@@ -261,7 +261,7 @@ Tests additionally check actual Blender UVs, shader topology/settings, pin attac
 rolling wraparound and 250 wheel-state OBB-invariance cases. Material and camera
 comparison scene invariance is audited separately. Visual inspection remains
 necessary: geometry checks do not establish photorealism or detector performance.
-See [the current validation report](docs/upgrade_validation.md).
+See [the current validation report](shared/docs/upgrade_validation.md).
 
 The [previous Three.js pipeline](https://github.com/hqu35/water-meter-synthetic-data-pipeline)
 was inspected read-only for layout, projection and appearance conventions. This
@@ -277,14 +277,14 @@ screenshots. Matching to those four mechanical photographs remains unverified.
 
 ## Independent font and glass review
 
-Industrial font presets: [review report](docs/industrial_fonts_review.md).
-Native physical protective cover: [glass report](docs/glass_review.md).
+Industrial font presets: [review report](shared/docs/industrial_fonts_review.md).
+Native physical protective cover: [glass report](shared/docs/glass_review.md).
 These fixed review artifacts preserve the approved mechanics and defer atlas spacing/transition calibration.
-Formal dated deliveries are indexed in [DELIVERIES.md](DELIVERIES.md); source `outputs/` folders are staging.
+Formal dated deliveries are indexed in [DELIVERIES.md](shared/DELIVERIES.md); source `outputs/` folders are staging.
 
 ## Numeral-band annotation correction — Stage 1 checkpoint
 
-[Single-sample report and review artifacts](docs/obb_band_stage1.md). The approved
+[Single-sample report and review artifacts](shared/docs/obb_band_stage1.md). The approved
 raised-register model now has a mesh-derived `visible_numeral_band` adapter in
 `digitgen/band_annotations.py` and a fixed review entry point `obb_band_stage1.py`.
 Its class 0 covers the central printed cream band rather than the whole slot;

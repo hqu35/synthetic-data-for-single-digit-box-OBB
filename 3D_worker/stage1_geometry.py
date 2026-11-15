@@ -1,4 +1,9 @@
 """STAGE 1 ONLY: fixed mechanical inspection. Never generates training labels/data."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import copy
 import hashlib
@@ -179,7 +184,7 @@ def main():
     parser.add_argument('--output',default='outputs/stage1_geometry')
     parser.add_argument('--debug',action='store_true')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    cfg=json.loads((ROOT/args.config).read_text());p=fixed_parameters(cfg);verify_spec(p['texture'])
+    cfg=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());p=fixed_parameters(cfg);verify_spec(p['texture'])
     if cfg['stage']!='geometry_review_only' or cfg['digit_sequence']!='00054':raise ValueError('Stage 1 fixed inspection configuration required')
     out=(ROOT/args.output).resolve()
     if out.exists() and any(out.iterdir()):raise ValueError('Inspection output must be new or empty')
@@ -219,7 +224,7 @@ def main():
         debug_geometry()
         views['G_topology_debug'],_=render_view('G_topology_debug',cfg['views'][a],cfg,p,z,out,camera=cameras[a])
         bpy.ops.wm.save_as_mainfile(filepath=str(out/'stage1_debug.blend'))
-    files=[ROOT/'stage1_geometry.py',ROOT/'digitgen/mechanics.py',ROOT/'digitgen/materials.py']
+    files=[ROOT/'stage1_geometry.py',ROOT.parent/'shared'/'digitgen/mechanics.py',ROOT.parent/'shared'/'digitgen/materials.py']
     report={'stage':'Stage 1 only; STOP for human geometry review','training_dataset_generated':False,
             'config':cfg,'parameters':p,'geometry_checks':checks,'views':views,'objects':inventory,
             'blender_version':bpy.app.version_string,'source_sha256':hashlib.sha256(b''.join(f.read_bytes() for f in files)).hexdigest(),

@@ -1,4 +1,9 @@
 """Build a seamless cylindrical ink mask with an openly licensed font (host Python)."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import hashlib
 import json
@@ -37,11 +42,11 @@ def prepare(config, update_current=True):
         _, crops=build_photo_atlas(config)
         manifest=texture_spec(config);manifest['source_crops']=crops
         if update_current:
-            (ROOT/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
+            (ROOT.parent/'shared'/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
         return manifest
-    font_path = ROOT/t['font']
+    font_path = ROOT.parent/'shared'/t['font']
     key = hashlib.sha256(font_path.read_bytes()+json.dumps(t,sort_keys=True).encode()).hexdigest()[:16]
-    destination = ROOT/'assets/atlases'/f'ink_{key}.png'
+    destination = ROOT.parent/'shared'/'assets/atlases'/f'ink_{key}.png'
     destination.parent.mkdir(parents=True,exist_ok=True)
     identity=ImageFont.truetype(str(font_path),100).getname()
     if 'font_family' in t and t['font_family'].casefold()!=identity[0].casefold():
@@ -84,7 +89,7 @@ def prepare(config, update_current=True):
                 'uv_definition':'u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u',
                 'license':t.get('font_license','assets/fonts/OFL.txt')}
     if update_current:
-        (ROOT/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
+        (ROOT.parent/'shared'/'assets/atlases/current.json').write_text(json.dumps(manifest,indent=2)+'\n')
     return manifest
 
 
@@ -95,4 +100,4 @@ if __name__=='__main__':
     from font_candidates import PRESETS, resolve_config
     parser.add_argument('--font-preset', choices=sorted(PRESETS))
     args = parser.parse_args()
-    print(json.dumps(prepare(resolve_config(load_config(ROOT/args.config), args.font_preset)),indent=2))
+    print(json.dumps(prepare(resolve_config(load_config((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)), args.font_preset)),indent=2))

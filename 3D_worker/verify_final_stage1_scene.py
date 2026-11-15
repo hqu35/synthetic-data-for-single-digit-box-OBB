@@ -1,4 +1,9 @@
 """Reload the saved review .blend and verify actual shader and rolling OBB invariance."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import json
 import math

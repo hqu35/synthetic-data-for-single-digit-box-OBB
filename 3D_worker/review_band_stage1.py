@@ -1,4 +1,9 @@
 """Audit the single saved sample and create overlays from the exact exported labels."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import hashlib
 import json
@@ -18,7 +23,7 @@ def main():
     report=json.loads((out/'inspection_report.json').read_text());res=report['resolution']
     assert report['rendered_rgb_count']==1 and not report['stage2_started']
     assert report['scene_signature_before']==report['scene_signature_after']
-    assert report['implementation_sha256']==hashlib.sha256((ROOT/'digitgen/band_annotations.py').read_bytes()).hexdigest()
+    assert report['implementation_sha256']==hashlib.sha256((ROOT.parent/'shared'/'digitgen/band_annotations.py').read_bytes()).hexdigest()
     im=Image.open(out/'000001.png').convert('RGB');assert im.size==tuple(res)
     boxes=read_labels(out/'000001.txt',res);assert len(boxes)==len(report['regions'])==5
     overlay=im.copy();draw=ImageDraw.Draw(overlay)

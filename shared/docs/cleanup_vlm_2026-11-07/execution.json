@@ -1,0 +1,27 @@
+{
+  "state": "completed",
+  "deleted_files": 398,
+  "deleted_bytes": 96989339,
+  "deleted_paths": [
+    "3D_worker/generate_vlm_exp.py",
+    "3D_worker/exp/VLM_exp",
+    "3D_worker/exp/VLM_blue_blur50_yaw20",
+    "3D_worker/exp/VLM_blue_blur50_yaw20.process.json",
+    "3D_worker/__pycache__/generate_vlm_exp.cpython-39.pyc",
+    "3D_worker/__pycache__/generate_vlm_exp.cpython-313.pyc",
+    "3D_worker/review_final_stage1.py",
+    "3D_worker/review_raised_stage1.py",
+    "3D_worker/review_stage1.py",
+    "3D_worker/prepare_font_review.py",
+    "3D_worker/industrial_fonts_review.py"
+  ],
+  "retained": [
+    "2.5D_blurry_4_diffusion/generate_degraded_register.py",
+    "3D_worker/scene/scene_core.py",
+    "3D_worker/scene/generate_scratch_multi.py",
+    "2d_mask_4_diffusion/geometry_worker",
+    "shared/assets",
+    "3D_worker/exp/glass_review/protective_glass_review.blend",
+    "3D_worker/exp/scratch_multi_version"
+  ]
+}

@@ -1,4 +1,9 @@
 """Final Stage 1 fixed pin/typography/ink review; never runs a dataset batch."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import copy
 import hashlib
@@ -37,7 +42,7 @@ def configure_scene(c):
 def change_print(c,p,typography=None,gloss=True):
     sample=copy.deepcopy(p['appearance']);sample['ink_gloss_enabled']=gloss
     spec=texture_spec({'typography':typography or c['typography']});verify_spec(spec)
-    image=bpy.data.images.load(str(ROOT/spec['path']),check_existing=True);image.colorspace_settings.name='Non-Color'
+    image=bpy.data.images.load(str(ROOT.parent/'shared'/spec['path']),check_existing=True);image.colorspace_settings.name='Non-Color'
     mat=plastic('Inspection printed surface',sample,image)
     for i in range(5):bpy.data.objects[f'wheel_{i}_raised_band'].data.materials[0]=mat
     return mat,spec
@@ -76,7 +81,7 @@ def main():
     parser.add_argument('--output',default='outputs/stage1_final_refinement')
     parser.add_argument('--preview',action='store_true',help='Render just the 3/4 pin closeups and row at lower sample count')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    c=json.loads((ROOT/args.config).read_text());c['material']['ink_color']=c['typography']['glyph_ink_color']
+    c=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());c['material']['ink_color']=c['typography']['glyph_ink_color']
     if args.preview:c['samples']=16
     resolved=copy.deepcopy(c);resolved.update(calibrate_pins(c,3));resolved['target_visible_pins']=3
     d=raised_layout(resolved);p=parameters(resolved,d);verify_spec(p['texture'])
@@ -139,7 +144,7 @@ def main():
     for image in bpy.data.images:
         if image.source=='FILE':image.pack()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'final_stage1_review.blend'))
-    files=[ROOT/'stage1_final_refinement.py',*sorted((ROOT/'digitgen').glob('*.py')),ROOT/'prepare_assets.py']
+    files=[ROOT/'stage1_final_refinement.py',*sorted((ROOT.parent/'shared'/'digitgen').glob('*.py')),ROOT/'prepare_assets.py']
     report={'stage':'Final Stage 1 refinement; STOP for human approval','training_dataset_generated':False,'randomization':False,
         'config':c,'resolved_three_pin_config':resolved,'four_pin_calibration':calibrate_pins(c,4),
         'layout':d,'parameters':p,'geometry_checks':checks,'ink_shader_checks':ink_checks,'blender_version':bpy.app.version_string,'views':views,'pin_visibility':visibility,

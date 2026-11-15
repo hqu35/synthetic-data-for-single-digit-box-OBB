@@ -15,8 +15,10 @@ def verify_spec(spec):
 
 
 def texture_spec(c):
-    from font_candidates import resolve_config
-    c=resolve_config(c)
+    # Fixed photographic atlases do not require the optional font-candidate machinery.
+    if c.get('font_preset'):
+        from font_candidates import resolve_config
+        c=resolve_config(c)
     t=c['typography']
     if t.get('image_source'):
         from .photo_atlas import photo_key

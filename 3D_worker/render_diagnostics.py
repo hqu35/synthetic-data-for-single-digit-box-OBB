@@ -1,4 +1,9 @@
 """Native Blender diagnostic suite: exposed mechanics, shader comparisons and UV calibration."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import copy
 import json
@@ -37,7 +42,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config',default='configs/preview.json');parser.add_argument('--output',default='outputs/upgrade_diagnostics')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    c=load_config(ROOT/args.config);c['resolution']=[1024,512];c['render']['samples']=48
+    c=load_config((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config));c['resolution']=[1024,512];c['render']['samples']=48
     out=(ROOT/args.output).resolve()
     if out.exists() and any(out.iterdir()):raise ValueError('Diagnostics output must be new or empty')
     out.mkdir(parents=True,exist_ok=True)

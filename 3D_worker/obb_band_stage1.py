@@ -1,4 +1,9 @@
 """One unchanged reference RGB with corrected 3D numeral-band OBBs. Stop after review."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import hashlib
 import json
@@ -26,7 +31,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--config',default='configs/obb_band_stage1.json')
     parser.add_argument('--recheck',action='store_true',help='Verify current annotations against existing one-sample RGB; render nothing')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    config=json.loads((ROOT/args.config).read_text());out=ROOT/config['output']
+    config=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());out=ROOT/config['output']
     if not args.recheck and out.exists() and any(out.iterdir()):raise ValueError('Choose a new/empty review output directory')
     out.mkdir(parents=True,exist_ok=True)
     source=ROOT/config['source_scene'];bpy.ops.wm.open_mainfile(filepath=str(source))
@@ -47,7 +52,7 @@ def main():
         if max(abs(a-b) for box,other in zip(boxes,stored) for p,q in zip(box,other) for a,b in zip(p,q))>1e-6:
             raise AssertionError('Current projection no longer matches saved sample labels')
         report['regions']=regions
-        report['implementation_sha256']=hashlib.sha256((ROOT/'digitgen/band_annotations.py').read_bytes()).hexdigest()
+        report['implementation_sha256']=hashlib.sha256((ROOT.parent/'shared'/'digitgen/band_annotations.py').read_bytes()).hexdigest()
         report['post_render_annotation_recheck']='passed against current implementation and unchanged scene; zero additional renders'
         write_json(out/'inspection_report.json',report);print('SAVED_SAMPLE_ANNOTATIONS_RECHECKED_WITHOUT_RENDER');return
     labels=out/'000001.txt';export_labels(labels,boxes,resolution)
@@ -77,7 +82,7 @@ def main():
         'scene_signature_before':before,'scene_signature_after':after,
         'geometry_material_atlas_camera_lighting_unchanged':True,'regions':regions,
         'glass_policy':'Preserved native glass. Labels remain direct geometry projections, not image-fitted glyph boxes; small optical shifts remain as documented in the source glass review.',
-        'implementation_sha256':hashlib.sha256((ROOT/'digitgen/band_annotations.py').read_bytes()).hexdigest()}
+        'implementation_sha256':hashlib.sha256((ROOT.parent/'shared'/'digitgen/band_annotations.py').read_bytes()).hexdigest()}
     write_json(out/'inspection_report.json',report);write_json(out/'config.json',config)
     write_json(out/'classes.json',{'0':'digit_band'})
     print('ONE_SAMPLE_OBB_REVIEW_OK',json.dumps({'output':str(out),'boxes':len(regions),

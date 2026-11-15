@@ -1,4 +1,9 @@
 """Render one tightly framed register preview; never resume the dataset batch."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import hashlib
 import json
@@ -18,7 +23,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--config',default='configs/tight_framing_preview.json')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
-    config=json.loads((ROOT/args.config).read_text());out=ROOT/config['output']
+    config=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());out=ROOT/config['output']
     if out.exists() and any(out.iterdir()):raise ValueError('Use a new/empty preview output directory')
     out.mkdir(parents=True,exist_ok=True)
     source=ROOT/config['source_scene'];bpy.ops.wm.open_mainfile(filepath=str(source))

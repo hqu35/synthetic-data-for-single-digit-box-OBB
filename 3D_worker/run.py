@@ -1,4 +1,9 @@
 """Host-Python entry point: render with Blender, then audit saved files."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import shutil
 import subprocess
@@ -19,11 +24,11 @@ def main():
     parser.add_argument('--index',type=int)
     parser.add_argument('--rolling-preview',action='store_true')
     args = parser.parse_args()
-    config = load_config(ROOT/args.config)
+    config = load_config((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config))
     prepare(config)
     output = (args.output or ROOT/config['output']).resolve()
     command = [args.blender,'--background','--factory-startup','--python-exit-code','1',
-               '--python',str(ROOT/'generate.py'),'--','--config',str(ROOT/args.config),'--output',str(output)]
+               '--python',str(ROOT/'generate.py'),'--','--config',str((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)),'--output',str(output)]
     for key in ('count','index'):
         value = getattr(args,key)
         if value is not None:

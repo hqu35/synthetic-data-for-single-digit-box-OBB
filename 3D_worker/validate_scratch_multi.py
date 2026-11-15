@@ -1,4 +1,9 @@
 """Validate the finished 20-image scratch batch and build an overview."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 from collections import Counter
 import argparse
 from pathlib import Path

@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "count": 5,
+  "checks": "image and label sha256, five in-bounds OBBs, affine-transformed contours and matching labels",
+  "samples": [
+    {
+      "sample": "000001",
+      "digits": "79602",
+      "shear": -0.0004796753632415121,
+      "resolution": [
+        1200,
+        400
+      ],
+      "sensor_resolution": [
+        240,
+        80
+      ]
+    },
+    {
+      "sample": "000002",
+      "digits": "95678",
+      "shear": -0.02431567985172671,
+      "resolution": [
+        1200,
+        395
+      ],
+      "sensor_resolution": [
+        240,
+        79
+      ]
+    },
+    {
+      "sample": "000003",
+      "digits": "03816",
+      "shear": 0.051230918121597704,
+      "resolution": [
+        1200,
+        395
+      ],
+      "sensor_resolution": [
+        240,
+        79
+      ]
+    },
+    {
+      "sample": "000004",
+      "digits": "83951",
+      "shear": 0.029379998627239105,
+      "resolution": [
+        1200,
+        405
+      ],
+      "sensor_resolution": [
+        240,
+        81
+      ]
+    },
+    {
+      "sample": "000005",
+      "digits": "05167",
+      "shear": 0.07196153927595876,
+      "resolution": [
+        1200,
+        380
+      ],
+      "sensor_resolution": [
+        240,
+        76
+      ]
+    }
+  ],
+  "limitations": "Geometry labels are not corrected for glass refraction. Optical realism has not been calibrated against real data."
+}

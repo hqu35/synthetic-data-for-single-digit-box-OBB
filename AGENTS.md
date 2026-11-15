@@ -11,7 +11,7 @@ The user requires final deliverables outside this source workspace, organized as
 - Keep source code, assets and temporary/debug outputs in this repository. Publish a
   verified copy of final artifacts to the experiment folder; preserve originals and
   earlier links unless the user explicitly asks for deletion or relocation.
-- Use `tools/deliver_results.py` to create an indexed, checksum-verified delivery.
+- Use `shared/tools/deliver_results.py` to create an indexed, checksum-verified delivery.
   Pass its `--report` and optional `--extra NAME=SOURCE` arguments as appropriate.
 - Each delivery needs a README entry point, results, relevant report, provenance and
   SHA-256 manifest. Adjust copied report links so they open the copied artifacts.

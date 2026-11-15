@@ -1,0 +1,52 @@
+{
+  "arguments": {
+    "output": "outputs/degraded_register_review_v3_20261107",
+    "count": 5,
+    "seed": 2026110711,
+    "sensor_width": 240,
+    "blur_percent": 50,
+    "stain_strength": 0.32,
+    "scratch_count": 170,
+    "scratch_width": 2,
+    "no_shear": false
+  },
+  "atlas": {
+    "path": "assets/atlases/photo_feb51f0d24c6973f.png",
+    "sha256": "a4835caaad4a7f450e3e31573813b76e02a9507c38839dc707b920f3fbb1bfd8",
+    "source_image": "assets/reference/user_digit_strip.png",
+    "source_image_sha256": "e1549e76f1935e192a8d6564af77549b4f492c0c6e49bbc6d091f2879c05a44c",
+    "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
+    "size": [
+      10240,
+      1024
+    ]
+  },
+  "x_shear_buckets": [
+    {
+      "name": "subtle",
+      "weight": 0.5,
+      "range": [
+        -0.03,
+        0.03
+      ]
+    },
+    {
+      "name": "natural",
+      "weight": 0.3,
+      "range": [
+        -0.08,
+        0.08
+      ]
+    },
+    {
+      "name": "strong",
+      "weight": 0.2,
+      "range": [
+        -0.12,
+        0.12
+      ]
+    }
+  ],
+  "degradation": "Bilinear downsample/upscale followed by linear-light Gaussian blur, sensor noise and X shear",
+  "note": "Projected OBBs do not include glass refraction."
+}

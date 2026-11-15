@@ -1,4 +1,9 @@
 """Generate the approved fixed-identity controlled experiment, then stop."""
+
+# Load the single shared package without worker-local asset links.
+import sys as _shared_sys
+from pathlib import Path as _SharedPath
+_shared_sys.path.insert(0, str(next(p / 'shared' for p in _SharedPath(__file__).resolve().parents if (p / 'shared' / 'digitgen').is_dir())))
 import argparse
 import hashlib
 import json
@@ -42,7 +47,7 @@ def main():
     parser.add_argument('--blur-percent',type=float,default=0,help='Gaussian blur strength, 0 through 50')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
     blur_sigma_from_percent(args.blur_percent,(1600,460))
-    config=json.loads((ROOT/args.config).read_text());out=ROOT/config['output']
+    config=json.loads(((ROOT.parent/'shared'/args.config if str(args.config).startswith('configs/') else ROOT/args.config)).read_text());out=ROOT/config['output']
     if args.blur_percent:
         config['blur_percent']=args.blur_percent
     if config['count'] not in (5,100,200) or not config['stage1_approved']:raise ValueError('Choose an approved review or dataset configuration')
