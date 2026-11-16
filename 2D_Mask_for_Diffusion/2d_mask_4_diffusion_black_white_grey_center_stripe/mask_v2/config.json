@@ -1,0 +1,11 @@
+{
+  "window_count": 5,
+  "window_coverage_fraction": [0.84, 0.88],
+  "window_height_fraction": [0.66, 0.74],
+  "gap_to_window_width": [0.02, 0.05],
+  "center_strip_width_fraction": 0.70,
+  "shared_curvature_halfwidth": [-0.04, 0.04],
+  "background_gray": 0,
+  "window_gray": 255,
+  "strip_gray": 155
+}

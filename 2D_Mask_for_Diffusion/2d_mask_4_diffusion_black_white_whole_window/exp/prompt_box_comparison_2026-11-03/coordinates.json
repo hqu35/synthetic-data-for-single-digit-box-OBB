@@ -1,0 +1,87 @@
+{
+  "source_name": "create-a-realistic.png",
+  "source_sha256": "88c8e6303b92c65db59638259f2a7052269f5fad3c55e5478c493b2436bd7fad",
+  "image_size": [
+    1168,
+    496
+  ],
+  "normalization": "[top,left,bottom,right] on 0\u20131000 grid",
+  "boxes": [
+    {
+      "digit": "0",
+      "normalized_tlbr": [
+        250,
+        105,
+        755,
+        235
+      ],
+      "pixel_xyxy": [
+        122.64,
+        124.0,
+        274.48,
+        374.48
+      ]
+    },
+    {
+      "digit": "3",
+      "normalized_tlbr": [
+        250,
+        265,
+        755,
+        395
+      ],
+      "pixel_xyxy": [
+        309.52,
+        124.0,
+        461.36,
+        374.48
+      ]
+    },
+    {
+      "digit": "7",
+      "normalized_tlbr": [
+        250,
+        425,
+        755,
+        555
+      ],
+      "pixel_xyxy": [
+        496.4,
+        124.0,
+        648.24,
+        374.48
+      ]
+    },
+    {
+      "digit": "8",
+      "normalized_tlbr": [
+        250,
+        585,
+        755,
+        715
+      ],
+      "pixel_xyxy": [
+        683.28,
+        124.0,
+        835.12,
+        374.48
+      ]
+    },
+    {
+      "digit": "4",
+      "normalized_tlbr": [
+        250,
+        745,
+        755,
+        875
+      ],
+      "pixel_xyxy": [
+        870.16,
+        124.0,
+        1022.0,
+        374.48
+      ]
+    }
+  ],
+  "scope": "Prompt boxes only; no independently annotated ground-truth boxes, so IoU is not calculated."
+}

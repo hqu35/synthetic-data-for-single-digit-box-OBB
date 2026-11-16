@@ -1,0 +1,54 @@
+{
+  "digit_count": 6,
+  "scenario": "mixed_rolling",
+  "config_seed": 539,
+  "windows": [
+    {
+      "slot": 1,
+      "mode": "centered_clean",
+      "current_digit": 5,
+      "next_digit": 6,
+      "progress": 0.0,
+      "neighbor_visibility_hint_pct": 0
+    },
+    {
+      "slot": 2,
+      "mode": "rolling",
+      "current_digit": 1,
+      "next_digit": 2,
+      "progress": 0.1
+    },
+    {
+      "slot": 3,
+      "mode": "centered_neighbors",
+      "current_digit": 3,
+      "next_digit": 4,
+      "progress": 0.0,
+      "neighbor_visibility_hint_pct": 20
+    },
+    {
+      "slot": 4,
+      "mode": "centered_neighbors",
+      "current_digit": 1,
+      "next_digit": 2,
+      "progress": 0.0,
+      "neighbor_visibility_hint_pct": 20
+    },
+    {
+      "slot": 5,
+      "mode": "centered_clean",
+      "current_digit": 0,
+      "next_digit": 1,
+      "progress": 0.0,
+      "neighbor_visibility_hint_pct": 0
+    },
+    {
+      "slot": 6,
+      "mode": "centered_clean",
+      "current_digit": 6,
+      "next_digit": 7,
+      "progress": 0.0,
+      "neighbor_visibility_hint_pct": 0
+    }
+  ]
+}
