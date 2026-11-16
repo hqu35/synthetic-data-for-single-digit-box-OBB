@@ -1,15 +1,29 @@
-# Water-meter mask and prompt integration
+<!-- recursive-summary:start -->
+## Directory overview
 
-Generate one mask and its matching prompt in a new output directory:
+Builds prompts from mask geometry; digit identities and rolling states are sampled independently of the mask.
+
+Generate a new mask/prompt pair from the repository root:
 
 ```sh
-python3 'Flux3_kelin_ComfyUI_workflow/Prompt generator/watermeter_generate_layout_prompt.py' \
-  --output 2d_mask_4_diffusion/exp/my_mask_prompt \
-  --mask-seed 20261115 --prompt-seed 539 --scenario one_rolling
+python3 Flux3_kelin_ComfyUI_workflow/Prompt_generator/watermeter_generate_layout_prompt.py --output /private/tmp/meter-prompt-example --mask-seed 20261115 --prompt-seed 539
 ```
 
-The mask worker currently supports exactly five positions. The mask supplies the position count and left-to-right geometry only. The prompt generator independently chooses digit identities and rolling states from the prompt seed. FLUX guidance rectangles enclose the complete continuous curved strip boundary and use outward-rounded integer `[top,left,bottom,right]` coordinates in 0–1000 relative to the whole mask image. YOLO OBB labels remain independent and normalized to 0–1.
+The prompt specifies nine appearance references followed by the mask. Bounding boxes in the prompt are text hints; no box-aware enforcement or FLUX inference is performed here.
 
-`mask/conditioning.png` is the geometry reference; `mask/preview.png` visualizes geometry and FLUX rectangles. `mask/flux_bboxes.json`, `mask/annotations.txt` and `mask/geometry.json` contain the underlying annotations. `prompt.txt`, `prompt_config.json`, and `layout_prompt.json` describe the matched prompt. The mask path in `layout_prompt.json` is relative to that JSON file.
+### Files
 
-The separate `watermeter_build_manifest.py` accepts mask sample directories via `--layouts-dir`, plus nine or more disjoint appearance references in each of `--clear-dir` and `--noisy-dir`. Its bounding boxes are text guidance unless a box-aware runtime is configured. The prompt assumes nine appearance references followed by the mask as reference 9. This code does not run FLUX or ComfyUI. If the workflow crops or pads the reference image, boxes must be transformed to the resulting canvas.
+| File | Role |
+|---|---|
+| [README.md](README.md) | Directory documentation and this managed overview. |
+| [watermeter\_build\_manifest.py](watermeter_build_manifest.py) | Build a pilot manifest from reference folders and native mask-worker samples. |
+| [watermeter\_comfy\_api\_worker.py](watermeter_comfy_api_worker.py) | Patch an API-format ComfyUI prompt graph per manifest row. No server calls. |
+| [watermeter\_generate\_layout\_prompt.py](watermeter_generate_layout_prompt.py) | Generate one 2D mask and its immediately matched water-meter prompt. |
+| [watermeter\_geometry.py](watermeter_geometry.py) | Load mask-worker geometry for prompt generation. |
+| [watermeter\_prompt\_generator.py](watermeter_prompt_generator.py) | Deterministic water-meter register prompt configurations; no ML dependencies. |
+
+### Summary
+
+This directory groups the files and subdirectories described above.
+
+<!-- recursive-summary:end -->

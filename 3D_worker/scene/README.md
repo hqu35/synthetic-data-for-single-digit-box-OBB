@@ -1,9 +1,21 @@
-# Shared 3D scene
+<!-- recursive-summary:start -->
+## Directory overview
 
-`scene_core.py` builds and configures the current Blender register scene and projects digit-strip geometry. `generate_scratch_multi.py` uses it to render the scratch dataset. The blurry diffusion worker imports these same components and applies its own image degradation and glass contamination. Their OBBs use the shared projected geometry and shear code.
+Shared Blender scene setup and scratch-batch generation. The blurry worker imports this package.
 
-From the repository root, to create a fresh scratch batch:
+From the repository root, the scratch generator can be run with Blender using `--python 3D_worker/scene/generate_scratch_multi.py -- --output exp/NEW_NAME`. It requires the shared assets and the saved glass scene under `3D_worker/exp/glass_review/`.
 
-```sh
-/Applications/Blender.app/Contents/MacOS/Blender --background --factory-startup --disable-autoexec --python-exit-code 1 --python 3D_worker/scene/generate_scratch_multi.py -- --output exp/my_new_scratch_batch
-```
+### Files
+
+| File | Role |
+|---|---|
+| [README.md](README.md) | Directory documentation and this managed overview. |
+| [\_\_init\_\_.py](__init__.py) | Shared 3D scene setup and scratch generation. |
+| [generate\_scratch\_multi.py](generate_scratch_multi.py) | Render 20 varied 3D register images with glass scratches. |
+| [scene\_core.py](scene_core.py) | Shared 3D scene setup, camera sampling and projection. |
+
+### Summary
+
+This directory groups the files and subdirectories described above.
+
+<!-- recursive-summary:end -->

@@ -1,0 +1,41 @@
+{
+  "coordinate_order": "top,left,bottom,right",
+  "coordinate_range": [
+    0,
+    1000
+  ],
+  "normalized_to": "full_image",
+  "boxes": [
+    [
+      166,
+      56,
+      867,
+      221
+    ],
+    [
+      161,
+      239,
+      855,
+      401
+    ],
+    [
+      154,
+      416,
+      846,
+      577
+    ],
+    [
+      157,
+      593,
+      828,
+      750
+    ],
+    [
+      152,
+      765,
+      817,
+      921
+    ]
+  ],
+  "box_definition": "full_continuous_strip_boundary_outward_rounded"
+}

@@ -1,12 +1,24 @@
-# 2D mask and annotation worker
+<!-- recursive-summary:start -->
+## Directory overview
 
-`geometry_worker/` is the standalone statistical digit-strip geometry and dual FLUX AABB / YOLO OBB conditioning worker. It is independent of Blender. Existing annotation and geometry experiments are in `exp/`. See `geometry_worker/README.md` for algorithms, assumptions and audit details.
+Standalone geometry-mask generation for diffusion guidance, with separate FLUX rectangles and YOLO OBB labels.
 
-```sh
-PYTHONPATH=2d_mask_4_diffusion python3 -m geometry_worker generate --count 20 --seed 20261104 --reading 43882 --output 2d_mask_4_diffusion/exp/my_new_batch
-PYTHONPATH=2d_mask_4_diffusion python3 -m geometry_worker.audit 2d_mask_4_diffusion/exp/my_new_batch
-```
+### Files
 
-Run these commands from the repository root; the `PYTHONPATH` setting finds the worker in this directory.
+| File | Role |
+|---|---|
+| [README.md](README.md) | Directory documentation and this managed overview. |
+| [outputs](outputs) | Symbolic link to exp; no content is duplicated. |
 
-New outputs provide `flux_bboxes.json` with integer `[top, left, bottom, right]` boxes on 0–1000 and `annotations.txt` with the original four YOLO OBB vertices normalized to 0–1. Both use the entire image.
+### Subdirectories
+
+| Directory | Role |
+|---|---|
+| [exp/](exp/README.md) | Historical geometry-mask samples and prompt-integration examples; generated leaves are not modified. |
+| [geometry\_worker/](geometry_worker/README.md) | NumPy/Pillow geometry sampler and renderer. Current output has five digit-strip regions and contains no digit identities. |
+
+### Summary
+
+This directory groups the files and subdirectories described above.
+
+<!-- recursive-summary:end -->
