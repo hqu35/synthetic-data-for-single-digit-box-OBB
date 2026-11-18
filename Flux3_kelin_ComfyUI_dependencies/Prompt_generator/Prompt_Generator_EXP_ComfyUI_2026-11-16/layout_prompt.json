@@ -1,0 +1,205 @@
+{
+  "layout": {
+    "digit_count": 5,
+    "mask_version": "v2",
+    "resolution": [
+      1200,
+      460
+    ],
+    "mask_seed": 20261116,
+    "mask_image": "mask/conditioning.png",
+    "windows": [
+      {
+        "slot": 1,
+        "flux_aabb_yxyx_1000": [
+          177,
+          95,
+          840,
+          219
+        ],
+        "yolo_obb_xy_01": [
+          [
+            0.10156427029801048,
+            0.17025330030042865
+          ],
+          [
+            0.21897126288704039,
+            0.1772370028651597
+          ],
+          [
+            0.21312234249313175,
+            0.8463982290749555
+          ],
+          [
+            0.09571534990410183,
+            0.8394145265102245
+          ]
+        ]
+      },
+      {
+        "slot": 2,
+        "flux_aabb_yxyx_1000": [
+          171,
+          265,
+          837,
+          389
+        ],
+        "yolo_obb_xy_01": [
+          [
+            0.27131514351436875,
+            0.16450973423812454
+          ],
+          [
+            0.3892843918244969,
+            0.1715268813757459
+          ],
+          [
+            0.3834074612679803,
+            0.8438926844124994
+          ],
+          [
+            0.26543821295785214,
+            0.8368755372748781
+          ]
+        ]
+      },
+      {
+        "slot": 3,
+        "flux_aabb_yxyx_1000": [
+          165,
+          435,
+          835,
+          561
+        ],
+        "yolo_obb_xy_01": [
+          [
+            0.44187961298951856,
+            0.1587307873254033
+          ],
+          [
+            0.5604165281587111,
+            0.16578170090582434
+          ],
+          [
+            0.5545113178703344,
+            0.8413829215536892
+          ],
+          [
+            0.4359744027011419,
+            0.8343320079732681
+          ]
+        ]
+      },
+      {
+        "slot": 4,
+        "flux_aabb_yxyx_1000": [
+          159,
+          607,
+          832,
+          733
+        ],
+        "yolo_obb_xy_01": [
+          [
+            0.6132655152539574,
+            0.1529160425337197
+          ],
+          [
+            0.7323755869129144,
+            0.16000104909582186
+          ],
+          [
+            0.726441823413115,
+            0.8388689755083373
+          ],
+          [
+            0.6073317517541581,
+            0.8317839689462351
+          ]
+        ]
+      },
+      {
+        "slot": 5,
+        "flux_aabb_yxyx_1000": [
+          154,
+          779,
+          830,
+          905
+        ],
+        "yolo_obb_xy_01": [
+          [
+            0.7854808006082553,
+            0.14706507566438284
+          ],
+          [
+            0.9051695984059169,
+            0.15418450650676016
+          ],
+          [
+            0.8992070042288255,
+            0.8363508829014739
+          ],
+          [
+            0.779518206431164,
+            0.8292314520590965
+          ]
+        ]
+      }
+    ]
+  },
+  "prompt_config": {
+    "digit_count": 5,
+    "scenario": "all_centered",
+    "config_seed": 539,
+    "windows": [
+      {
+        "slot": 1,
+        "mode": "centered_clean",
+        "current_digit": 8,
+        "next_digit": 9,
+        "progress": 0.0,
+        "neighbor_visibility_hint_pct": 0
+      },
+      {
+        "slot": 2,
+        "mode": "centered_neighbors",
+        "current_digit": 2,
+        "next_digit": 3,
+        "progress": 0.0,
+        "neighbor_visibility_hint_pct": 5
+      },
+      {
+        "slot": 3,
+        "mode": "centered_clean",
+        "current_digit": 1,
+        "next_digit": 2,
+        "progress": 0.0,
+        "neighbor_visibility_hint_pct": 0
+      },
+      {
+        "slot": 4,
+        "mode": "centered_neighbors",
+        "current_digit": 3,
+        "next_digit": 4,
+        "progress": 0.0,
+        "neighbor_visibility_hint_pct": 20
+      },
+      {
+        "slot": 5,
+        "mode": "centered_neighbors",
+        "current_digit": 1,
+        "next_digit": 2,
+        "progress": 0.0,
+        "neighbor_visibility_hint_pct": 20
+      }
+    ]
+  },
+  "prompt": "Photorealistic close-up of one mechanical water-meter register with exactly 5 digit windows in one left-to-right row. Reference images 0 through 8 supply photographic appearance only: real wheel material, numeral typography, texture, lighting, and exposure. Reference image 9 is a grayscale GEOMETRY GUIDE, not a texture source. In the geometry guide, each gray strip marks the numeral-bearing surface of a digit wheel; place its digits within that strip. The white margins beside it represent surrounding window structure and environment, not numeral-bearing surfaces. Black gaps separate neighboring windows. Each bounding box corresponds to a gray strip. Keep the wheel layout aligned with reference image 9, preserving spacing, the camera perspective, and the full vertical rolling numeral strips. Window 1: mechanical digit wheel 1 showing numeral 8 centered, without visible neighboring numerals. Window 2: mechanical digit wheel 2 showing 2 precisely centered, with only about 5% of adjacent wheel numerals visible at the upper and lower window edges. Window 3: mechanical digit wheel 3 showing numeral 1 centered, without visible neighboring numerals. Window 4: mechanical digit wheel 4 showing 3 precisely centered, with only about 20% of adjacent wheel numerals visible at the upper and lower window edges. Window 5: mechanical digit wheel 5 showing 1 precisely centered, with only about 20% of adjacent wheel numerals visible at the upper and lower window edges. Use the following normalized FLUX layout hints, with each bbox in [top,left,bottom,right] order on a 0–1000 canvas: [{\"id\":\"digit_1\",\"bbox\":[177,95,840,219],\"desc\":\"mechanical digit wheel 1 showing numeral 8 centered, without visible neighboring numerals\"},{\"id\":\"digit_2\",\"bbox\":[171,265,837,389],\"desc\":\"mechanical digit wheel 2 showing 2 precisely centered, with only about 5% of adjacent wheel numerals visible at the upper and lower window edges\"},{\"id\":\"digit_3\",\"bbox\":[165,435,835,561],\"desc\":\"mechanical digit wheel 3 showing numeral 1 centered, without visible neighboring numerals\"},{\"id\":\"digit_4\",\"bbox\":[159,607,832,733],\"desc\":\"mechanical digit wheel 4 showing 3 precisely centered, with only about 20% of adjacent wheel numerals visible at the upper and lower window edges\"},{\"id\":\"digit_5\",\"bbox\":[154,779,830,905],\"desc\":\"mechanical digit wheel 5 showing 1 precisely centered, with only about 20% of adjacent wheel numerals visible at the upper and lower window edges\"}]. Render one coherent realistic register; no markers, bounding-box outlines, explanatory text, dots, or collage.",
+  "yolo_obb_label_lines": [
+    "0 0.1015642703 0.1702533003 0.2189712629 0.1772370029 0.2131223425 0.8463982291 0.0957153499 0.8394145265",
+    "0 0.2713151435 0.1645097342 0.3892843918 0.1715268814 0.3834074613 0.8438926844 0.2654382130 0.8368755373",
+    "0 0.4418796130 0.1587307873 0.5604165282 0.1657817009 0.5545113179 0.8413829216 0.4359744027 0.8343320080",
+    "0 0.6132655153 0.1529160425 0.7323755869 0.1600010491 0.7264418234 0.8388689755 0.6073317518 0.8317839689",
+    "0 0.7854808006 0.1470650757 0.9051695984 0.1541845065 0.8992070042 0.8363508829 0.7795182064 0.8292314521"
+  ],
+  "guidance_note": "Bounding boxes are text guidance only."
+}

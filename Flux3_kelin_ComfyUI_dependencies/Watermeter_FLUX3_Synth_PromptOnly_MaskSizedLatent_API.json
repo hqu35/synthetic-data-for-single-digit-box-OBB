@@ -1,0 +1,380 @@
+{
+  "2": {
+    "inputs": {
+      "clip_name": "qwen3vl_4b_int8_convrot.safetensors",
+      "type": "flux3",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Load CLIP",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "3": {
+    "inputs": {
+      "vae_name": "flux2-vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "Photorealistic close-up of one mechanical water-meter register with exactly 5 digit windows in one left-to-right row. Reference images 0 through 8 supply photographic appearance only: real wheel material, numeral typography, texture, lighting, and exposure. Reference image 9 is a grayscale GEOMETRY GUIDE, not a texture source. In the geometry guide, each gray strip marks the numeral-bearing surface of a digit wheel; place its digits within that strip. The white margins beside it represent surrounding window structure and environment, not numeral-bearing surfaces. Black gaps separate neighboring windows. Each bounding box corresponds to a gray strip. Keep the wheel layout aligned with reference image 9, preserving spacing, the camera perspective, and the full vertical rolling numeral strips.\n\nWindow 1: mechanical digit wheel 1 showing numeral 2 centered, without visible neighboring numerals.\n\nWindow 2: mechanical digit wheel 2 showing 8 precisely centered, with only about 10% of adjacent wheel numerals visible at the upper and lower window edges.\n\nWindow 3: mechanical digit wheel 3 showing numeral 7 centered, without visible neighboring numerals.\n\nWindow 4: Inside this single digit window, display two consecutive numerals on the same mechanical wheel surface. The upper portion shows numeral 7, occupying approximately 30% of the visible numeral area. The lower portion shows numeral 8, occupying approximately 70% of the visible numeral area. Numeral 7 must appear ABOVE numeral 8, never beside it. Separate the two numerals with a narrow, visible horizontal mechanical seam consistent with the reference images. Both numerals are partially clipped by the window boundaries according to their positions. They belong to one continuous rotating digit wheel, not two separate windows.\n\nWindow 5: Inside this single digit window, display two consecutive numerals on the same mechanical wheel surface. The upper portion shows numeral 4, occupying approximately 95% of the visible numeral area. Only a very small lower portion of numeral 5, approximately 5%, is visible entering from the bottom edge. Numeral 4 must appear ABOVE numeral 5, never beside it. A narrow horizontal mechanical seam separates their visible portions. Both belong to the same continuous digit wheel, not separate windows.\n\nUse the following normalized FLUX layout hints, with each bbox in [top,left,bottom,right] order on a 0–1000 canvas:\n\n[{\"id\":\"digit_1\",\"bbox\":[177,95,840,219],\"desc\":\"mechanical digit wheel 1 showing numeral 2 centered, without visible neighboring numerals\"},{\"id\":\"digit_2\",\"bbox\":[171,265,837,389],\"desc\":\"mechanical digit wheel 2 showing 8 precisely centered, with only about 10% of adjacent wheel numerals visible at the upper and lower window edges\"},{\"id\":\"digit_3\",\"bbox\":[165,435,835,561],\"desc\":\"mechanical digit wheel 3 showing numeral 7 centered, without visible neighboring numerals\"},{\"id\":\"digit_4\",\"bbox\":[159,607,832,733],\"desc\":\"one continuous digit wheel: numeral 7 in the upper portion (approximately 30% of visible numeral area), numeral 8 in the lower portion (approximately 70%). A narrow horizontal mechanical seam separates them. The two numerals are vertically stacked, not side by side\"},{\"id\":\"digit_5\",\"bbox\":[154,779,830,905],\"desc\":\"one continuous digit wheel: numeral 4 occupies approximately 95% of the visible numeral area above, with only a tiny lower portion of numeral 5 visible at the bottom (approximately 5%). A narrow horizontal mechanical seam separates them\"}]\n\nRender one coherent realistic register; no markers, bounding-box outlines, explanatory text, dots, or collage.\n\nAlso learn and reproduce realistic visual noise from reference images 0 through 8, including natural blur, dust, dirt, mud stains, water droplets, smudges, and other photographic imperfections, while preserving the authentic appearance of the mechanical digit wheels.\n\nFocus on scratch this time",
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt (direct; no upsampler)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "7": {
+    "inputs": {
+      "seed": 680167116117430,
+      "steps": 50,
+      "cfg": 3.5,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "denoise": 1,
+      "model": [
+        "59",
+        0
+      ],
+      "positive": [
+        "17",
+        0
+      ],
+      "negative": [
+        "17",
+        1
+      ],
+      "latent_image": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "watermeter_synthetic_70pct",
+      "images": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "17": {
+    "inputs": {
+      "resolution": "resize",
+      "resolution.megapixels": 1,
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "58",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ],
+      "images.image0": [
+        "54",
+        0
+      ],
+      "images.image1": [
+        "62",
+        0
+      ],
+      "images.image4": [
+        "65",
+        0
+      ],
+      "images.image5": [
+        "66",
+        0
+      ],
+      "images.image6": [
+        "67",
+        0
+      ],
+      "images.image7": [
+        "68",
+        0
+      ],
+      "images.image8": [
+        "69",
+        0
+      ],
+      "images.image9": [
+        "63",
+        0
+      ],
+      "images.image2": [
+        "70",
+        0
+      ],
+      "images.image3": [
+        "64",
+        0
+      ]
+    },
+    "class_type": "ReferenceMultiLatent",
+    "_meta": {
+      "title": "Set Reference Multi Latent",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "54": {
+    "inputs": {
+      "image": "train2156.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 0 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "58": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "59": {
+    "inputs": {
+      "unet_name": "flux3-image-klein-base-int8-convrot.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "62": {
+    "inputs": {
+      "image": "4.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 1 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "63": {
+    "inputs": {
+      "image": "conditioning (1).png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "GEOMETRY MASK — image9 (conditioning.png)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "64": {
+    "inputs": {
+      "image": "train2558.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 3 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "65": {
+    "inputs": {
+      "image": "27 copy.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 4 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "66": {
+    "inputs": {
+      "image": "2.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 5 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "67": {
+    "inputs": {
+      "image": "36.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 6 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "68": {
+    "inputs": {
+      "image": "48.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 7 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "69": {
+    "inputs": {
+      "image": "1.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 8 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "70": {
+    "inputs": {
+      "image": "55.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Appearance Reference 2 (replace with unannotated photo)",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "71": {
+    "inputs": {
+      "image": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "72": {
+    "inputs": {
+      "upscale_method": "area",
+      "scale_by": 0.08,
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Upscale Image By",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "73": {
+    "inputs": {
+      "upscale_method": "bicubic",
+      "width": [
+        "71",
+        0
+      ],
+      "height": [
+        "71",
+        1
+      ],
+      "crop": "disabled",
+      "image": [
+        "72",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  },
+  "78": {
+    "inputs": {
+      "width": [
+        "71",
+        0
+      ],
+      "height": [
+        "71",
+        1
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyFlux2LatentImage",
+    "_meta": {
+      "title": "Generation Latent — dimensions from image9 mask",
+      "cnr_id": "comfy-core",
+      "ver": "0.43.0"
+    }
+  }
+}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digit Geometry Annotation</title>
+<style>
+body { margin: 0; font: 15px system-ui, sans-serif; background: #eff2f5; color: #182231; }
+header, main { padding: 16px 24px; } header { background: #142238; color: white; }
+h1 { font-size: 21px; margin: 0 0 5px; } header p { margin: 0; }
+main { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 16px; }
+.canvas-wrap { background: #202833; border-radius: 6px; overflow: hidden; }
+canvas { display: block; width: 100%; height: min(65vh, 650px); cursor: crosshair; touch-action: none; }
+.controls, aside { background: white; padding: 14px; border-radius: 6px; }
+.controls { margin-bottom: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+button, select { font: inherit; padding: 7px 10px; } button { cursor: pointer; }
+aside h2 { font-size: 17px; margin: 0 0 10px; } aside p { line-height: 1.5; }
+#stage { font-weight: 700; } #message { color: #ae271e; min-height: 1.4em; }
+pre { white-space: pre-wrap; font-size: 12px; } .hint { color: #4e5f70; font-size: 13px; }
+@media(max-width: 800px) { main { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header><h1>Digit Geometry Annotation</h1><p>Manually measure one digit wheel and character per image.</p></header>
+<main>
+<section>
+<div class="controls"><button id="previous">Previous</button><select id="image-select" aria-label="Select image"></select><button id="next">Next</button><button id="undo">Undo</button><button id="reset">Reset image</button><button id="fit">Fit image</button><button id="export">Export JSON</button></div>
+<div class="canvas-wrap"><canvas id="canvas"></canvas></div>
+<p class="hint">Click to place a point. Scroll to zoom at the pointer; Shift-drag or right-drag to pan. Export frequently: saved browser progress is local to this browser.</p>
+<div id="message" role="status"></div>
+</section>
+<aside><h2>Annotation progress</h2><p id="stage"></p><p id="instructions"></p><p id="progress"></p><h2>Measurements</h2><pre id="measurements">Complete all 12 points to calculate.</pre></aside>
+</main>
+<script>
+'use strict';
+const imageNames = Array.from({length: 10}, (_, i) => `sample_${String(i + 1).padStart(3, '0')}.png`);
+const pointNames = ['Full digit: TL', 'Full digit: BL', 'Full digit: BR', 'Full digit: TR', 'Gap: upper digit bottom', 'Gap: lower digit top', 'Character: TL', 'Character: BL', 'Character: BR', 'Character: TR', 'Stroke: first boundary', 'Stroke: opposite boundary'];
+const stageNames = ['Full digit OBB', 'Inter-digit gap', 'Tight character OBB', 'Local stroke thickness'];
+const colors = ['#ffcc39', '#ff7a60', '#51e7ad', '#82aaff'];
+const storageKey = 'flux-graphics-geometry-v1';
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+const selector = document.getElementById('image-select');
+const measurements = document.getElementById('measurements');
+const message = document.getElementById('message');
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch { saved = {}; }
+let currentIndex = 0;
+let points = saved[imageNames[0]] || [];
+let image = new Image();
+let scale = 1, offsetX = 0, offsetY = 0, preview = null, dragging = null;
+imageNames.forEach((name, i) => selector.add(new Option(`${i + 1} / 10 — ${name}`, i)));
+function persist() {
+  saved[imageNames[currentIndex]] = points;
+  try { localStorage.setItem(storageKey, JSON.stringify(saved)); }
+  catch { message.textContent = 'Browser storage unavailable. Export JSON to save your work.'; }
+}
+function fit() {
+  if (!image.naturalWidth) return;
+  scale = Math.min((canvas.width - 30) / image.naturalWidth, (canvas.height - 30) / image.naturalHeight);
+  offsetX = (canvas.width - image.naturalWidth * scale) / 2;
+  offsetY = (canvas.height - image.naturalHeight * scale) / 2;
+  draw();
+}
+function resize() {
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = Math.round(rect.width); canvas.height = Math.round(rect.height);
+  fit();
+}
+function loadImage(index) {
+  persist(); currentIndex = index; points = saved[imageNames[index]] || [];
+  selector.value = index; preview = null; message.textContent = '';
+  image = new Image();
+  image.onload = () => { fit(); update(); };
+  image.onerror = () => { message.textContent = `Could not load images/${imageNames[index]}. Keep the images folder next to index.html.`; };
+  image.src = `images/${imageNames[index]}`;
+  update();
+}
+function length(a, b) { return Math.hypot(b[0] - a[0], b[1] - a[1]); }
+function dimensions(q) {
+  return {width: (length(q[0], q[3]) + length(q[1], q[2])) / 2, height: (length(q[0], q[1]) + length(q[3], q[2])) / 2};
+}
+function insidePolygon(point, polygon) {
+  let inside = false;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const a = polygon[j], b = polygon[i];
+    const cross = (point[0] - a[0]) * (b[1] - a[1]) - (point[1] - a[1]) * (b[0] - a[0]);
+    if (Math.abs(cross) < 1e-7 && point[0] >= Math.min(a[0], b[0]) && point[0] <= Math.max(a[0], b[0]) && point[1] >= Math.min(a[1], b[1]) && point[1] <= Math.max(a[1], b[1])) return true;
+    if ((a[1] > point[1]) !== (b[1] > point[1]) && point[0] < (b[0] - a[0]) * (point[1] - a[1]) / (b[1] - a[1]) + a[0]) inside = !inside;
+  }
+  return inside;
+}
+function annotation() {
+  if (points.length !== 12) return null;
+  const full = points.slice(0, 4), character = points.slice(6, 10);
+  const digit = dimensions(full), tight = dimensions(character);
+  const vx = ((full[1][0] - full[0][0]) + (full[2][0] - full[3][0])) / 2;
+  const vy = ((full[1][1] - full[0][1]) + (full[2][1] - full[3][1])) / 2;
+  const verticalLength = Math.hypot(vx, vy);
+  if (!digit.width || !digit.height || !tight.width || !tight.height || !verticalLength) return null;
+  const gap = Math.abs(((points[5][0] - points[4][0]) * vx + (points[5][1] - points[4][1]) * vy) / verticalLength);
+  const stroke = length(points[10], points[11]);
+  const quad = q => ({tl:q[0], bl:q[1], br:q[2], tr:q[3]});
+  return {image: imageNames[currentIndex], digit_obb: quad(full), inter_digit_gap: {upper_bottom:points[4], lower_top:points[5]}, tight_character_obb:quad(character), stroke_thickness:{point_1:points[10], point_2:points[11]}, measurements:{digit_width_px:digit.width, digit_height_px:digit.height, character_width_px:tight.width, character_height_px:tight.height, gap_px:gap, stroke_thickness_px:stroke}, ratios:{character_width_to_digit_width:tight.width / digit.width, character_height_to_digit_height:tight.height / digit.height, gap_to_character_height:gap / tight.height, stroke_to_character_width:stroke / tight.width}};
+}
+function screen(point) { return [offsetX + point[0] * scale, offsetY + point[1] * scale]; }
+function line(a, b, color, dashed = false) {
+  const p = screen(a), q = screen(b); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.setLineDash(dashed ? [7, 5] : []);
+  ctx.beginPath(); ctx.moveTo(...p); ctx.lineTo(...q); ctx.stroke(); ctx.setLineDash([]);
+}
+function drawGroup(start, end, closed, color) {
+  const group = points.slice(start, end);
+  for (let i = 1; i < group.length; i++) line(group[i - 1], group[i], color);
+  if (closed && group.length === end - start) line(group[group.length - 1], group[0], color);
+  group.forEach((p, i) => { const [x,y] = screen(p); ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x,y,4,0,2*Math.PI); ctx.fill(); ctx.fillStyle = '#fff'; ctx.fillText(String(start+i+1),x+6,y-6); });
+}
+function guideThrough(p, direction, color) {
+  const magnitude = Math.hypot(...direction); if (!magnitude) return;
+  const extent = Math.max(image.naturalWidth, image.naturalHeight) * 3;
+  const dx = direction[0] / magnitude * extent, dy = direction[1] / magnitude * extent;
+  line([p[0]-dx,p[1]-dy],[p[0]+dx,p[1]+dy],color,true);
+}
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  if (!image.complete || !image.naturalWidth) return;
+  ctx.drawImage(image,offsetX,offsetY,image.naturalWidth*scale,image.naturalHeight*scale);
+  drawGroup(0,4,true,colors[0]); drawGroup(4,6,false,colors[1]); drawGroup(6,10,true,colors[2]); drawGroup(10,12,false,colors[3]);
+  if (preview && points.length < 12) {
+    const stage = points.length < 4 ? 0 : points.length < 6 ? 1 : points.length < 10 ? 2 : 3;
+    if (points.length >= 4 && points.length < 10) {
+      const horizontal = [(points[3][0]-points[0][0]+points[2][0]-points[1][0])/2, (points[3][1]-points[0][1]+points[2][1]-points[1][1])/2];
+      const vertical = [(points[1][0]-points[0][0]+points[2][0]-points[3][0])/2, (points[1][1]-points[0][1]+points[2][1]-points[3][1])/2];
+      guideThrough(preview,horizontal,colors[stage]);
+      if (stage === 2) guideThrough(preview,vertical,colors[stage]);
+    }
+    const start = [0,4,6,10][stage];
+    if (points.length > start) line(points[points.length-1],preview,colors[stage],true);
+    const [x,y] = screen(preview); ctx.strokeStyle=colors[stage]; ctx.beginPath(); ctx.arc(x,y,5,0,2*Math.PI); ctx.stroke();
+  }
+}
+function update() {
+  const n = points.length;
+  const stage = n < 4 ? 0 : n < 6 ? 1 : n < 10 ? 2 : 3;
+  document.getElementById('stage').textContent = n === 12 ? 'Complete — 12 / 12 points' : `${stageNames[stage]} — point ${n+1} / 12`;
+  document.getElementById('instructions').textContent = n === 12 ? 'Review the overlay and export your annotations.' : `Next: ${pointNames[n]}`;
+  document.getElementById('progress').textContent = `${imageNames.filter(name => (saved[name] || []).length === 12).length} of 10 images completed`;
+  const result = annotation();
+  measurements.textContent = result ? JSON.stringify({measurements:result.measurements, ratios:result.ratios},null,2) : (n === 12 ? 'Invalid dimensions. Undo and correct the points.' : 'Complete all 12 points to calculate.');
+  draw();
+}
+function imagePoint(event) {
+  const rect = canvas.getBoundingClientRect();
+  return [(event.clientX-rect.left-offsetX)/scale,(event.clientY-rect.top-offsetY)/scale];
+}
+canvas.addEventListener('pointerdown', e => {
+  if (e.button === 2 || e.shiftKey) { dragging = {x:e.clientX,y:e.clientY}; canvas.setPointerCapture(e.pointerId); return; }
+  if (e.button !== 0 || points.length >= 12) return;
+  const p = imagePoint(e);
+  if (p[0] < 0 || p[1] < 0 || p[0] > image.naturalWidth || p[1] > image.naturalHeight) { message.textContent = 'Place points inside the image.'; return; }
+  if (points.length >= 6 && points.length < 10 && !insidePolygon(p,points.slice(0,4))) { message.textContent = 'Character corners must be inside the full digit OBB.'; return; }
+  message.textContent = ''; points.push(p); persist(); update();
+});
+canvas.addEventListener('pointermove', e => {
+  if (dragging) { offsetX += e.clientX-dragging.x; offsetY += e.clientY-dragging.y; dragging = {x:e.clientX,y:e.clientY}; draw(); return; }
+  preview = imagePoint(e); draw();
+});
+canvas.addEventListener('pointerup', () => { dragging = null; });
+canvas.addEventListener('pointercancel', () => { dragging = null; });
+canvas.addEventListener('pointerleave', () => { if (!dragging) { preview = null; draw(); } });
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+canvas.addEventListener('wheel', e => {
+  e.preventDefault(); const rect = canvas.getBoundingClientRect();
+  const x=e.clientX-rect.left, y=e.clientY-rect.top; const old=scale;
+  scale=Math.max(0.05,Math.min(50,scale*Math.exp(-e.deltaY*0.001)));
+  offsetX=x-(x-offsetX)*scale/old; offsetY=y-(y-offsetY)*scale/old; draw();
+},{passive:false});
+document.getElementById('previous').onclick = () => loadImage((currentIndex+9)%10);
+document.getElementById('next').onclick = () => loadImage((currentIndex+1)%10);
+selector.onchange = () => loadImage(Number(selector.value));
+document.getElementById('undo').onclick = () => { points.pop(); persist(); message.textContent=''; update(); };
+document.getElementById('reset').onclick = () => { if (confirm('Reset all points for this image?')) { points=[]; persist(); message.textContent=''; update(); } };
+document.getElementById('fit').onclick = fit;
+document.getElementById('export').onclick = () => {
+  persist(); const originalIndex = currentIndex, originalPoints = points;
+  const output = [];
+  for (let i=0;i<imageNames.length;i++) { currentIndex=i; points=saved[imageNames[i]] || []; const item=annotation(); if (item) output.push(item); }
+  currentIndex=originalIndex; points=originalPoints;
+  const url=URL.createObjectURL(new Blob([JSON.stringify({annotations:output},null,2)],{type:'application/json'}));
+  const link=document.createElement('a'); link.href=url; link.download='annotations.json'; link.click(); setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+window.addEventListener('resize',resize); resize(); loadImage(0);
+</script>
+</body>
+</html>

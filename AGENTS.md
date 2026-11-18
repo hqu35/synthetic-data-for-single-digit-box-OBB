@@ -64,7 +64,7 @@ Write code that a human researcher can easily read, understand, debug, and modif
 - Prefer meaningful names over unexplained abbreviations.
 - Preserve standard mathematical and ML notation where appropriate.
 - Maintain consistent naming conventions.
-- Avoid unnecessarily verbose names when shorter names are clear.
+- Prefer shorter names only when they remain fully clear; readability takes precedence over brevity.
 
 ### Control Flow
 
@@ -94,29 +94,57 @@ Write code that a human researcher can easily read, understand, debug, and modif
 
 ### Formatting
 
-For Python:
+For Python, follow **PEP 8** as the primary coding style standard.
 
-- Follow established PEP 8 conventions.
-- Use consistent four-space indentation.
-- Maintain readable whitespace, line breaks, and imports.
-- Split long expressions into readable multiline statements.
-- Preserve existing conventions where reasonable.
+**General Rules**
 
-Ruff may be used when available:
+- Use four spaces for indentation.
+- Target a maximum line length of **79 characters**, following PEP 8.
+- Use conventional whitespace around operators, assignments, and function arguments.
+- Follow PEP 8 conventions for blank lines, imports, and naming.
+- Prefer compact, readable expressions when they fit within the line-length limit.
+- Break long expressions only when necessary for line length or when doing so clearly improves readability.
+- Keep logically connected mathematical expressions and operations together.
+- Avoid excessive parentheses, unnecessary indentation, and fragmented multiline expressions.
+- Never split short expressions across multiple lines merely for visual symmetry.
+- Preserve existing project formatting conventions when they are explicitly configured.
 
-    ruff format path/to/file.py
+**Multiline Formatting**
 
-For a non-modifying check:
+- Prefer one-line statements when they are short and easy to understand.
+- For genuinely long statements, break lines at logical boundaries, such as function arguments or mathematical subexpressions.
+- Use implicit continuation inside parentheses rather than backslashes when practical.
+- Do not place individual operators, operands, or simple function arguments on separate lines unnecessarily.
+- Do not manually enforce an artificially narrow line width.
 
-    ruff format --check path/to/file.py
+**Formatting Tools**
 
-**Formatting restrictions:**
+Ruff may be used when available, configured consistently with the project's PEP 8 conventions.
+
+To format a specific file with a 79-character target:
+
+```bash
+
+ruff format --line-length 79 path/to/file.py
+
+```
+
+To check formatting without modifying the file:
+
+```bash
+
+ruff format --check --line-length 79 path/to/file.py
+
+```
+
+**Formatting Restrictions**
 
 - Format only files relevant to the current task.
 - Do not automatically format the entire repository.
 - Do not introduce new mandatory formatting infrastructure.
 - Do not perform unrelated code cleanup.
 - Preserve program behavior.
+- Do not sacrifice code readability merely to satisfy mechanical formatting preferences.
 
 ## 2. Avoid Introducing Excessive Defensive Engineering
 
@@ -261,7 +289,7 @@ It does NOT instruct the agent to create, rename, or reorganize experiments duri
 - Determine order using experiment creation timestamps.
 - For new experiments, prefer sortable directory names:
 
-    YYYY-MM-DD_HH-mm-ss_short-description
+    YYYY-MM-DD_HH-mm-ss_descriptive-experiment-name
 
 - Use the `America/Chicago` timezone.
 - Ensure new experiment directory names are unique.
@@ -270,9 +298,9 @@ It does NOT instruct the agent to create, rename, or reorganize experiments duri
 Example:
 
     experiments/
-    ├── 2026-11-13_09-30-00_baseline/
-    ├── 2026-11-14_14-20-10_augmentation/
-    └── 2026-11-15_15-51-30_new-experiment/
+    ├── 2026-11-13_09-30-00_initial-model-baseline/
+    ├── 2026-11-14_14-20-10_synthetic-data-augmentation-evaluation/
+    └── 2026-11-15_15-51-30_post-training-manual-inspection/
 
 When presenting experiment listings, sort by timestamp in ascending order. Do not assume every file browser automatically uses this sort order.
 
@@ -291,6 +319,40 @@ If formal delivery rules require:
 preserve that convention instead of replacing it with timestamp-based naming.
 
 Formal delivery organization takes precedence over the general experiment naming preference.
+
+### 4.3 Human-Readable Naming Conventions
+
+- Name new experiments, output directories, scripts, and research artifacts so a researcher can understand their purpose at a glance, even weeks or months later.
+- **Prioritize clarity over brevity.** Do not sacrifice essential meaning to create a shorter name. Up to **6–7 meaningful words** is acceptable when needed; avoid unnecessary verbosity.
+- Prefer descriptive, natural English names indicating **what was done or why**, not merely a dataset size, parameter value, or implementation detail.
+- Avoid ambiguous names such as `unseen_100`, `test2`, `final_v3`, or `run_new` without explanatory context.
+- Retain the chronological prefix from Section 4.1 for new experiments; make the descriptive suffix meaningful (for example, `2026-11-15_15-51-30_post-training-manual-inspection/`).
+- Respect established project conventions and names required by external tools or formal deliverables; do not rename existing artifacts just to comply with these preferences.
+
+### 4.4 Organization of New Experiments
+
+- Inspect the relevant existing directory layout before choosing where new experimental artifacts belong.
+- Prefer an existing experiment category or directory when suitable; avoid creating arbitrary new top-level folders.
+- Keep outputs and experiment-specific records separate from reusable source code.
+- Avoid unnecessary nesting, fragmentation, and duplicate directories for the same experiment.
+- Make it easy to identify related experiments and locate their outputs, while preserving the chronological ordering rules above.
+
+### 4.5 Experiment Documentation
+
+For each substantial new experiment, provide a concise, human-readable record (such as a README or an existing experiment log) covering:
+
+- **Purpose:** Why was this experiment conducted?
+- **Method:** What was tested or changed?
+- **Results:** What happened, and where are the outputs?
+- **Conclusion:** What was learned, or what remains to be reviewed?
+
+Use plain English, meaningful headings, and minimal jargon. Keep it short enough to scan; do not create redundant documentation, metadata systems, or infrastructure for trivial runs. Do not invent results or conclusions that have not been established.
+
+### 4.6 Before Finishing New Experimental Work
+
+Review the **newly created** names, directory layout, and documentation. Ask: **Could another researcher understand what was done by browsing these artifacts without reading the implementation or reconstructing the conversation?** If not, improve the newly created artifacts within the current task's scope.
+
+**These are forward-looking rules, not a cleanup request.** Do not retroactively rename, move, rewrite, or reorganize existing files, experiments, or documentation unless explicitly requested.
 
 ---
 

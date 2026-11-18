@@ -12,9 +12,9 @@ _shared_sys.path.insert(
     0,
     str(
         next(
-            p / 'shared'
+            p / "shared"
             for p in _SharedPath(__file__).resolve().parents
-            if (p / 'shared' / 'digitgen').is_dir()
+            if (p / "shared" / "digitgen").is_dir()
         )
     ),
 )
@@ -33,19 +33,16 @@ def closed_four(width, height, style):
         """in the same mask as the """
         """font."""
     )
-    image = Image.new('L', (width, height))
+    image = Image.new("L", (width, height))
     draw = ImageDraw.Draw(image)
 
     def points(coords):
         return [
-            (
-                round(x * (width - 1)),
-                round(y * (height - 1)),
-            )
+            (round(x * (width - 1)), round(y * (height - 1)))
             for x, y in coords
         ]
 
-    if style == 'closed_triangle_v1':
+    if style == "closed_triangle_v1":
         draw.polygon(
             points(
                 [
@@ -65,12 +62,9 @@ def closed_four(width, height, style):
             fill=255,
         )
         draw.polygon(
-            points(
-                [(0.46, 0.17), (0.19, 0.66), (0.67, 0.66)]
-            ),
-            fill=0,
+            points([(0.46, 0.17), (0.19, 0.66), (0.67, 0.66)]), fill=0
         )
-    elif style == 'closed_upright_v2':
+    elif style == "closed_upright_v2":
         draw.polygon(
             points(
                 [
@@ -90,13 +84,10 @@ def closed_four(width, height, style):
             fill=255,
         )
         draw.polygon(
-            points(
-                [(0.67, 0.22), (0.19, 0.66), (0.67, 0.66)]
-            ),
-            fill=0,
+            points([(0.67, 0.22), (0.19, 0.66), (0.67, 0.66)]), fill=0
         )
     else:
-        raise ValueError('Unknown 4 glyph style')
+        raise ValueError("Unknown 4 glyph style")
     return image
 
 
@@ -104,85 +95,57 @@ def prepare(config, update_current=True):
     from font_candidates import resolve_config
 
     config = resolve_config(config)
-    t = config['typography']
-    if t.get('image_source'):
+    t = config["typography"]
+    if t.get("image_source"):
         from digitgen.photo_atlas import build_photo_atlas
         from digitgen.assets import texture_spec
 
         _, crops = build_photo_atlas(config)
         manifest = texture_spec(config)
-        manifest['source_crops'] = crops
+        manifest["source_crops"] = crops
         if update_current:
             (
-                ROOT.parent
-                / 'shared'
-                / 'assets/atlases/current.json'
-            ).write_text(
-                json.dumps(manifest, indent=2) + '\n'
-            )
+                ROOT.parent / "shared" / "assets/atlases/current.json"
+            ).write_text(json.dumps(manifest, indent=2) + "\n")
         return manifest
-    font_path = ROOT.parent / 'shared' / t['font']
+    font_path = ROOT.parent / "shared" / t["font"]
     key = hashlib.sha256(
-        font_path.read_bytes()
-        + json.dumps(t, sort_keys=True).encode()
+        font_path.read_bytes() + json.dumps(t, sort_keys=True).encode()
     ).hexdigest()[:16]
-    destination = (
-        ROOT.parent
-        / 'shared'
-        / 'assets/atlases'
-        / f'ink_{key}.png'
-    )
+    destination = ROOT.parent / "shared" / "assets/atlases" / f"ink_{key}.png"
     destination.parent.mkdir(parents=True, exist_ok=True)
-    identity = ImageFont.truetype(
-        str(font_path), 100
-    ).getname()
+    identity = ImageFont.truetype(str(font_path), 100).getname()
     if (
-        'font_family' in t
-        and t['font_family'].casefold()
-        != identity[0].casefold()
+        "font_family" in t
+        and t["font_family"].casefold() != identity[0].casefold()
     ):
         raise ValueError(
-            f'Configured font family does not match actual file: {identity}'
+            f"Configured font family does not match actual file: {identity}"
         )
     if (
-        'font_weight' in t
-        and t['font_weight'].casefold()
-        != identity[1].casefold()
+        "font_weight" in t
+        and t["font_weight"].casefold() != identity[1].casefold()
     ):
         raise ValueError(
-            f'Configured font weight does not match actual file: {identity}'
+            f"Configured font weight does not match actual file: {identity}"
         )
     if not destination.exists():
-        segment, axial = (
-            t['segment_pixels'],
-            t['axial_pixels'],
-        )
-        atlas = Image.new('L', (10 * segment, axial))
+        segment, axial = (t["segment_pixels"], t["axial_pixels"])
+        atlas = Image.new("L", (10 * segment, axial))
         font = ImageFont.truetype(str(font_path), axial * 2)
         glyphs = []
         for digit in range(10):
             bounds = font.getbbox(str(digit))
             glyph = Image.new(
-                'L',
-                (
-                    bounds[2] - bounds[0],
-                    bounds[3] - bounds[1],
-                ),
+                "L", (bounds[2] - bounds[0], bounds[3] - bounds[1])
             )
             ImageDraw.Draw(glyph).text(
-                (-bounds[0], -bounds[1]),
-                str(digit),
-                font=font,
-                fill=255,
+                (-bounds[0], -bounds[1]), str(digit), font=font, fill=255
             )
-            if t.get('trim_glyph_ink_bounds', False):
+            if t.get("trim_glyph_ink_bounds", False):
                 glyph = glyph.crop(glyph.getbbox())
-            if digit == 4 and t.get('four_style'):
-                glyph = closed_four(
-                    glyph.width,
-                    glyph.height,
-                    t['four_style'],
-                )
+            if digit == 4 and t.get("four_style"):
+                glyph = closed_four(glyph.width, glyph.height, t["four_style"])
             glyphs.append(glyph)
         max_width = max(g.width for g in glyphs)
         for digit, glyph in enumerate(glyphs):
@@ -190,8 +153,8 @@ def prepare(config, update_current=True):
                 1,
                 round(
                     axial
-                    * t['numeral_width']
-                    * t.get('glyph_width_scale', 1)
+                    * t["numeral_width"]
+                    * t.get("glyph_width_scale", 1)
                     * glyph.width
                     / max_width
                 ),
@@ -200,79 +163,56 @@ def prepare(config, update_current=True):
                 1,
                 round(
                     segment
-                    * t['numeral_height']
-                    * t.get('glyph_height_scale', 1)
+                    * t["numeral_height"]
+                    * t.get("glyph_height_scale", 1)
                 ),
             )
-            glyph = glyph.resize(
-                (width, height), Image.Resampling.LANCZOS
-            )
-            face = Image.new('L', (axial, segment))
-            horizontal = t.get(
-                'glyph_horizontal_alignment', 'center'
-            )
-            vertical = t.get(
-                'glyph_vertical_alignment', 'center'
-            )
+            glyph = glyph.resize((width, height), Image.Resampling.LANCZOS)
+            face = Image.new("L", (axial, segment))
+            horizontal = t.get("glyph_horizontal_alignment", "center")
+            vertical = t.get("glyph_vertical_alignment", "center")
             xpos = {
-                'left': 0,
-                'center': (axial - width) // 2,
-                'right': axial - width,
+                "left": 0,
+                "center": (axial - width) // 2,
+                "right": axial - width,
             }[horizontal]
             ypos = {
-                'top': 0,
-                'center': (segment - height) // 2,
-                'bottom': segment - height,
+                "top": 0,
+                "center": (segment - height) // 2,
+                "bottom": segment - height,
             }[vertical]
             face.paste(glyph, (xpos, ypos))
             # u grows with cylinder +angle (up); v grows with
             # local +X (right).
             # PNG y is downward: transpose about the anti-diagonal, not rotate.
-            tile = face.transpose(
-                Image.Transpose.TRANSVERSE
-            )
+            tile = face.transpose(Image.Transpose.TRANSVERSE)
             atlas.paste(tile, (digit * segment, 0))
         atlas.save(destination)
     manifest = {
-        'path': str(destination.relative_to(ROOT)),
-        'sha256': hashlib.sha256(
-            destination.read_bytes()
-        ).hexdigest(),
-        'font': t['font'],
-        'font_sha256': hashlib.sha256(
-            font_path.read_bytes()
-        ).hexdigest(),
-        'size': [
-            10 * t['segment_pixels'],
-            t['axial_pixels'],
-        ],
-        'typography': t,
-        'uv_definition': 'u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u',
-        'license': t.get(
-            'font_license', 'assets/fonts/OFL.txt'
-        ),
+        "path": str(destination.relative_to(ROOT)),
+        "sha256": hashlib.sha256(destination.read_bytes()).hexdigest(),
+        "font": t["font"],
+        "font_sha256": hashlib.sha256(font_path.read_bytes()).hexdigest(),
+        "size": [10 * t["segment_pixels"], t["axial_pixels"]],
+        "typography": t,
+        "uv_definition": "u=angle/(2*pi)+0.05, v=x/wheel_width+0.5; repeat u",
+        "license": t.get("font_license", "assets/fonts/OFL.txt"),
     }
     if update_current:
-        (
-            ROOT.parent
-            / 'shared'
-            / 'assets/atlases/current.json'
-        ).write_text(json.dumps(manifest, indent=2) + '\n')
+        (ROOT.parent / "shared" / "assets/atlases/current.json").write_text(
+            json.dumps(manifest, indent=2) + "\n"
+        )
     return manifest
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from digitgen.config import load_config
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        '--config', default='configs/preview.json'
-    )
+    parser.add_argument("--config", default="configs/preview.json")
     from font_candidates import PRESETS, resolve_config
 
-    parser.add_argument(
-        '--font-preset', choices=sorted(PRESETS)
-    )
+    parser.add_argument("--font-preset", choices=sorted(PRESETS))
     args = parser.parse_args()
     print(
         json.dumps(
@@ -280,12 +220,8 @@ if __name__ == '__main__':
                 resolve_config(
                     load_config(
                         (
-                            ROOT.parent
-                            / 'shared'
-                            / args.config
-                            if str(args.config).startswith(
-                                'configs/'
-                            )
+                            ROOT.parent / "shared" / args.config
+                            if str(args.config).startswith("configs/")
                             else ROOT / args.config
                         )
                     ),

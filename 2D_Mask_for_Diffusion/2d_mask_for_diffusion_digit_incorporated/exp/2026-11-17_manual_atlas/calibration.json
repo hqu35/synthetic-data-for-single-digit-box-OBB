@@ -1,0 +1,107 @@
+{
+  "mask_resolution": [
+    1200,
+    460
+  ],
+  "strip_sizes_px": [
+    [
+      140.6261539558912,
+      303.3812473016136
+    ],
+    [
+      141.29960498171303,
+      304.8341236440503
+    ],
+    [
+      141.97953728691976,
+      306.30098243974044
+    ],
+    [
+      142.66604488747262,
+      307.78202651496343
+    ],
+    [
+      143.35922362653338,
+      309.27746263792795
+    ]
+  ],
+  "median_strip_px": [
+    142,
+    306
+  ],
+  "pitch_px": 275,
+  "median_height_fraction": 0.7763786268756616,
+  "gap_over_ink_height": 0.15737559275345295,
+  "glyphs": {
+    "0": {
+      "source": "sample_001.png",
+      "ink_box_px": [
+        130,
+        243
+      ]
+    },
+    "1": {
+      "source": "sample_001.png",
+      "ink_box_px": [
+        79,
+        242
+      ]
+    },
+    "2": {
+      "source": "sample_006.png",
+      "ink_box_px": [
+        126,
+        214
+      ]
+    },
+    "3": {
+      "source": "assets/reference/user_digit_strip.png",
+      "ink_box_px": [
+        123,
+        238
+      ]
+    },
+    "4": {
+      "source": "sample_010.png",
+      "ink_box_px": [
+        125,
+        253
+      ]
+    },
+    "5": {
+      "source": "assets/reference/user_digit_strip.png",
+      "ink_box_px": [
+        114,
+        238
+      ]
+    },
+    "6": {
+      "source": "assets/reference/user_digit_strip.png",
+      "ink_box_px": [
+        120,
+        238
+      ]
+    },
+    "7": {
+      "source": "assets/reference/user_digit_strip.png",
+      "ink_box_px": [
+        118,
+        238
+      ]
+    },
+    "8": {
+      "source": "sample_002.png",
+      "ink_box_px": [
+        122,
+        233
+      ]
+    },
+    "9": {
+      "source": "sample_005.png",
+      "ink_box_px": [
+        111,
+        242
+      ]
+    }
+  }
+}
